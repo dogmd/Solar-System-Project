@@ -6,10 +6,12 @@ public class Universe : MonoBehaviour
 {
     public GravityObject[] objects;
     public float gravitationalConstant = 1.93f;
+    public float timeStep = 0.01f;
 
     // Start is called before the first frame update
     void Start()
     {
+        Time.fixedDeltaTime = timeStep;
         objects = new GravityObject[transform.childCount];
 
         int i = 0;
@@ -19,27 +21,27 @@ public class Universe : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         foreach (GravityObject obj in objects) {
             Vector3 force = new Vector2(0, 0);
-            Vector3 position = obj.gameObject.transform.position;
+            Vector3 position = obj.transform.position;
             foreach (GravityObject other in objects) {
                 if (other != obj) {
-                    Vector3 heading = (position - other.gameObject.transform.position);
-                    float forceMag = calcGravity(obj.mass, other.mass, heading.magnitude);
+                    Vector3 heading = (position - other.transform.position);
+                    float forceMag = CalcGravity(obj.mass, other.mass, heading.magnitude);
                     Vector3 forceDirection = heading / heading.magnitude;
                     force += forceDirection * -forceMag;
                 }
             }
-            obj.acceleration = force / obj.mass;
+            obj.acceleration = (force / obj.mass);
 
-            obj.velocity += obj.acceleration;
-            obj.gameObject.transform.position += obj.velocity;
+            obj.velocity += obj.acceleration * timeStep;
+            obj.gameObject.transform.position += obj.velocity * timeStep;
         }
     }
 
-    float calcGravity(float m1, float m2, float r) {
+    public float CalcGravity(float m1, float m2, float r) {
         if (r < 0.01) {
             r = 0.01f;
         }
