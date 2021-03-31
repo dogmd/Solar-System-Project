@@ -29,6 +29,6 @@ public class GravityObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        gameObject.transform.localScale = new Vector3(radius, radius, radius);
     }
 }
