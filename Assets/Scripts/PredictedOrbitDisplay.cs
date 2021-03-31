@@ -70,7 +70,7 @@ public class PredictedOrbitDisplay : MonoBehaviour {
         // render
         for (int i = 0; i < orbitPoints.Length; i++) {
             for (int j = 0; j < orbitPoints[i].Length - 1; j++) {
-                Debug.DrawLine(orbitPoints[i][j], orbitPoints[i][j + 1], gravObjs[i].gameObject.GetComponent<MeshRenderer>().material.color);
+                Debug.DrawLine(orbitPoints[i][j], orbitPoints[i][j + 1], gravObjs[i].gameObject.GetComponent<MeshRenderer>().sharedMaterial.color);
             }
         }
     }
