@@ -17,55 +17,71 @@ public class FlyCamera : MonoBehaviour {
     float mainSpeed = 100.0f; //regular speed
     float ctrlAdd = 250.0f; //multiplied by how long ctrl is held.  Basically running
     float maxCtrl = 1000.0f; //Maximum speed when holdin gctrl
-    float camSens = 0.25f; //How sensitive it with mouse
-    private Vector3 lastMouse = new Vector3(255, 255, 255); //kind of in the middle of the screen, rather than at the top (play)
+    float camSens = 1f; //How sensitive it with mouse
+    private Vector3 lastMouse = new Vector3(255, 255, 255);
     private float totalRun= 1.0f;
      
+            
+     bool IsMouseOverGameWindow { 
+        get {
+            return !(0 > Input.mousePosition.x || 0 > Input.mousePosition.y || Screen.width < Input.mousePosition.x || Screen.height < Input.mousePosition.y); 
+        } 
+    }
     void Update () {
-        lastMouse = Input.mousePosition - lastMouse ;
-        lastMouse = new Vector3(-lastMouse.y * camSens, lastMouse.x * camSens, 0 );
-        lastMouse = new Vector3(transform.eulerAngles.x + lastMouse.x , transform.eulerAngles.y + lastMouse.y, 0);
-        transform.eulerAngles = lastMouse;
-        lastMouse =  Input.mousePosition;
-        //Mouse  camera angle done.  
-       
-        //Keyboard commands
-        Vector3 p = GetBaseInput();
-        if (Input.GetKey (KeyCode.LeftControl)){
-            totalRun += Time.deltaTime;
-            p  = p * totalRun * ctrlAdd;
-            p.x = Mathf.Clamp(p.x, -maxCtrl, maxCtrl);
-            p.y = Mathf.Clamp(p.y, -maxCtrl, maxCtrl);
-            p.z = Mathf.Clamp(p.z, -maxCtrl, maxCtrl);
-        }
-        else{
-            totalRun = Mathf.Clamp(totalRun * 0.5f, 1f, 1000f);
-            p = p * mainSpeed;
-        }
-       
-        p = p * Time.deltaTime;
-        Vector3 newPosition = transform.position;
+        if (Cursor.lockState == CursorLockMode.Locked) {
+            if (Input.GetKey(KeyCode.Tab)) {
+                Cursor.lockState = CursorLockMode.None;
+            } else {
+                Cursor.lockState = CursorLockMode.Locked;
+            }
 
-        // x and z        
-        transform.Translate(p);
-        newPosition.x = transform.position.x;
-        newPosition.z = transform.position.z;
-        transform.position = newPosition;
+            lastMouse = new Vector3(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"), 0);
+            lastMouse = new Vector3(-lastMouse.y * camSens, lastMouse.x * camSens, 0 );
+            lastMouse = new Vector3(transform.eulerAngles.x + lastMouse.x , transform.eulerAngles.y + lastMouse.y, 0);
+            transform.eulerAngles = lastMouse;
+            lastMouse =  new Vector3(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"), 0);
+            //Mouse  camera angle done.  
         
-        // y
-        Vector3 yOff = Vector3.zero;
-        if (Input.GetKey(KeyCode.LeftShift)){ 
-            yOff = new Vector3(0, -1, 0);
+            //Keyboard commands
+            Vector3 p = GetBaseInput();
+            if (Input.GetKey(KeyCode.LeftControl)) {
+                totalRun += Time.deltaTime;
+                p  = p * totalRun * ctrlAdd;
+                p.x = Mathf.Clamp(p.x, -maxCtrl, maxCtrl);
+                p.y = Mathf.Clamp(p.y, -maxCtrl, maxCtrl);
+                p.z = Mathf.Clamp(p.z, -maxCtrl, maxCtrl);
+            } else {
+                totalRun = Mathf.Clamp(totalRun * 0.5f, 1f, 1000f);
+                p = p * mainSpeed;
+            }
+        
+            p = p * Time.deltaTime;
+            Vector3 newPosition = transform.position;
+
+            // x and z        
+            transform.Translate(p);
+            newPosition.x = transform.position.x;
+            newPosition.z = transform.position.z;
+            transform.position = newPosition;
+            
+            // y
+            Vector3 yOff = Vector3.zero;
+            if (Input.GetKey(KeyCode.LeftShift)){ 
+                yOff = new Vector3(0, -1, 0);
+            }
+            if (Input.GetKey(KeyCode.Space)){ 
+                yOff = new Vector3(0, 1, 0);
+            }
+            if (Input.GetKey (KeyCode.LeftControl)){
+                yOff = yOff * totalRun * ctrlAdd* Time.deltaTime;
+                yOff.y = Mathf.Clamp(yOff.y, -maxCtrl, maxCtrl);
+            } else {
+                yOff *= mainSpeed * Time.deltaTime;
+            }
+            transform.Translate(yOff);
+        } else if (IsMouseOverGameWindow && Application.isFocused && !Input.GetKey(KeyCode.Tab)) {
+            Cursor.lockState = CursorLockMode.Locked;
         }
-        if (Input.GetKey(KeyCode.Space)){ 
-            yOff = new Vector3(0, 1, 0);
-        }
-        if (Input.GetKey (KeyCode.LeftControl)){
-            yOff = yOff * totalRun * ctrlAdd* Time.deltaTime;
-        } else {
-            yOff *= mainSpeed * Time.deltaTime;
-        }
-        transform.Translate(yOff);
     }
      
     private Vector3 GetBaseInput() { //returns the basic values, if it's 0 than it's not active.
