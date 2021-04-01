@@ -365,7 +365,7 @@ MonoBehaviour:
   numSteps: 50000
   timeStep: 0.01
   useUniverseTime: 1
-  relativeToObj: 0
+  relativeToObj: 1
   centralBody: {fileID: 1535042517}
   enableSimulation: 1
 --- !u!114 &1853302547
