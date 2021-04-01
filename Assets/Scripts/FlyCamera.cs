@@ -15,7 +15,8 @@ public class FlyCamera : MonoBehaviour {
      
      
     public float mainSpeed = 25.0f; //regular speed
-    float ctrlAdd = 250.0f; //multiplied by how long ctrl is held.  Basically running
+    float ctrlMult = 3f;
+    float ctrlAdd; //multiplied by how long ctrl is held.  Basically running
     float maxCtrl = 1000.0f; //Maximum speed when holdin gctrl
     public float camSens = 1f; //How sensitive it with mouse
     private Vector3 lastMouse = new Vector3(255, 255, 255);
@@ -29,6 +30,7 @@ public class FlyCamera : MonoBehaviour {
     }
     void Update () {
         if (Cursor.lockState == CursorLockMode.Locked) {
+            ctrlAdd = ctrlMult * mainSpeed;
             if (Input.GetKey(KeyCode.Tab)) {
                 Cursor.lockState = CursorLockMode.None;
             } else {
@@ -47,9 +49,6 @@ public class FlyCamera : MonoBehaviour {
             if (Input.GetKey(KeyCode.LeftControl)) {
                 totalRun += Time.deltaTime;
                 p  = p * totalRun * ctrlAdd;
-                p.x = Mathf.Clamp(p.x, -maxCtrl, maxCtrl);
-                p.y = Mathf.Clamp(p.y, -maxCtrl, maxCtrl);
-                p.z = Mathf.Clamp(p.z, -maxCtrl, maxCtrl);
             } else {
                 totalRun = Mathf.Clamp(totalRun * 0.5f, 1f, 1000f);
                 p = p * mainSpeed;
