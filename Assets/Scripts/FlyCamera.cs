@@ -14,12 +14,12 @@ public class FlyCamera : MonoBehaviour {
     space : Moves camera on X and Z axis only.  So camera doesn't gain any height*/
      
      
-    float mainSpeed = 100.0f; //regular speed
+    public float mainSpeed = 25.0f; //regular speed
     float ctrlAdd = 250.0f; //multiplied by how long ctrl is held.  Basically running
     float maxCtrl = 1000.0f; //Maximum speed when holdin gctrl
-    float camSens = 1f; //How sensitive it with mouse
+    public float camSens = 1f; //How sensitive it with mouse
     private Vector3 lastMouse = new Vector3(255, 255, 255);
-    private float totalRun= 1.0f;
+    private float totalRun = 1.0f;
      
             
      bool IsMouseOverGameWindow { 

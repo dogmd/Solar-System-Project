@@ -37,26 +37,26 @@ public class PredictedOrbitDisplay : MonoBehaviour {
 
         // initialize arrays and simulation objects
         for (int i = 0; i < gravObjs.Length; i++) {
-            simObjs[i] = new OrbitSimObject(gravObjs[i]);
+            simObjs[i] = new OrbitSimObject(gravObjs[i], universe.runSpeedFactor);
             orbitPoints[i] = new Vector3[numSteps];
 
             if (gravObjs[i] == centralBody) {
                 refIndex = i;
-                initalRefPos = simObjs[i].position;
+                initalRefPos = transform.TransformPoint(Mathd.GetFloatVector3(simObjs[i].position));
             }
         }
 
         // simulate
         for (int i = 0; i < numSteps; i++) {
-            Vector3 newRefPos = simObjs[refIndex].position;
+            Vector3 newRefPos = transform.TransformPoint(Mathd.GetFloatVector3(simObjs[refIndex].position));
             for (int j = 0; j < simObjs.Length; j++) {
                 OrbitSimObject obj = simObjs[j];
-                Vector3 force = CalcForce(obj, simObjs);
-                Vector3 acceleration = (force / obj.mass);
+                Vector3d force = CalcForce(obj, simObjs);
+                Vector3d acceleration = (force / obj.mass);
                 obj.velocity += acceleration * timeStep;
                 obj.position += obj.velocity * timeStep;
 
-                Vector3 drawPoint = obj.position;
+                Vector3 drawPoint = transform.TransformPoint(Mathd.GetFloatVector3(obj.position));
                 if (relativeToObj) {
                     drawPoint -= (newRefPos - initalRefPos);
                 }
@@ -75,13 +75,13 @@ public class PredictedOrbitDisplay : MonoBehaviour {
         }
     }
 
-    Vector3 CalcForce(OrbitSimObject obj, OrbitSimObject[] others) {
-        Vector3 force = Vector3.zero;
+    Vector3d CalcForce(OrbitSimObject obj, OrbitSimObject[] others) {
+        Vector3d force = Vector3d.zero;
         foreach (OrbitSimObject other in others) {
             if (other != obj) {
-                Vector3 heading = (obj.position - other.position);
-                float forceMag = universe.CalcGravity(obj.mass, other.mass, heading.magnitude);
-                Vector3 forceDirection = heading / heading.magnitude;
+                Vector3d heading = (obj.position - other.position);
+                double forceMag = universe.CalcGravity(obj.mass, other.mass, heading.magnitude);
+                Vector3d forceDirection = heading / heading.magnitude;
                 force += forceDirection * -forceMag;
             }
         }
@@ -90,13 +90,13 @@ public class PredictedOrbitDisplay : MonoBehaviour {
 
     // use this class so actual objects aren't affected
     class OrbitSimObject {
-        public Vector3 position;
-        public Vector3 velocity;
-        public float mass;
+        public Vector3d position;
+        public Vector3d velocity;
+        public double mass;
 
-        public OrbitSimObject(GravityObject obj) {
-            position = obj.transform.position;
-            velocity = obj.velocity;
+        public OrbitSimObject(GravityObject obj, double runSpeedFactor) {
+            position = obj.position;
+            velocity = obj.initialVelocity * runSpeedFactor;
             mass = obj.mass;
         }
     }

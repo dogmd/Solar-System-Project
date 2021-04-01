@@ -5,16 +5,17 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class GravityObject : MonoBehaviour
 {
-    public float mass;
+    public double mass;
     public float radius;
-    public Vector3 velocity;
-    public Vector3 acceleration;
-    Transform transform;
+    public Vector3d position;
+    [HideInInspector]
+    public Vector3d velocity;
+    public Vector3d initialVelocity;
 
 
     // Start is called before the first frame update
     void Start() {
-        transform = gameObject.transform;
+        position = new Vector3d(transform.position);
         if (radius == 0) {
             radius = gameObject.transform.localScale.magnitude;
         } else {
@@ -29,6 +30,9 @@ public class GravityObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.localScale = new Vector3(radius, radius, radius);
+        if (!Application.isPlaying) {
+            position = new Vector3d(transform.localPosition);
+            gameObject.transform.localScale = new Vector3(radius, radius, radius);
+        }
     }
 }
