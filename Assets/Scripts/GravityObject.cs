@@ -5,34 +5,53 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class GravityObject : MonoBehaviour
 {
+    // Values used in simulation
     public double mass;
     public float radius;
+    [HideInInspector]
     public Vector3d position;
     [HideInInspector]
     public Vector3d velocity;
-    public Vector3d initialVelocity;
+    
+    // Values used for input
+    public Vector3d Position;
+    public Vector3d Velocity;
+    private Universe universe;
+    public bool useUniverseSizeScale = true;
+    public bool useUniverseDistanceScale = true;
+    public double sizeScale = 1f;
+    public double distanceScale = 1f;
 
-
-    // Start is called before the first frame update
     void Start() {
-        position = new Vector3d(transform.position);
+        universe = transform.parent.gameObject.transform.GetComponent<Universe>();
+
         if (radius == 0) {
             radius = gameObject.transform.localScale.magnitude;
-        } else {
-            gameObject.transform.localScale = new Vector3(radius, radius, radius);
         }
+        float r = (float)(radius * Universe.SCALE * sizeScale);
+        gameObject.transform.localScale = new Vector3(r, r, r);
+
         if (mass == 0) {
-            mass = 0.01f;
+            mass = 0.01d;
         }
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         if (!Application.isPlaying) {
-            position = new Vector3d(transform.localPosition);
-            gameObject.transform.localScale = new Vector3(radius, radius, radius);
+            if (useUniverseDistanceScale) {
+                distanceScale = universe.distanceScale;
+            }
+            if (useUniverseSizeScale) {
+                sizeScale = universe.sizeScale;
+            }
+
+            transform.localPosition = Mathd.GetFloatVector3(Position * Universe.AU * Universe.SCALE * distanceScale);
+            this.position = Position * Universe.AU;
+            this.velocity = Velocity * Universe.VEL_SCALE;
+            
+            float r = (float)(radius * Universe.SCALE * sizeScale);
+            gameObject.transform.localScale = new Vector3(r, r, r);
         }
     }
 }

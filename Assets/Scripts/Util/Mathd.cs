@@ -13,8 +13,13 @@ namespace UnityEngine {
         public const double Rad2Deg = 57.29578d;
         public const double Epsilon = 1.401298E-45d;
 
-        public static Vector3 GetFloatVector3(Vector3d v) {
+        public static Vector3 GetDisplayVector3(Vector3d v, GravityObject obj) {
+            v *= obj.distanceScale * Universe.SCALE;
             return new Vector3((float)v.x, (float)v.y, (float)v.z);
+        }
+
+        public static Vector3 GetFloatVector3(Vector3d v) {
+            return new Vector3((float)(v.x), (float)(v.y), (float)(v.z));
         }
 
         public static double Sin(double d) {

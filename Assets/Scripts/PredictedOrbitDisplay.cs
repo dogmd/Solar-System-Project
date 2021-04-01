@@ -42,21 +42,22 @@ public class PredictedOrbitDisplay : MonoBehaviour {
 
             if (gravObjs[i] == centralBody) {
                 refIndex = i;
-                initalRefPos = transform.TransformPoint(Mathd.GetFloatVector3(simObjs[i].position));
+                initalRefPos = transform.TransformPoint(Mathd.GetDisplayVector3(simObjs[i].position, gravObjs[i]));
             }
         }
 
         // simulate
         for (int i = 0; i < numSteps; i++) {
-            Vector3 newRefPos = transform.TransformPoint(Mathd.GetFloatVector3(simObjs[refIndex].position));
+            Vector3 newRefPos = transform.TransformPoint(Mathd.GetDisplayVector3(simObjs[refIndex].position, gravObjs[refIndex]));
             for (int j = 0; j < simObjs.Length; j++) {
                 OrbitSimObject obj = simObjs[j];
                 Vector3d force = CalcForce(obj, simObjs);
                 Vector3d acceleration = (force / obj.mass);
+
                 obj.velocity += acceleration * timeStep;
                 obj.position += obj.velocity * timeStep;
 
-                Vector3 drawPoint = transform.TransformPoint(Mathd.GetFloatVector3(obj.position));
+                Vector3 drawPoint = transform.TransformPoint(Mathd.GetDisplayVector3(obj.position, gravObjs[j]));
                 if (relativeToObj) {
                     drawPoint -= (newRefPos - initalRefPos);
                 }
@@ -96,7 +97,7 @@ public class PredictedOrbitDisplay : MonoBehaviour {
 
         public OrbitSimObject(GravityObject obj, double runSpeedFactor) {
             position = obj.position;
-            velocity = obj.initialVelocity * runSpeedFactor;
+            velocity = obj.velocity * runSpeedFactor;
             mass = obj.mass;
         }
     }
