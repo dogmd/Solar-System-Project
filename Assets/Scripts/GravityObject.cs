@@ -6,7 +6,10 @@ using UnityEngine;
 public class GravityObject : MonoBehaviour {
     // Values used in simulation
     public double mass;
-    public float radius;
+    private float _GameWorldRadius;
+    private double oldRadius;
+    private double oldSizeScale;
+    public double radius;
     [HideInInspector]
     public Vector3d position;
     [HideInInspector]
@@ -19,8 +22,8 @@ public class GravityObject : MonoBehaviour {
     public Universe universe;
     public bool useCustomSizeScale = false;
     public bool useCustomDistanceScale = false;
-    public double sizeScale = 1f;
-    public double distanceScale = 1f;
+    public double sizeScale = 1d;
+    public double distanceScale = 1d;
 
     void SetUniverse() {
         Transform curr = transform;
@@ -34,7 +37,7 @@ public class GravityObject : MonoBehaviour {
         if (radius == 0) {
             radius = gameObject.transform.localScale.magnitude;
         }
-        gameObject.transform.localScale = new Vector3(GameWorldRadius, GameWorldRadius, GameWorldRadius);
+        gameObject.transform.localScale = new Vector3(GameWorldRadius * 2, GameWorldRadius * 2, GameWorldRadius * 2);
 
 
         if (mass == 0) {
@@ -45,22 +48,32 @@ public class GravityObject : MonoBehaviour {
 
     void Update() {
         if (!Application.isPlaying) {
-            transform.localPosition = Mathd.GetFloatVector3(initPos * Universe.AU * Universe.SCALE * distanceScale);
-
             this.position = initPos * Universe.AU;
             this.velocity = initVel * Universe.VEL_SCALE;            
         }
 
-        gameObject.transform.localScale = new Vector3(GameWorldRadius, GameWorldRadius, GameWorldRadius);
+        gameObject.transform.localScale = new Vector3(GameWorldRadius * 2, GameWorldRadius * 2, GameWorldRadius * 2);
         if (!useCustomDistanceScale) {
             distanceScale = universe.distanceScale;
         }
         if (!useCustomSizeScale) {
             sizeScale = universe.sizeScale;
         }
+
+        if (oldRadius != radius || oldSizeScale != sizeScale) {
+            _GameWorldRadius = (float)(radius * Universe.SCALE * sizeScale);
+        }
+        oldRadius = radius;
+        oldSizeScale = sizeScale;
+    }
+        
+    public Vector3 GameWorldPos {
+        get {
+            return ScaledPos + universe.worldOffset;
+        }
     }
 
-    public Vector3 GameWorldPos {
+    public Vector3 ScaledPos {
         get {
             return Mathd.GetFloatVector3(position * Universe.SCALE * distanceScale);
         }
@@ -68,7 +81,7 @@ public class GravityObject : MonoBehaviour {
 
     public float GameWorldRadius {
         get {
-            return (float)(radius * Universe.SCALE * sizeScale);
+            return _GameWorldRadius;
         }
     }
 

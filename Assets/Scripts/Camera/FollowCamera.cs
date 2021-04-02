@@ -1,6 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(CameraControls))]
+[RequireComponent(typeof(CosmicCamera))]
 [ExecuteInEditMode]
 public class FollowCamera : MonoBehaviour {
     public GravityObject referenceBody;
@@ -8,16 +9,20 @@ public class FollowCamera : MonoBehaviour {
     private float zoomSpeed = 150f;
     public float zoom = 0;
     private CameraControls camControls;
+    private CosmicCamera cosmicCam;
 
     void Start() {
         camControls = transform.GetComponent<CameraControls>();
+        cosmicCam = gameObject.transform.GetComponent<CosmicCamera>();
     }
 
     void Update() {
         if (referenceBody) {
             zoomSpeed = referenceBody.GameWorldRadius * 10;
-            Vector3 newPosition = referenceBody.GameWorldPos;
+
+            Vector3 newPosition = transform.position;
             camControls.UpdateCamera();
+
 
             // Modified from http://answers.unity.com/answers/1536663/view.html
             float ScrollWheelChange = Input.GetAxis("Mouse ScrollWheel");      
@@ -37,7 +42,8 @@ public class FollowCamera : MonoBehaviour {
 
             // Get current camera postition for the offset
             Vector3 offset = new Vector3(X, Y, Z);
-            transform.position = newPosition + offset;
+            Vector3 camE = camControls.eulerOffset;
+            referenceBody.universe.worldOffset = -referenceBody.ScaledPos + newPosition - offset;
         }
         if (referenceBody != prevReferenceBody) {
             zoom = -1;

@@ -9,12 +9,14 @@ public class Universe : MonoBehaviour {
     public static readonly double SCALE = 1000 / AU;
     public static readonly double VEL_SCALE = AU / DAY;
 
-    private GravityObject[] objects;
+    [HideInInspector]
+    public GravityObject[] objects;
     public double gravitationalConstant = 6674.07989501953;
     public float timeStep = 0.01f;
-    public float distanceScale = 1f;
-    public float sizeScale = 1f;
+    public double distanceScale = 1d;
+    public double sizeScale = 1d;
     public double runSpeedFactor = 1d;
+    public Vector3 worldOffset = Vector3.zero;
 
     void Start() {
         Time.fixedDeltaTime = timeStep;
@@ -41,9 +43,10 @@ public class Universe : MonoBehaviour {
 
             obj.velocity += acceleration * timeStep;
             obj.position += obj.velocity * timeStep;
-            obj.transform.localPosition = transform.TransformPoint(Mathd.GetDisplayVector3(obj.position, obj));
         }
     }
+
+    void Update() {}
 
     public double CalcGravity(double m1, double m2, double r) {
         if (r < 0.01) {
