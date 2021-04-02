@@ -10,16 +10,17 @@ public class FlyCamera : MonoBehaviour {
     float maxCtrl = 1000.0f; //Maximum speed when holding ctrl
     private float totalRun = 1.0f;
     private CameraControls camControls;
+    public bool active;
 
     void Start() {
         camControls = transform.GetComponent<CameraControls>();
     }
 
     void LateUpdate() {
-        if (Application.isFocused && IsMouseOverGameWindow) {
+        if (Application.isFocused && IsMouseOverGameWindow && active) {
             Universe universe = transform.parent.GetComponent<Universe>();
             ctrlAdd = ctrlMult * mainSpeed;
-            camControls.UpdateCamera();
+            camControls.UpdateCamera(-1, 1, 1);
         
             //Keyboard commands
             Vector3 p = GetBaseInput();
@@ -32,7 +33,6 @@ public class FlyCamera : MonoBehaviour {
             }
         
             p = p * Time.deltaTime;
-            Vector3 camE = transform.eulerAngles;
             Vector3 newPosition = universe.worldOffset + transform.TransformDirection(p);
             universe.worldOffset = -newPosition;
             

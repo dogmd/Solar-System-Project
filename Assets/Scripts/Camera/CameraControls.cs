@@ -8,7 +8,7 @@ public class CameraControls : MonoBehaviour {
 
     void Start() {}
 
-    void Update() {
+    void Update() { 
         if (lockMouse) {
             if (Input.GetKey(KeyCode.Tab)) {
                 Cursor.lockState = CursorLockMode.None;
@@ -23,8 +23,19 @@ public class CameraControls : MonoBehaviour {
     }
 
     public void UpdateCamera() {
+        UpdateCamera(-1, -1, 1);
+    }
+
+    public void UpdateCamera(float xSens, float ySens, float zSens) {
         if (tracking) {
-            Vector3 mouseOff = new Vector3(-Input.GetAxis("Mouse Y"), -Input.GetAxis("Mouse X"), 0);
+            float xOff = Input.GetAxis("Mouse X");
+            float yOff = Input.GetAxis("Mouse Y");
+            Vector3 mouseOff;
+            if (Input.GetMouseButton(1)) {
+                mouseOff = new Vector3(0, 0, xOff * xSens);
+            } else {
+                mouseOff = Quaternion.AngleAxis(-eulerOffset.z, Vector3.forward) * new Vector3(yOff * ySens, xOff * xSens, 0);
+            }
             eulerOffset += mouseOff;
             gameObject.transform.eulerAngles = eulerOffset;
         }

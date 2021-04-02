@@ -75,7 +75,7 @@ public class GravityObject : MonoBehaviour {
 
     public Vector3 ScaledPos {
         get {
-            return Mathd.GetFloatVector3(position * Universe.SCALE * distanceScale);
+            return Mathd.GetDisplayVector3(position, this);
         }
     }
 
