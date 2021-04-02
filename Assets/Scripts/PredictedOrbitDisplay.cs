@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteInEditMode]
+[RequireComponent(typeof(Universe))]
 public class PredictedOrbitDisplay : MonoBehaviour {
     public int numSteps = 1024;
     public float timeStep = 0.1f;
@@ -82,7 +83,7 @@ public class PredictedOrbitDisplay : MonoBehaviour {
             if (other != obj) {
                 Vector3d heading = (obj.position - other.position);
                 double forceMag = universe.CalcGravity(obj.mass, other.mass, heading.magnitude);
-                Vector3d forceDirection = heading / heading.magnitude;
+                Vector3d forceDirection = heading / heading.magnitude;                
                 force += forceDirection * -forceMag;
             }
         }
@@ -94,11 +95,13 @@ public class PredictedOrbitDisplay : MonoBehaviour {
         public Vector3d position;
         public Vector3d velocity;
         public double mass;
+        public string name;
 
         public OrbitSimObject(GravityObject obj, double runSpeedFactor) {
             position = obj.position;
             velocity = obj.velocity * runSpeedFactor;
             mass = obj.mass;
+            name = obj.gameObject.name;
         }
     }
 }

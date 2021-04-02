@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Universe : MonoBehaviour
-{
+[RequireComponent(typeof(PredictedOrbitDisplay))]
+public class Universe : MonoBehaviour {
     public static readonly double AU = 149597870.7;
     public static readonly double DAY = 86400.0;
     public static readonly double SCALE = 1000 / AU;
@@ -18,14 +18,11 @@ public class Universe : MonoBehaviour
 
     void Start() {
         Time.fixedDeltaTime = timeStep;
-        objects = new GravityObject[transform.childCount];
+        objects = GetComponentsInChildren<GravityObject>();
 
-        int i = 0;
-        foreach (Transform t in transform) {
-            objects[i] = t.GetComponent<GravityObject>();
-            objects[i].velocity = objects[i].Velocity * Universe.VEL_SCALE * runSpeedFactor;
-            objects[i].position = objects[i].Position * Universe.AU;
-            i++;
+        foreach (GravityObject obj in objects) {
+            obj.velocity = obj.initVel * Universe.VEL_SCALE * runSpeedFactor;
+            obj.position = obj.initPos * Universe.AU;
         }
     }
 

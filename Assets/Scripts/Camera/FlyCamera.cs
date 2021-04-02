@@ -2,47 +2,23 @@ using UnityEngine;
 using System.Collections;
  
 // From https://gist.github.com/gunderson/d7f096bd07874f31671306318019d996, modified to be minecraft fly controls
-public class FlyCamera : MonoBehaviour {
- 
-    /*
-    Writen by Windexglow 11-13-10.  Use it, edit it, steal it I don't care.  
-    Converted to C# 27-02-13 - no credit wanted.
-    Simple flycam I made, since I couldn't find any others made public.  
-    Made simple to use (drag and drop, done) for regular keyboard layout  
-    wasd : basic movement
-    ctrl : Makes camera accelerate
-    space : Moves camera on X and Z axis only.  So camera doesn't gain any height*/
-     
-     
+[RequireComponent(typeof(Camera))]
+public class FlyCamera : MonoBehaviour {  
     public float mainSpeed = 25.0f; //regular speed
-    float ctrlMult = 3f;
+    float ctrlMult = 12f;
     float ctrlAdd; //multiplied by how long ctrl is held.  Basically running
-    float maxCtrl = 1000.0f; //Maximum speed when holdin gctrl
-    public float camSens = 1f; //How sensitive it with mouse
-    private Vector3 lastMouse = new Vector3(255, 255, 255);
+    float maxCtrl = 1000.0f; //Maximum speed when holding ctrl
     private float totalRun = 1.0f;
-     
-            
-     bool IsMouseOverGameWindow { 
-        get {
-            return !(0 > Input.mousePosition.x || 0 > Input.mousePosition.y || Screen.width < Input.mousePosition.x || Screen.height < Input.mousePosition.y); 
-        } 
-    }
-    void Update () {
-        if (Cursor.lockState == CursorLockMode.Locked) {
-            ctrlAdd = ctrlMult * mainSpeed;
-            if (Input.GetKey(KeyCode.Tab)) {
-                Cursor.lockState = CursorLockMode.None;
-            } else {
-                Cursor.lockState = CursorLockMode.Locked;
-            }
+    private CameraControls camControls;
 
-            lastMouse = new Vector3(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"), 0);
-            lastMouse = new Vector3(-lastMouse.y * camSens, lastMouse.x * camSens, 0 );
-            lastMouse = new Vector3(transform.eulerAngles.x + lastMouse.x , transform.eulerAngles.y + lastMouse.y, 0);
-            transform.eulerAngles = lastMouse;
-            lastMouse =  new Vector3(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"), 0);
-            //Mouse  camera angle done.  
+    void Start() {
+        camControls = transform.GetComponent<CameraControls>();
+    }
+
+    void Update () {
+        if (Application.isFocused && IsMouseOverGameWindow) {
+            ctrlAdd = ctrlMult * mainSpeed;
+            camControls.UpdateCamera();
         
             //Keyboard commands
             Vector3 p = GetBaseInput();
@@ -78,8 +54,6 @@ public class FlyCamera : MonoBehaviour {
                 yOff *= mainSpeed * Time.deltaTime;
             }
             transform.Translate(yOff);
-        } else if (IsMouseOverGameWindow && Application.isFocused && !Input.GetKey(KeyCode.Tab)) {
-            Cursor.lockState = CursorLockMode.Locked;
         }
     }
      
@@ -98,5 +72,11 @@ public class FlyCamera : MonoBehaviour {
             p_Velocity += new Vector3(1, 0, 0);
         }
         return p_Velocity;
+    }
+
+    bool IsMouseOverGameWindow { 
+        get {
+            return !(0 > Input.mousePosition.x || 0 > Input.mousePosition.y || Screen.width < Input.mousePosition.x || Screen.height < Input.mousePosition.y); 
+        } 
     }
 }

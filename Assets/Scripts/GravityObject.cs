@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteInEditMode]
-public class GravityObject : MonoBehaviour
-{
+public class GravityObject : MonoBehaviour {
     // Values used in simulation
     public double mass;
     public float radius;
@@ -14,22 +13,29 @@ public class GravityObject : MonoBehaviour
     public Vector3d velocity;
     
     // Values used for input
-    public Vector3d Position;
-    public Vector3d Velocity;
-    private Universe universe;
-    public bool useUniverseSizeScale = true;
-    public bool useUniverseDistanceScale = true;
+    public Vector3d initPos;
+    public Vector3d initVel;
+    [HideInInspector]
+    public Universe universe;
+    public bool useCustomSizeScale = false;
+    public bool useCustomDistanceScale = false;
     public double sizeScale = 1f;
     public double distanceScale = 1f;
 
+    void SetUniverse() {
+        Transform curr = transform;
+        while (!(universe = curr.parent.GetComponent<Universe>())) {
+            curr = curr.parent;
+        }
+    }
+    
     void Start() {
-        universe = transform.parent.gameObject.transform.GetComponent<Universe>();
-
+        SetUniverse();
         if (radius == 0) {
             radius = gameObject.transform.localScale.magnitude;
         }
-        float r = (float)(radius * Universe.SCALE * sizeScale);
-        gameObject.transform.localScale = new Vector3(r, r, r);
+        gameObject.transform.localScale = new Vector3(GameWorldRadius, GameWorldRadius, GameWorldRadius);
+
 
         if (mass == 0) {
             mass = 0.01d;
@@ -39,19 +45,34 @@ public class GravityObject : MonoBehaviour
 
     void Update() {
         if (!Application.isPlaying) {
-            if (useUniverseDistanceScale) {
-                distanceScale = universe.distanceScale;
-            }
-            if (useUniverseSizeScale) {
-                sizeScale = universe.sizeScale;
-            }
+            transform.localPosition = Mathd.GetFloatVector3(initPos * Universe.AU * Universe.SCALE * distanceScale);
 
-            transform.localPosition = Mathd.GetFloatVector3(Position * Universe.AU * Universe.SCALE * distanceScale);
-            this.position = Position * Universe.AU;
-            this.velocity = Velocity * Universe.VEL_SCALE;
-            
-            float r = (float)(radius * Universe.SCALE * sizeScale);
-            gameObject.transform.localScale = new Vector3(r, r, r);
+            this.position = initPos * Universe.AU;
+            this.velocity = initVel * Universe.VEL_SCALE;            
         }
+
+        gameObject.transform.localScale = new Vector3(GameWorldRadius, GameWorldRadius, GameWorldRadius);
+        if (!useCustomDistanceScale) {
+            distanceScale = universe.distanceScale;
+        }
+        if (!useCustomSizeScale) {
+            sizeScale = universe.sizeScale;
+        }
+    }
+
+    public Vector3 GameWorldPos {
+        get {
+            return Mathd.GetFloatVector3(position * Universe.SCALE * distanceScale);
+        }
+    }
+
+    public float GameWorldRadius {
+        get {
+            return (float)(radius * Universe.SCALE * sizeScale);
+        }
+    }
+
+    void TeleportTo(Camera cam) {
+        //cam.transform.position.x = position * Universe.SCALE * distanceScale;
     }
 }

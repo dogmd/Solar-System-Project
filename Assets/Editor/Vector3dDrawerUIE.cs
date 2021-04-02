@@ -3,9 +3,8 @@ using UnityEditor.UIElements;
 using UnityEngine.UIElements;
 using UnityEngine;
 
-// IngredientDrawerUIE
 [CustomPropertyDrawer(typeof(Vector3d))]
-public class IngredientDrawerUIE : PropertyDrawer {
+public class Vector3dUIE : PropertyDrawer {
     public override VisualElement CreatePropertyGUI(SerializedProperty property) {
         // Create property container element.
         var container = new VisualElement();
@@ -42,7 +41,7 @@ public class IngredientDrawerUIE : PropertyDrawer {
         return base.GetPropertyHeight(property, label) + BottomSpacing;
     }
  
-    private static void DrawMultiplePropertyFields(Rect pos, GUIContent[] subLabels, SerializedProperty[] props) {
+    public static void DrawMultiplePropertyFields(Rect pos, GUIContent[] subLabels, SerializedProperty[] props) {
         // backup gui settings
         var indent     = EditorGUI.indentLevel;
         var labelWidth = EditorGUIUtility.labelWidth;

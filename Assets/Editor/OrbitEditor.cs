@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 
 [CustomEditor (typeof (PredictedOrbitDisplay))]
-public class GravityBodyEditor : Editor
+public class OrbitEditor : Editor
 {
     // Start is called before the first frame update
     void Start()
