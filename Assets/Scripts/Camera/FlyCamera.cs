@@ -20,7 +20,7 @@ public class FlyCamera : MonoBehaviour {
         if (Application.isFocused && IsMouseOverGameWindow && active) {
             Universe universe = transform.parent.GetComponent<Universe>();
             ctrlAdd = ctrlMult * mainSpeed;
-            camControls.UpdateCamera(-1, 1, 1);
+            camControls.UpdateCamera(-1, -1, 1);
         
             //Keyboard commands
             Vector3 p = GetBaseInput();
@@ -33,7 +33,7 @@ public class FlyCamera : MonoBehaviour {
             }
         
             p = p * Time.deltaTime;
-            Vector3 newPosition = universe.worldOffset + transform.TransformDirection(p);
+            Vector3d newPosition = universe.worldOffset + new Vector3d(transform.TransformDirection(p));
             universe.worldOffset = -newPosition;
             
             // y
@@ -50,7 +50,7 @@ public class FlyCamera : MonoBehaviour {
             } else {
                 yOff *= mainSpeed * Time.deltaTime;
             }
-            newPosition = universe.worldOffset - yOff;
+            newPosition = universe.worldOffset - new Vector3d(yOff);
             universe.worldOffset = -newPosition;
         }
     }

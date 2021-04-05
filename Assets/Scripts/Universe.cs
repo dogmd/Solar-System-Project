@@ -6,7 +6,7 @@ using UnityEngine;
 public class Universe : MonoBehaviour {
     public static readonly double AU = 149597870.7;
     public static readonly double DAY = 86400.0;
-    public static readonly double SCALE = 1000 / AU;
+    public static readonly double SCALE = 10000 / AU;
     public static readonly double VEL_SCALE = AU / DAY;
 
     [HideInInspector]
@@ -16,7 +16,7 @@ public class Universe : MonoBehaviour {
     public double distanceScale = 1d;
     public double sizeScale = 1d;
     public double runSpeedFactor = 1d;
-    public Vector3 worldOffset = Vector3.zero;
+    public Vector3d worldOffset = Vector3d.zero;
 
     void Start() {
         Time.fixedDeltaTime = timeStep;

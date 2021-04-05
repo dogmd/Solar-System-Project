@@ -24,6 +24,11 @@ public class GravityObject : MonoBehaviour {
     public bool useCustomDistanceScale = false;
     public double sizeScale = 1d;
     public double distanceScale = 1d;
+    public int trailLength = -1;
+    private Vector3d[] trail;
+    private int trailInd;
+    [HideInInspector]
+    public Color color;
 
     void SetUniverse() {
         Transform curr = transform;
@@ -33,26 +38,87 @@ public class GravityObject : MonoBehaviour {
     }
     
     void Start() {
+        color = Random.ColorHSV();
         SetUniverse();
         if (radius == 0) {
             radius = gameObject.transform.localScale.magnitude;
         }
-        gameObject.transform.localScale = new Vector3(GameWorldRadius * 2, GameWorldRadius * 2, GameWorldRadius * 2);
+        SetScale();
 
+        if (trailLength == -1) {
+            PredictedOrbitDisplay orbitSim = universe.GetComponent<PredictedOrbitDisplay>();
+            trailLength = (int)(orbitSim.numSteps * universe.timeStep / orbitSim.timeStep);
+        }
+        trail = new Vector3d[trailLength];
 
         if (mass == 0) {
             mass = 0.01d;
         }
+    }
 
+    void SetScale() {
+        Transform transform = this.gameObject.transform;
+        bool multiTransfom = false;
+        if (name == "Saturn") {
+            foreach (Transform t in transform.GetComponentInChildren<Transform>()) {
+                if (t.gameObject.name == name) {
+                    transform = t;
+                    multiTransfom = true;
+                    break;
+                }
+            }
+        }
+
+        double rescale = -1, maxSize = -1;
+        for (int i = 0; i < 3; i++) {
+            double size = transform.GetComponent<MeshRenderer>().bounds.size[i];
+            if (size == 0) {
+                size = 0.000001d;
+            }
+            if (maxSize < size) {
+                maxSize = size;
+                rescale = transform.localScale[i];
+            }
+        }
+        rescale = 2 * (radius * Universe.SCALE * sizeScale) * rescale / maxSize;
+        if (rescale == 0) {
+            rescale = 0.000001d;
+        }
+        if (multiTransfom) {
+            foreach (Transform t in transform.parent.GetComponentInChildren<Transform>()) {
+                t.localScale = new Vector3((float)rescale, (float)rescale, (float)rescale);
+            }
+        } else {
+            transform.localScale = new Vector3((float)rescale, (float)rescale, (float)rescale);
+        }
+
+        Light light = transform.GetComponent<Light>();
+        if (light) {
+            light.range = (float)(radius * distanceScale);
+        }
     }
 
     void Update() {
+        SetUniverse();
+        SetScale();
         if (!Application.isPlaying) {
             this.position = initPos * Universe.AU;
-            this.velocity = initVel * Universe.VEL_SCALE;            
+            this.velocity = initVel * Universe.VEL_SCALE;
+        } else {
+            // handle trail
+            trail[trailInd] = position;
+            // for (int i = 0; i < trailLength - 1; i++) {
+            //     int ind = (trailInd - i + trailLength) % trailLength;
+            //     if (ind - 1 > 0 && trail[ind] != null && trail[ind - 1] != null) {
+            //         Vector3 a = Mathd.GetDisplayVector3(trail[ind], this) + universe.worldOffset;
+            //         Vector3 b = Mathd.GetDisplayVector3(trail[ind - 1], this) + universe.worldOffset;
+            //         Debug.DrawLine(a, b, gameObject.GetComponent<MeshRenderer>().sharedMaterial.color);
+            //     }
+            // }
+            trailInd++;
+            trailInd %= trailLength;
         }
 
-        gameObject.transform.localScale = new Vector3(GameWorldRadius * 2, GameWorldRadius * 2, GameWorldRadius * 2);
         if (!useCustomDistanceScale) {
             distanceScale = universe.distanceScale;
         }
@@ -67,15 +133,15 @@ public class GravityObject : MonoBehaviour {
         oldSizeScale = sizeScale;
     }
         
-    public Vector3 GameWorldPos {
+    public Vector3d GameWorldPos {
         get {
             return ScaledPos + universe.worldOffset;
         }
     }
 
-    public Vector3 ScaledPos {
+    public Vector3d ScaledPos {
         get {
-            return Mathd.GetDisplayVector3(position, this);
+            return position * this.distanceScale * Universe.SCALE;
         }
     }
 

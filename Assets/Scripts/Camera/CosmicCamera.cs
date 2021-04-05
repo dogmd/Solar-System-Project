@@ -30,7 +30,7 @@ public class CosmicCamera : MonoBehaviour {
         }
 
         foreach (GravityObject obj in transform.parent.GetComponentsInChildren<GravityObject>()) {
-            obj.transform.localPosition = obj.GameWorldPos;
+            obj.transform.localPosition = Mathd.GetFloatVector3(obj.GameWorldPos);
         }
     }
 }

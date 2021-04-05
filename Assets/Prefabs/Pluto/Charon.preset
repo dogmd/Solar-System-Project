@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Charon
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: 616b7b0691ef46d4c949a1b1a8ab79ba, type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mass
+    value: 0.0153
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: radius
+    value: 605
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: position.x
+    value: 2142972694.9403963
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: position.y
+    value: -4652696148.048113
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: position.z
+    value: -121814242.49972868
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: velocity.x
+    value: 4.949201743780997
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: velocity.y
+    value: 1.0694372215724883
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: velocity.z
+    value: -1.4382067182299965
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: initPos.x
+    value: 14.32488767997148
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: initPos.y
+    value: -31.10135275507042
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: initPos.z
+    value: -0.814277916722572
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: initVel.x
+    value: 0.002858403188907676
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: initVel.y
+    value: 0.0006176516785399874
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: initVel.z
+    value: -0.0008306338845173931
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: universe
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: useCustomSizeScale
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: useCustomDistanceScale
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sizeScale
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: distanceScale
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: trailLength
+    value: 50000
+    objectReference: {fileID: 0}
+  m_ExcludedProperties: []

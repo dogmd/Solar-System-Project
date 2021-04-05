@@ -6,7 +6,7 @@ using UnityEditor;
 [CustomEditor(typeof(GravityObject))]
 [CanEditMultipleObjects]
 public class GravityObjectEditor : Editor {
-    SerializedProperty mass, radius, initPos, initVel, useCustSize, useCustDist, sizeScale, distScale;
+    SerializedProperty mass, radius, initPos, initVel, useCustSize, useCustDist, sizeScale, distScale, trailLength;
     
     void OnEnable() {
         mass = serializedObject.FindProperty("mass");
@@ -17,6 +17,7 @@ public class GravityObjectEditor : Editor {
         useCustDist = serializedObject.FindProperty("useCustomDistanceScale");
         sizeScale = serializedObject.FindProperty("sizeScale");
         distScale = serializedObject.FindProperty("distanceScale");
+        trailLength = serializedObject.FindProperty("trailLength");
     }
 
     public override void OnInspectorGUI()
@@ -35,10 +36,13 @@ public class GravityObjectEditor : Editor {
         EditorGUILayout.PropertyField(distScale);
         EditorGUILayout.EndToggleGroup();
 
+        EditorGUILayout.PropertyField(trailLength);
+
+
         Rect r = EditorGUILayout.BeginHorizontal("Button");
         if (GUI.Button(r, GUIContent.none)) {
             var value = (GravityObject)target;
-            SceneView.lastActiveSceneView.pivot = value.GameWorldPos;
+            SceneView.lastActiveSceneView.pivot = Mathd.GetFloatVector3(value.GameWorldPos);
             SceneView.lastActiveSceneView.Repaint();
         }
         GUILayout.Label("Teleport to object");

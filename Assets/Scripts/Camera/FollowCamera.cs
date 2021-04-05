@@ -6,8 +6,8 @@ using UnityEngine;
 public class FollowCamera : MonoBehaviour {
     public GravityObject referenceBody;
     private GravityObject prevReferenceBody;
-    private float zoomSpeed = 150f;
-    public float zoom = 0;
+    private double zoomSpeed = 150f;
+    public double zoom = 0;
     private CameraControls camControls;
     private CosmicCamera cosmicCam;
     public bool active;
@@ -22,29 +22,28 @@ public class FollowCamera : MonoBehaviour {
             if (referenceBody) {
                 zoomSpeed = referenceBody.GameWorldRadius * 10;
 
-                Vector3 newPosition = transform.position;
+                Vector3d newPosition = new Vector3d(transform.position);
                 camControls.UpdateCamera();
 
-
                 // Modified from http://answers.unity.com/answers/1536663/view.html
-                float ScrollWheelChange = Input.GetAxis("Mouse ScrollWheel");      
+                double ScrollWheelChange = Input.GetAxis("Mouse ScrollWheel");      
                 zoom += ScrollWheelChange;
-                float R = zoom * zoomSpeed - 0.01f;
-                float PosX = transform.eulerAngles.x + 90; // Get up and down
-                float PosY = -1 * (transform.eulerAngles.y - 90); // Get left to right
+                double R = zoom * zoomSpeed - 0.05f;
+                double PosX = transform.eulerAngles.x + 90; // Get up and down
+                double PosY = -1 * (transform.eulerAngles.y - 90); // Get left to right
                 
                 // Convert from degrees to radians
-                PosX = PosX / 180 * Mathf.PI;
-                PosY = PosY / 180 * Mathf.PI;                   
+                PosX = PosX / 180 * Mathd.PI;
+                PosY = PosY / 180 * Mathd.PI;                   
 
                 // Calculate new coords
-                float X = R * Mathf.Sin(PosX) * Mathf.Cos(PosY);
-                float Z = R * Mathf.Sin(PosX) * Mathf.Sin(PosY);
-                float Y = R * Mathf.Cos(PosX);               
+                double X = R * Mathd.Sin(PosX) * Mathd.Cos(PosY);
+                double Z = R * Mathd.Sin(PosX) * Mathd.Sin(PosY);
+                double Y = R * Mathd.Cos(PosX);               
 
                 // Get current camera postition for the offset
-                Vector3 offset = new Vector3(X, Y, Z);
-                referenceBody.universe.worldOffset = -referenceBody.ScaledPos + newPosition - offset;
+                Vector3d offset = new Vector3d(X, Y, Z);
+                referenceBody.universe.worldOffset = -referenceBody.position * referenceBody.distanceScale * Universe.SCALE + newPosition - offset;
             }
             if (referenceBody != prevReferenceBody) {
                 zoom = -1;
