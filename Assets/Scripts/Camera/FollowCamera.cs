@@ -24,6 +24,8 @@ public class FollowCamera : MonoBehaviour {
 
                 Vector3d newPosition = new Vector3d(transform.position);
                 camControls.UpdateCamera();
+                Vector3 vel = Mathd.GetFloatVector3(referenceBody.velocity).normalized;
+                gameObject.transform.eulerAngles = Quaternion.Euler(vel.x, vel.y, vel.z) * (camControls.eulerOffset);// + referenceBody.transform.eulerAngles);
 
                 // Modified from http://answers.unity.com/answers/1536663/view.html
                 double ScrollWheelChange = Input.GetAxis("Mouse ScrollWheel");      

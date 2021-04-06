@@ -10,15 +10,16 @@ public class GravityObject : MonoBehaviour {
     private double oldRadius;
     private double oldSizeScale;
     public double radius;
-    [HideInInspector]
+    public double siderealPeriod = 0;
+    public double obliquity = 0;
     public Vector3d position;
-    [HideInInspector]
     public Vector3d velocity;
+    public Vector3 axis;
+    public double rotation;
     
     // Values used for input
     public Vector3d initPos;
     public Vector3d initVel;
-    [HideInInspector]
     public Universe universe;
     public bool useCustomSizeScale = false;
     public bool useCustomDistanceScale = false;
@@ -27,7 +28,6 @@ public class GravityObject : MonoBehaviour {
     public int trailLength = -1;
     private Vector3d[] trail;
     private int trailInd;
-    [HideInInspector]
     public Color color;
 
     void SetUniverse() {
@@ -58,6 +58,7 @@ public class GravityObject : MonoBehaviour {
 
     void SetScale() {
         Transform transform = this.gameObject.transform;
+
         bool multiTransfom = false;
         if (name == "Saturn") {
             foreach (Transform t in transform.GetComponentInChildren<Transform>()) {
@@ -68,6 +69,10 @@ public class GravityObject : MonoBehaviour {
                 }
             }
         }
+
+        // undo rotation
+        Vector3 eAngs = transform.eulerAngles;
+        transform.eulerAngles = Vector3.zero;
 
         double rescale = -1, maxSize = -1;
         for (int i = 0; i < 3; i++) {
@@ -96,11 +101,55 @@ public class GravityObject : MonoBehaviour {
         if (light) {
             light.range = (float)(radius * distanceScale);
         }
+
+        // redo rotation
+        transform.eulerAngles = eAngs;
+    }
+
+    void SetAxis() {
+        Vector3 vel = Mathd.GetFloatVector3(velocity).normalized;
+        Vector3 rot = Quaternion.Euler(vel.x, vel.y, vel.z) * new Vector3(90, 270, 270 - (float)obliquity);
+        transform.eulerAngles = rot;
+        axis = Quaternion.Euler(rot.x, -rot.y, rot.z) * Vector3.up;
+        Debug.DrawLine(transform.position, transform.position + axis * (float)sizeScale, Color.yellow);
+        Debug.DrawLine(transform.position, transform.position + Vector3.up * (float)sizeScale, Color.green);
+        Debug.DrawLine(transform.position, transform.position + Vector3.right * (float)sizeScale, Color.red);
+        Debug.DrawLine(transform.position, transform.position + Vector3.forward * (float)sizeScale, Color.blue);
+        Debug.DrawLine(transform.position, transform.position + vel * (float)sizeScale, Color.white);
+    }
+
+    void Rotate() {
+        double degOff = universe.timeStep * universe.runSpeedFactor / (siderealPeriod * 24 * 60 * 60) * 360;
+        if (siderealPeriod == 0) {
+            return;
+        }
+        Vector3 vel = Mathd.GetFloatVector3(velocity).normalized;
+        if (Application.isPlaying) {
+            rotation += degOff;
+            rotation %= 360;
+
+            Vector3 rot = Quaternion.Euler(vel.x, vel.y, vel.z) * new Vector3(90, 270, 270 - (float)obliquity);
+
+            if (name == "Saturn") {
+                foreach(Transform t in transform.GetComponentInChildren<Transform>()) {
+                    t.eulerAngles = rot;
+                    t.RotateAround(t.position, axis, (float)rotation);
+                }
+            } else {
+                transform.eulerAngles = rot;
+                transform.RotateAround(transform.position, axis, (float)rotation);
+            }
+        }
     }
 
     void Update() {
         SetUniverse();
         SetScale();
+        if (axis == Vector3.zero || !Application.isPlaying) {
+            SetAxis();
+        }
+        Rotate();                           
+        
         if (!Application.isPlaying) {
             this.position = initPos * Universe.AU;
             this.velocity = initVel * Universe.VEL_SCALE;

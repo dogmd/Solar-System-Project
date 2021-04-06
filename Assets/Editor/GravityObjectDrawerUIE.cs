@@ -1,13 +1,14 @@
 using UnityEngine;
 using UnityEditor;
+using System;
 
 
 // IngredientDrawerUIE
 [CustomEditor(typeof(GravityObject))]
 [CanEditMultipleObjects]
 public class GravityObjectEditor : Editor {
-    SerializedProperty mass, radius, initPos, initVel, useCustSize, useCustDist, sizeScale, distScale, trailLength;
-    
+    SerializedProperty mass, radius, initPos, initVel, useCustSize, useCustDist, sizeScale, distScale, trailLength, siderealPeriod, obliquity;
+
     void OnEnable() {
         mass = serializedObject.FindProperty("mass");
         radius = serializedObject.FindProperty("radius");
@@ -18,13 +19,16 @@ public class GravityObjectEditor : Editor {
         sizeScale = serializedObject.FindProperty("sizeScale");
         distScale = serializedObject.FindProperty("distanceScale");
         trailLength = serializedObject.FindProperty("trailLength");
+        siderealPeriod = serializedObject.FindProperty("siderealPeriod");
+        obliquity = serializedObject.FindProperty("obliquity");
     }
 
-    public override void OnInspectorGUI()
-    {
+    public override void OnInspectorGUI() {
         serializedObject.Update();
         EditorGUILayout.PropertyField(mass, new GUIContent("Mass x10^23 (kg)"));
         EditorGUILayout.PropertyField(radius, new GUIContent("Radius (km)"));
+        EditorGUILayout.PropertyField(siderealPeriod, new GUIContent("Sid. Rot. Period (day)"));
+        EditorGUILayout.PropertyField(obliquity, new GUIContent("Obliquity to orbit (deg)"));
         EditorGUILayout.PropertyField(initPos, new GUIContent("Initial Pos (au)"));
         EditorGUILayout.PropertyField(initVel, new GUIContent("Inital Vel (au/day)"));
 
