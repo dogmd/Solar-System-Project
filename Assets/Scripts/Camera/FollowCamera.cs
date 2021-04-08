@@ -11,6 +11,7 @@ public class FollowCamera : MonoBehaviour {
     private CameraControls camControls;
     private CosmicCamera cosmicCam;
     public bool active;
+    public bool followRotation = true;
 
     void Start() {
         camControls = transform.GetComponent<CameraControls>();
@@ -24,8 +25,17 @@ public class FollowCamera : MonoBehaviour {
 
                 Vector3d newPosition = new Vector3d(transform.position);
                 camControls.UpdateCamera();
-                Vector3 vel = Mathd.GetFloatVector3(referenceBody.velocity).normalized;
-                gameObject.transform.eulerAngles = Quaternion.Euler(vel.x, vel.y, vel.z) * (camControls.eulerOffset);// + referenceBody.transform.eulerAngles);
+                transform.up = referenceBody.axis;
+                float zAng = Vector3.Angle(Vector3.forward, Mathd.GetFloatVector3(referenceBody.velocity).normalized);
+                transform.up = Quaternion.AngleAxis(-zAng + camControls.eulerOffset.z, Vector3.forward) * transform.up;
+                float zOff = 0;
+                if (followRotation) {
+                    zOff = (float)referenceBody.rotation;
+                }
+
+                float xAng = Vector3.Angle(transform.right, referenceBody.axis);
+                float yAng = Vector3.Angle(transform.up, referenceBody.axis);
+                transform.Rotate(new Vector3(-xAng + camControls.eulerOffset.x, zOff, -yAng + camControls.eulerOffset.y));
 
                 // Modified from http://answers.unity.com/answers/1536663/view.html
                 double ScrollWheelChange = Input.GetAxis("Mouse ScrollWheel");      

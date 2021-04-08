@@ -108,14 +108,23 @@ public class GravityObject : MonoBehaviour {
 
     void SetAxis() {
         Vector3 vel = Mathd.GetFloatVector3(velocity).normalized;
-        Vector3 rot = Quaternion.Euler(vel.x, vel.y, vel.z) * new Vector3(90, 270, 270 - (float)obliquity);
-        transform.eulerAngles = rot;
-        axis = Quaternion.Euler(rot.x, -rot.y, rot.z) * Vector3.up;
-        Debug.DrawLine(transform.position, transform.position + axis * (float)sizeScale, Color.yellow);
-        Debug.DrawLine(transform.position, transform.position + Vector3.up * (float)sizeScale, Color.green);
-        Debug.DrawLine(transform.position, transform.position + Vector3.right * (float)sizeScale, Color.red);
-        Debug.DrawLine(transform.position, transform.position + Vector3.forward * (float)sizeScale, Color.blue);
-        Debug.DrawLine(transform.position, transform.position + vel * (float)sizeScale, Color.white);
+        axis = Vector3.Cross(vel + new Vector3(0, 0, (float)obliquity / 360), Vector3.up);
+        if (name == "Saturn") {
+            foreach(Transform t in transform.GetComponentInChildren<Transform>()) {
+                t.up = axis;
+            }
+        } else { 
+            transform.up = axis;
+        }
+
+        // Draw debug lines
+        if (this == transform.root.GetComponentInChildren<FollowCamera>().referenceBody) {
+            float r = (float)radius;
+            Vector3 orthogonal = Vector3.Cross(vel, Vector3.forward);
+            Debug.DrawLine(transform.position, transform.position + axis * (float)sizeScale * r, Color.yellow);
+            Debug.DrawLine(transform.position, transform.position + vel * (float)sizeScale* r, Color.white);
+            Debug.DrawLine(transform.position, transform.position + orthogonal * (float)sizeScale* r, Color.red);
+        }
     }
 
     void Rotate() {
@@ -128,15 +137,13 @@ public class GravityObject : MonoBehaviour {
             rotation += degOff;
             rotation %= 360;
 
-            Vector3 rot = Quaternion.Euler(vel.x, vel.y, vel.z) * new Vector3(90, 270, 270 - (float)obliquity);
-
             if (name == "Saturn") {
                 foreach(Transform t in transform.GetComponentInChildren<Transform>()) {
-                    t.eulerAngles = rot;
+                    t.up = axis;
                     t.RotateAround(t.position, axis, (float)rotation);
                 }
             } else {
-                transform.eulerAngles = rot;
+                transform.up = axis;
                 transform.RotateAround(transform.position, axis, (float)rotation);
             }
         }
