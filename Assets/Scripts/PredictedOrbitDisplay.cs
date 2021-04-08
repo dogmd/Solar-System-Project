@@ -10,6 +10,7 @@ public class PredictedOrbitDisplay : MonoBehaviour {
     public bool useUniverseTime = false;
     public bool relativeToObj;
     public GravityObject centralBody;
+    public bool useCamerasCentralBody = true;
     public bool enableSimulation;
     Universe universe;
 
@@ -31,7 +32,7 @@ public class PredictedOrbitDisplay : MonoBehaviour {
             timeStep = universe.timeStep;
         }
         FollowCamera cam = transform.GetComponentInChildren<FollowCamera>();
-        if (cam) {
+        if (cam && useCamerasCentralBody) {
             centralBody = cam.referenceBody;
         }
 

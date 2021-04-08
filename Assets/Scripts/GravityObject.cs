@@ -108,7 +108,7 @@ public class GravityObject : MonoBehaviour {
 
     void SetAxis() {
         Vector3 vel = Mathd.GetFloatVector3(velocity).normalized;
-        axis = Vector3.Cross(vel + new Vector3(0, 0, (float)obliquity / 360), Vector3.up);
+        axis = Quaternion.AngleAxis((float)obliquity, vel) * Vector3.Cross(vel, Vector3.up);//Vector3.Cross(vel, Vector3.up + new Vector3((float)obliquity, 0, 0));
         if (name == "Saturn") {
             foreach(Transform t in transform.GetComponentInChildren<Transform>()) {
                 t.up = axis;

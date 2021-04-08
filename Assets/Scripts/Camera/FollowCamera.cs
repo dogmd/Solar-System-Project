@@ -25,17 +25,16 @@ public class FollowCamera : MonoBehaviour {
 
                 Vector3d newPosition = new Vector3d(transform.position);
                 camControls.UpdateCamera();
+
                 transform.up = referenceBody.axis;
-                float zAng = Vector3.Angle(Vector3.forward, Mathd.GetFloatVector3(referenceBody.velocity).normalized);
-                transform.up = Quaternion.AngleAxis(-zAng + camControls.eulerOffset.z, Vector3.forward) * transform.up;
-                float zOff = 0;
                 if (followRotation) {
-                    zOff = (float)referenceBody.rotation;
+                    transform.rotation *= Quaternion.AngleAxis((float)referenceBody.rotation, Vector3.up);
                 }
 
-                float xAng = Vector3.Angle(transform.right, referenceBody.axis);
-                float yAng = Vector3.Angle(transform.up, referenceBody.axis);
-                transform.Rotate(new Vector3(-xAng + camControls.eulerOffset.x, zOff, -yAng + camControls.eulerOffset.y));
+                Vector3 axis = Vector3.Cross(Mathd.GetFloatVector3(referenceBody.velocity.normalized), Vector3.down);
+                transform.rotation *= Quaternion.FromToRotation(referenceBody.axis, axis);
+                transform.rotation *= Quaternion.AngleAxis(camControls.eulerOffset.y, Vector3.Cross(axis, Vector3.right));
+                transform.rotation *= Quaternion.AngleAxis(camControls.eulerOffset.x, Vector3.Cross(axis, Vector3.up));
 
                 // Modified from http://answers.unity.com/answers/1536663/view.html
                 double ScrollWheelChange = Input.GetAxis("Mouse ScrollWheel");      
@@ -56,6 +55,8 @@ public class FollowCamera : MonoBehaviour {
                 // Get current camera postition for the offset
                 Vector3d offset = new Vector3d(X, Y, Z);
                 referenceBody.universe.worldOffset = -referenceBody.position * referenceBody.distanceScale * Universe.SCALE + newPosition - offset;
+                //transform.Rotate(new Vector3(camControls.eulerOffset.x, camControls.eulerOffset.y, 0));
+                //transform.LookAt(Mathd.GetFloatVector3(referenceBody.GameWorldPos));
             }
             if (referenceBody != prevReferenceBody) {
                 zoom = -1;
