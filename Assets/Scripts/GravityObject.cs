@@ -6,9 +6,6 @@ using UnityEngine;
 public class GravityObject : MonoBehaviour {
     // Values used in simulation
     public double mass;
-    private float _GameWorldRadius;
-    private double oldRadius;
-    private double oldSizeScale;
     public double radius;
     public double siderealPeriod = 0;
     public double obliquity = 0;
@@ -26,7 +23,7 @@ public class GravityObject : MonoBehaviour {
     public double sizeScale = 1d;
     public double distanceScale = 1d;
     public int trailLength = -1;
-    private Vector3d[] trail;
+    private Vector3[] trail;
     private int trailInd;
     public Color color;
 
@@ -49,7 +46,7 @@ public class GravityObject : MonoBehaviour {
             PredictedOrbitDisplay orbitSim = universe.GetComponent<PredictedOrbitDisplay>();
             trailLength = (int)(orbitSim.numSteps * universe.timeStep / orbitSim.timeStep);
         }
-        trail = new Vector3d[trailLength];
+        trail = new Vector3[trailLength];
 
         if (mass == 0) {
             mass = 0.01d;
@@ -85,7 +82,7 @@ public class GravityObject : MonoBehaviour {
                 rescale = transform.localScale[i];
             }
         }
-        rescale = 2 * (radius * Universe.SCALE * sizeScale) * rescale / maxSize;
+        rescale = 2 * (radius * Universe.SCALE * SizeScale) * rescale / maxSize;
         if (rescale == 0) {
             rescale = 0.000001d;
         }
@@ -99,7 +96,7 @@ public class GravityObject : MonoBehaviour {
 
         Light light = transform.GetComponent<Light>();
         if (light) {
-            light.range = (float)(radius * distanceScale);
+            light.range = (float)(radius * DistanceScale);
         }
 
         // redo rotation
@@ -121,9 +118,9 @@ public class GravityObject : MonoBehaviour {
         if (this == transform.root.GetComponentInChildren<FollowCamera>().referenceBody) {
             float r = (float)radius;
             Vector3 orthogonal = Vector3.Cross(vel, Vector3.forward);
-            Debug.DrawLine(transform.position, transform.position + axis * (float)sizeScale * r, Color.yellow);
-            Debug.DrawLine(transform.position, transform.position + vel * (float)sizeScale* r, Color.white);
-            Debug.DrawLine(transform.position, transform.position + orthogonal * (float)sizeScale* r, Color.red);
+            Debug.DrawLine(transform.position, transform.position + axis * (float)SizeScale * r, Color.yellow);
+            Debug.DrawLine(transform.position, transform.position + vel * (float)SizeScale* r, Color.white);
+            Debug.DrawLine(transform.position, transform.position + orthogonal * (float)SizeScale* r, Color.red);
         }
     }
 
@@ -160,33 +157,7 @@ public class GravityObject : MonoBehaviour {
         if (!Application.isPlaying) {
             this.position = initPos * Universe.AU;
             this.velocity = initVel * Universe.VEL_SCALE;
-        } else {
-            // handle trail
-            trail[trailInd] = position;
-            // for (int i = 0; i < trailLength - 1; i++) {
-            //     int ind = (trailInd - i + trailLength) % trailLength;
-            //     if (ind - 1 > 0 && trail[ind] != null && trail[ind - 1] != null) {
-            //         Vector3 a = Mathd.GetDisplayVector3(trail[ind], this) + universe.worldOffset;
-            //         Vector3 b = Mathd.GetDisplayVector3(trail[ind - 1], this) + universe.worldOffset;
-            //         Debug.DrawLine(a, b, gameObject.GetComponent<MeshRenderer>().sharedMaterial.color);
-            //     }
-            // }
-            trailInd++;
-            trailInd %= trailLength;
         }
-
-        if (!useCustomDistanceScale) {
-            distanceScale = universe.distanceScale;
-        }
-        if (!useCustomSizeScale) {
-            sizeScale = universe.sizeScale;
-        }
-
-        if (oldRadius != radius || oldSizeScale != sizeScale) {
-            _GameWorldRadius = (float)(radius * Universe.SCALE * sizeScale);
-        }
-        oldRadius = radius;
-        oldSizeScale = sizeScale;
     }
         
     public Vector3d GameWorldPos {
@@ -197,13 +168,31 @@ public class GravityObject : MonoBehaviour {
 
     public Vector3d ScaledPos {
         get {
-            return position * this.distanceScale * Universe.SCALE;
+            return position * this.DistanceScale * Universe.SCALE;
         }
     }
 
     public float GameWorldRadius {
         get {
-            return _GameWorldRadius;
+            return (float)(radius * Universe.SCALE * SizeScale);
+        }
+    }
+
+    public double SizeScale {
+        get {
+            if (useCustomSizeScale) {
+                return sizeScale;
+            }
+            return universe.sizeScale;
+        }
+    }
+
+    public double DistanceScale {
+        get {
+            if (useCustomDistanceScale) {
+                return distanceScale;
+            }
+            return universe.distanceScale;
         }
     }
 

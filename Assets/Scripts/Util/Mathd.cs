@@ -14,7 +14,7 @@ namespace UnityEngine {
         public const double Epsilon = 1.401298E-45d;
 
         public static Vector3 GetDisplayVector3(Vector3d v, GravityObject obj) {
-            v *= obj.distanceScale * Universe.SCALE;
+            v *= obj.DistanceScale * Universe.SCALE;
             return new Vector3((float)v.x, (float)v.y, (float)v.z);
         }
 

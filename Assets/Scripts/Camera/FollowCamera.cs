@@ -54,12 +54,12 @@ public class FollowCamera : MonoBehaviour {
 
                 // Get current camera postition for the offset
                 Vector3d offset = new Vector3d(X, Y, Z);
-                referenceBody.universe.worldOffset = -referenceBody.position * referenceBody.distanceScale * Universe.SCALE + newPosition - offset;
+                referenceBody.universe.worldOffset = -referenceBody.position * referenceBody.DistanceScale * Universe.SCALE + newPosition - offset;
                 //transform.Rotate(new Vector3(camControls.eulerOffset.x, camControls.eulerOffset.y, 0));
                 //transform.LookAt(Mathd.GetFloatVector3(referenceBody.GameWorldPos));
             }
             if (referenceBody != prevReferenceBody) {
-                zoom = -1;
+                zoom = -0.5;
             }
             prevReferenceBody = referenceBody;
         }
