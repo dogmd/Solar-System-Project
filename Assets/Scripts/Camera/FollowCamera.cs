@@ -12,6 +12,7 @@ public class FollowCamera : MonoBehaviour {
     private CosmicCamera cosmicCam;
     public bool active;
     public bool followRotation = true;
+    private Vector3d prevOffset;
 
     void Start() {
         camControls = transform.GetComponent<CameraControls>();
@@ -37,7 +38,7 @@ public class FollowCamera : MonoBehaviour {
                 transform.rotation *= Quaternion.AngleAxis(camControls.eulerOffset.x, Vector3.Cross(axis, Vector3.up));
 
                 // Modified from http://answers.unity.com/answers/1536663/view.html
-                double ScrollWheelChange = Input.GetAxis("Mouse ScrollWheel");      
+                double ScrollWheelChange = Input.GetAxis("Mouse ScrollWheel");
                 zoom += ScrollWheelChange;
                 double R = zoom * zoomSpeed - 0.05f;
                 double PosX = transform.eulerAngles.x + 90; // Get up and down
@@ -55,8 +56,9 @@ public class FollowCamera : MonoBehaviour {
                 // Get current camera postition for the offset
                 Vector3d offset = new Vector3d(X, Y, Z);
                 referenceBody.universe.worldOffset = -referenceBody.position * referenceBody.DistanceScale * Universe.SCALE + newPosition - offset;
-                //transform.Rotate(new Vector3(camControls.eulerOffset.x, camControls.eulerOffset.y, 0));
-                //transform.LookAt(Mathd.GetFloatVector3(referenceBody.GameWorldPos));
+
+                referenceBody.universe.OffsetTrails(Mathd.GetFloatVector3(prevOffset - offset));
+                prevOffset = offset;
             }
             if (referenceBody != prevReferenceBody) {
                 zoom = -0.5;

@@ -7,7 +7,7 @@ using System;
 [CustomEditor(typeof(GravityObject))]
 [CanEditMultipleObjects]
 public class GravityObjectEditor : Editor {
-    SerializedProperty mass, radius, initPos, initVel, useCustSize, useCustDist, sizeScale, distScale, trailLength, siderealPeriod, obliquity;
+    SerializedProperty mass, radius, initPos, initVel, useCustSize, useCustDist, sizeScale, distScale, siderealPeriod, obliquity, color; 
 
     void OnEnable() {
         mass = serializedObject.FindProperty("mass");
@@ -18,9 +18,9 @@ public class GravityObjectEditor : Editor {
         useCustDist = serializedObject.FindProperty("useCustomDistanceScale");
         sizeScale = serializedObject.FindProperty("sizeScale");
         distScale = serializedObject.FindProperty("distanceScale");
-        trailLength = serializedObject.FindProperty("trailLength");
         siderealPeriod = serializedObject.FindProperty("siderealPeriod");
         obliquity = serializedObject.FindProperty("obliquity");
+        color = serializedObject.FindProperty("color");
     }
 
     public override void OnInspectorGUI() {
@@ -40,8 +40,7 @@ public class GravityObjectEditor : Editor {
         EditorGUILayout.PropertyField(distScale);
         EditorGUILayout.EndToggleGroup();
 
-        EditorGUILayout.PropertyField(trailLength);
-
+        EditorGUILayout.PropertyField(initVel, new GUIContent("Trail Color"));
 
         Rect r = EditorGUILayout.BeginHorizontal("Button");
         if (GUI.Button(r, GUIContent.none)) {

@@ -10,7 +10,7 @@ public class Universe : MonoBehaviour {
     public static readonly double VEL_SCALE = AU / DAY;
 
     [HideInInspector]
-    public GravityObject[] objects;
+    public GravityObject[] gravityObjects;
     public double gravitationalConstant = 6674.07989501953;
     public float timeStep = 0.01f;
     public double distanceScale = 1d;
@@ -20,18 +20,18 @@ public class Universe : MonoBehaviour {
 
     void Start() {
         Time.fixedDeltaTime = timeStep;
-        objects = GetComponentsInChildren<GravityObject>();
+        gravityObjects = GetComponentsInChildren<GravityObject>();
 
-        foreach (GravityObject obj in objects) {
+        foreach (GravityObject obj in gravityObjects) {
             obj.velocity = obj.initVel * Universe.VEL_SCALE * runSpeedFactor;
             obj.position = obj.initPos * Universe.AU;
         }
     }
 
     void FixedUpdate() {
-        foreach (GravityObject obj in objects) {
+        foreach (GravityObject obj in gravityObjects) {
             Vector3d force = new Vector3d(Vector3.zero);
-            foreach (GravityObject other in objects) {
+            foreach (GravityObject other in gravityObjects) {
                 if (other != obj) {
                     Vector3d heading = (obj.position - other.position);
                     double forceMag = CalcGravity(obj.mass, other.mass, heading.magnitude);
@@ -53,5 +53,20 @@ public class Universe : MonoBehaviour {
             r = 0.01f;
         }
         return gravitationalConstant * runSpeedFactor * runSpeedFactor * m1 * m2 / (r * r);
+    }
+
+    public void OffsetTrails(Vector3 offset) {
+        if (offset != Vector3.zero) {
+            foreach (GravityObject obj in gravityObjects) {
+                TrailRenderer tr = obj.tr;
+                Vector3[] positions = new Vector3[tr.positionCount];
+                tr.GetPositions(positions);
+
+                for (int i = 0; i < positions.Length; i++) {
+                    positions[i] += offset;
+                }
+                tr.SetPositions(positions);
+            }
+        }
     }
 }

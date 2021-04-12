@@ -6,8 +6,12 @@ public class CameraControls : MonoBehaviour {
     public bool tracking = true;
     public float sens = 1f;
     public bool lockMouse = true;
+    private bool resetTrails = true;
+    private Universe universe;
 
-    void Start() {}
+    void Start() {
+        universe = transform.parent.GetComponent<Universe>();
+    }
 
     void Update() { 
         if (lockMouse) {
@@ -33,11 +37,13 @@ public class CameraControls : MonoBehaviour {
             float xOff = Input.GetAxis("Mouse X");
             float yOff = Input.GetAxis("Mouse Y");
             Vector3 mouseOff = Vector3.zero;
+
             if (Input.GetMouseButton(1)) {
                 mouseOff = new Vector3(0, 0, xOff * xSens);
             } else if (Input.GetMouseButton(0)) {
                 mouseOff = Quaternion.AngleAxis(-eulerOffset.z, Vector3.forward) * new Vector3(yOff * ySens, xOff * xSens, 0);
             }
+            
             eulerOffset += mouseOff;
             gameObject.transform.eulerAngles = eulerOffset;
         }

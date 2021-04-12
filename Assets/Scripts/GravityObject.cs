@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteInEditMode]
+[RequireComponent(typeof(TrailRenderer))]
 public class GravityObject : MonoBehaviour {
     // Values used in simulation
     public double mass;
@@ -22,10 +23,9 @@ public class GravityObject : MonoBehaviour {
     public bool useCustomDistanceScale = false;
     public double sizeScale = 1d;
     public double distanceScale = 1d;
-    public int trailLength = -1;
-    private Vector3[] trail;
     private int trailInd;
     public Color color;
+    public TrailRenderer tr;
 
     void SetUniverse() {
         Transform curr = transform;
@@ -42,15 +42,15 @@ public class GravityObject : MonoBehaviour {
         }
         SetScale();
 
-        if (trailLength == -1) {
-            PredictedOrbitDisplay orbitSim = universe.GetComponent<PredictedOrbitDisplay>();
-            trailLength = (int)(orbitSim.numSteps * universe.timeStep / orbitSim.timeStep);
-        }
-        trail = new Vector3[trailLength];
-
         if (mass == 0) {
             mass = 0.01d;
         }
+
+        tr = GetComponentInChildren<TrailRenderer>();
+        tr.material = new Material(Shader.Find("Sprites/Default"));
+        tr.startColor = color;
+        tr.endColor = color;
+        tr.widthCurve = AnimationCurve.EaseInOut(0, 1, 1, 0);
     }
 
     void SetScale() {
@@ -147,12 +147,15 @@ public class GravityObject : MonoBehaviour {
     }
 
     void Update() {
+        tr.time = 1 * (float)(100000 / universe.runSpeedFactor * DistanceScale);
+        tr.widthMultiplier = GameWorldRadius;
+
         SetUniverse();
         SetScale();
         if (axis == Vector3.zero || !Application.isPlaying) {
             SetAxis();
         }
-        Rotate();                           
+        Rotate();
         
         if (!Application.isPlaying) {
             this.position = initPos * Universe.AU;
@@ -194,9 +197,5 @@ public class GravityObject : MonoBehaviour {
             }
             return universe.distanceScale;
         }
-    }
-
-    void TeleportTo(Camera cam) {
-        //cam.transform.position.x = position * Universe.SCALE * distanceScale;
     }
 }
