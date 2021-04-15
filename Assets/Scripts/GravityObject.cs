@@ -35,7 +35,6 @@ public class GravityObject : MonoBehaviour {
     }
     
     void Start() {
-        color = Random.ColorHSV();
         SetUniverse();
         if (radius == 0) {
             radius = gameObject.transform.localScale.magnitude;

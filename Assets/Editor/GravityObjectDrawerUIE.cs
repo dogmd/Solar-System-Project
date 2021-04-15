@@ -40,7 +40,7 @@ public class GravityObjectEditor : Editor {
         EditorGUILayout.PropertyField(distScale);
         EditorGUILayout.EndToggleGroup();
 
-        EditorGUILayout.PropertyField(initVel, new GUIContent("Trail Color"));
+        EditorGUILayout.PropertyField(color, new GUIContent("Trail Color"));
 
         Rect r = EditorGUILayout.BeginHorizontal("Button");
         if (GUI.Button(r, GUIContent.none)) {
