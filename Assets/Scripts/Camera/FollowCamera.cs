@@ -19,13 +19,15 @@ public class FollowCamera : MonoBehaviour {
         cosmicCam = gameObject.transform.GetComponent<CosmicCamera>();
     }
 
-    void Update() {
+    public void Update() {
         if (active) {
             if (referenceBody != prevReferenceBody) {
+                prevReferenceBody.tr.emitting = true;
                 zoom = -0.5;
             }
             
             if (referenceBody) {
+                referenceBody.tr.emitting = false;
                 zoomSpeed = referenceBody.GameWorldRadius * 10;
 
                 Vector3d newPosition = new Vector3d(transform.position);

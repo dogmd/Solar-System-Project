@@ -45,6 +45,10 @@ public class GravityObjectEditor : Editor {
         Rect r = EditorGUILayout.BeginHorizontal("Button");
         if (GUI.Button(r, GUIContent.none)) {
             var value = (GravityObject)target;
+            FollowCamera cam = value.universe.transform.GetComponentInChildren<FollowCamera>();
+            cam.referenceBody = value;
+            cam.Update();
+
             SceneView.lastActiveSceneView.pivot = Mathd.GetFloatVector3(value.GameWorldPos);
             SceneView.lastActiveSceneView.Repaint();
         }
