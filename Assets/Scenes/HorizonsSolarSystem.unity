@@ -142,7 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 0.000000000000358
   radius: 0.165
-  siderealPeriod: 0
+  siderealPeriod: 0.5055
   obliquity: 0
   position:
     x: 16033914.55050617
@@ -167,7 +167,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.7311594, g: 0.19307655, b: 0.22449347, a: 1}
+  color: {r: 0.34434977, g: 0.033210143, b: 0.32357746, a: 1}
   tr: {fileID: 15646146}
 --- !u!4 &15646145 stripped
 Transform:
@@ -194,7 +194,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 487257604}
+  - {fileID: 1140637377}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -226,7 +226,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -234,7 +234,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -245,8 +245,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.7294118, g: 0.19215687, b: 0.22352941, a: 1}
-      key1: {r: 0.7294118, g: 0.19215687, b: 0.22352941, a: 1}
+      key0: {r: 0.34509805, g: 0.03137255, b: 0.3254902, a: 1}
+      key1: {r: 0.34509805, g: 0.03137255, b: 0.3254902, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -310,23 +310,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1569490915801020983, guid: 241ed0f589a821a4e8ded573be001270, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1157235.9
+      value: -844.1891
       objectReference: {fileID: 0}
     - target: {fileID: -1569490915801020983, guid: 241ed0f589a821a4e8ded573be001270, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1635620.1
+      value: -11.492985
       objectReference: {fileID: 0}
     - target: {fileID: -1569490915801020983, guid: 241ed0f589a821a4e8ded573be001270, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8426.937
+      value: -76.459946
       objectReference: {fileID: 0}
     - target: {fileID: -1569490915801020983, guid: 241ed0f589a821a4e8ded573be001270, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.40998167
       objectReference: {fileID: 0}
     - target: {fileID: -1569490915801020983, guid: 241ed0f589a821a4e8ded573be001270, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.70700425
+      value: 0.18013728
       objectReference: {fileID: 0}
     - target: {fileID: -1569490915801020983, guid: 241ed0f589a821a4e8ded573be001270, type: 3}
       propertyPath: m_LocalRotation.y
@@ -334,7 +334,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1569490915801020983, guid: 241ed0f589a821a4e8ded573be001270, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0120439725
+      value: 0.89412844
       objectReference: {fileID: 0}
     - target: {fileID: -1569490915801020983, guid: 241ed0f589a821a4e8ded573be001270, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -350,76 +350,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 9199261849990390558, guid: 241ed0f589a821a4e8ded573be001270, type: 3}
---- !u!21 &50259802
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
---- !u!21 &57900481
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1001 &80499216
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -449,15 +379,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: b848ee18797a2b547a9cb4c9eba189eb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 333.90594
+      value: -1157746.2
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: b848ee18797a2b547a9cb4c9eba189eb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2127.314
+      value: -1633504.2
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: b848ee18797a2b547a9cb4c9eba189eb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.3716528
+      value: 8352.849
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: b848ee18797a2b547a9cb4c9eba189eb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -489,6 +419,76 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 9199261849990390558, guid: b848ee18797a2b547a9cb4c9eba189eb, type: 3}
+--- !u!21 &92765428
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
+--- !u!21 &108946257
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1001 &120127680
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -514,15 +514,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6719975177263183207, guid: b52a8ce24b6a7ce409e339386b830388, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -453157.7
+      value: -1611237.8
       objectReference: {fileID: 0}
     - target: {fileID: -6719975177263183207, guid: b52a8ce24b6a7ce409e339386b830388, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 344173.38
+      value: -1291458.2
       objectReference: {fileID: 0}
     - target: {fileID: -6719975177263183207, guid: b52a8ce24b6a7ce409e339386b830388, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6448.9326
+      value: 14799.409
       objectReference: {fileID: 0}
     - target: {fileID: -6719975177263183207, guid: b52a8ce24b6a7ce409e339386b830388, type: 3}
       propertyPath: m_LocalRotation.w
@@ -558,111 +558,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 9199261849990390558, guid: b52a8ce24b6a7ce409e339386b830388, type: 3}
---- !u!21 &120188150
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
---- !u!21 &123741215
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
---- !u!21 &128791231
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &133362976 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6755307105989776790, guid: 1f476b932886dcd4d8333609d59dd343, type: 3}
@@ -687,7 +582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 0.04006
   radius: 2322
-  siderealPeriod: 0
+  siderealPeriod: 0.163141667
   obliquity: 0
   position:
     x: -5878355783.786328
@@ -712,7 +607,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.6801455, g: 0.687604, b: 0.72460467, a: 1}
+  color: {r: 0.12661134, g: 0.17005931, b: 0.20599988, a: 1}
   tr: {fileID: 133362981}
 --- !u!96 &133362981
 TrailRenderer:
@@ -734,7 +629,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1240848282}
+  - {fileID: 108946257}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -766,7 +661,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -774,7 +669,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -785,8 +680,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.6784314, g: 0.6862745, b: 0.7254902, a: 1}
-      key1: {r: 0.6784314, g: 0.6862745, b: 0.7254902, a: 1}
+      key0: {r: 0.1254902, g: 0.16862746, b: 0.20784314, a: 1}
+      key1: {r: 0.1254902, g: 0.16862746, b: 0.20784314, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -821,6 +716,111 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!21 &134844962
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
+--- !u!21 &144281412
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
+--- !u!21 &170383562
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1001 &181507531
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -850,15 +850,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5506861425463533205, guid: ca85d132b2a77c54ba4ca14ebdffa5a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -253725.34
+      value: -1411805.5
       objectReference: {fileID: 0}
     - target: {fileID: 5506861425463533205, guid: ca85d132b2a77c54ba4ca14ebdffa5a0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 357725.44
+      value: -1277906.1
       objectReference: {fileID: 0}
     - target: {fileID: 5506861425463533205, guid: ca85d132b2a77c54ba4ca14ebdffa5a0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5428.4175
+      value: 13778.895
       objectReference: {fileID: 0}
     - target: {fileID: 5506861425463533205, guid: ca85d132b2a77c54ba4ca14ebdffa5a0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -890,6 +890,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 9199261849990390558, guid: ca85d132b2a77c54ba4ca14ebdffa5a0, type: 3}
+--- !u!21 &185169326
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1001 &193590413
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -919,23 +954,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1391873842217687777, guid: a5c67c9e2bff6124a84fcabfb0eb783c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2595721.2
+      value: 1437641.2
       objectReference: {fileID: 0}
     - target: {fileID: 1391873842217687777, guid: a5c67c9e2bff6124a84fcabfb0eb783c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -131341.5
+      value: -1766973.1
       objectReference: {fileID: 0}
     - target: {fileID: 1391873842217687777, guid: a5c67c9e2bff6124a84fcabfb0eb783c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -51371.71
+      value: -43021.234
       objectReference: {fileID: 0}
     - target: {fileID: 1391873842217687777, guid: a5c67c9e2bff6124a84fcabfb0eb783c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.6795011
       objectReference: {fileID: 0}
     - target: {fileID: 1391873842217687777, guid: a5c67c9e2bff6124a84fcabfb0eb783c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.69926834
+      value: 0.5894296
       objectReference: {fileID: 0}
     - target: {fileID: 1391873842217687777, guid: a5c67c9e2bff6124a84fcabfb0eb783c, type: 3}
       propertyPath: m_LocalRotation.y
@@ -943,7 +978,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1391873842217687777, guid: a5c67c9e2bff6124a84fcabfb0eb783c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.10499441
+      value: -0.4368649
       objectReference: {fileID: 0}
     - target: {fileID: 1391873842217687777, guid: a5c67c9e2bff6124a84fcabfb0eb783c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -959,6 +994,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 9199261849990390558, guid: a5c67c9e2bff6124a84fcabfb0eb783c, type: 3}
+--- !u!21 &205195626
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &225198175 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 286523177310973376, guid: 16e2a8f2916e54747820bbbaff6803aa, type: 3}
@@ -978,7 +1048,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 0.00000018
   radius: 7.8
-  siderealPeriod: 0
+  siderealPeriod: 1.263
   obliquity: 0
   position:
     x: -83615369.26538664
@@ -1003,7 +1073,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.93349504, g: 0.75350523, b: 0.90099865, a: 1}
+  color: {r: 0.29761183, g: 0.75132847, b: 0.9877615, a: 1}
   tr: {fileID: 225198180}
 --- !u!4 &225198179 stripped
 Transform:
@@ -1030,7 +1100,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 123741215}
+  - {fileID: 709975758}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1062,7 +1132,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -1070,7 +1140,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -1081,8 +1151,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.93333334, g: 0.7529412, b: 0.9019608, a: 1}
-      key1: {r: 0.93333334, g: 0.7529412, b: 0.9019608, a: 1}
+      key0: {r: 0.29803923, g: 0.7529412, b: 0.9882353, a: 1}
+      key1: {r: 0.29803923, g: 0.7529412, b: 0.9882353, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1146,15 +1216,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: b4dc3184e83411743b6e3d932cd697d8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1077487.4
+      value: -80592.73
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: b4dc3184e83411743b6e3d932cd697d8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2746348.8
+      value: -4381980.5
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: b4dc3184e83411743b6e3d932cd697d8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -74978.72
+      value: -66628.24
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: b4dc3184e83411743b6e3d932cd697d8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1215,15 +1285,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: d64f28e9fedca4c4dab9a028886f069c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 232411.42
+      value: -925668.7
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: d64f28e9fedca4c4dab9a028886f069c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -441964.84
+      value: -2077596.5
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: d64f28e9fedca4c4dab9a028886f069c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2892.899
+      value: 5457.5776
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: d64f28e9fedca4c4dab9a028886f069c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1255,6 +1325,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 9199261849990390558, guid: d64f28e9fedca4c4dab9a028886f069c, type: 3}
+--- !u!21 &262227245
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &265934593 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1750018023552784411, guid: ca85d132b2a77c54ba4ca14ebdffa5a0, type: 3}
@@ -1279,7 +1384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 0.0000000000007329
   radius: 0.565
-  siderealPeriod: 0
+  siderealPeriod: 0.17904167
   obliquity: 0
   position:
     x: 151513918.47426337
@@ -1304,7 +1409,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.2623361, g: 0.18911718, b: 0.32898512, a: 1}
+  color: {r: 0.7204184, g: 0.30818644, b: 0.29618186, a: 1}
   tr: {fileID: 265934598}
 --- !u!96 &265934598
 TrailRenderer:
@@ -1326,7 +1431,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 438441452}
+  - {fileID: 480003936}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1358,7 +1463,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -1366,7 +1471,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -1377,8 +1482,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.2627451, g: 0.1882353, b: 0.32941177, a: 1}
-      key1: {r: 0.2627451, g: 0.1882353, b: 0.32941177, a: 1}
+      key0: {r: 0.72156864, g: 0.30980393, b: 0.29803923, a: 1}
+      key1: {r: 0.72156864, g: 0.30980393, b: 0.29803923, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1442,15 +1547,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 189de6cc9fb49ae43afc7c2f1b27cb25, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1157305.9
+      value: -774.2391
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 189de6cc9fb49ae43afc7c2f1b27cb25, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1635590.6
+      value: -40.977295
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 189de6cc9fb49ae43afc7c2f1b27cb25, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8529.463
+      value: -178.9865
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 189de6cc9fb49ae43afc7c2f1b27cb25, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1482,6 +1587,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 9199261849990390558, guid: 189de6cc9fb49ae43afc7c2f1b27cb25, type: 3}
+--- !u!21 &286422815
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &289713742 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2902540547183967652, guid: ef07819a0c1b2794290b0c5714d731e7, type: 3}
@@ -1501,7 +1641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 0.0091
   radius: 469.7
-  siderealPeriod: 0
+  siderealPeriod: 0.3780904167
   obliquity: 0
   position:
     x: 413605303.5914119
@@ -1526,7 +1666,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.16121653, g: 0.17024925, b: 0.20043209, a: 1}
+  color: {r: 0.029697064, g: 0.01593986, b: 0.008521308, a: 1}
   tr: {fileID: 289713747}
 --- !u!4 &289713746 stripped
 Transform:
@@ -1553,7 +1693,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1643264210}
+  - {fileID: 1305097644}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1585,7 +1725,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -1593,7 +1733,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -1604,8 +1744,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.16078432, g: 0.16862746, b: 0.2, a: 1}
-      key1: {r: 0.16078432, g: 0.16862746, b: 0.2, a: 1}
+      key0: {r: 0.03137255, g: 0.015686275, b: 0.007843138, a: 1}
+      key1: {r: 0.03137255, g: 0.015686275, b: 0.007843138, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1664,7 +1804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 0.02309
   radius: 764.5
-  siderealPeriod: 0
+  siderealPeriod: 4.518
   obliquity: 0
   position:
     x: 878592830.426703
@@ -1689,7 +1829,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.23386468, g: 0.43014327, b: 0.80951226, a: 1}
+  color: {r: 0.24663259, g: 0.26663938, b: 0.3088725, a: 1}
   tr: {fileID: 291864750}
 --- !u!96 &291864750
 TrailRenderer:
@@ -1711,7 +1851,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 607539487}
+  - {fileID: 185169326}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1743,7 +1883,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -1751,7 +1891,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -1762,8 +1902,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.23529412, g: 0.43137255, b: 0.80784315, a: 1}
-      key1: {r: 0.23529412, g: 0.43137255, b: 0.80784315, a: 1}
+      key0: {r: 0.24705882, g: 0.26666668, b: 0.30980393, a: 1}
+      key1: {r: 0.24705882, g: 0.26666668, b: 0.30980393, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1827,15 +1967,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 84f213324dd3ef14db19175a7b8a3439, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1157119.9
+      value: -960.27795
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 84f213324dd3ef14db19175a7b8a3439, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1635682
+      value: 50.450974
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 84f213324dd3ef14db19175a7b8a3439, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8165.989
+      value: 184.48805
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 84f213324dd3ef14db19175a7b8a3439, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1891,7 +2031,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 0.03527
   radius: 788.9
-  siderealPeriod: 0
+  siderealPeriod: 8.706
   obliquity: 0
   position:
     x: 2262108281.7906337
@@ -1916,7 +2056,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.008781045, g: 0.010604144, b: 0.0018596586, a: 1}
+  color: {r: 0.20117456, g: 0.2401289, b: 0.018204993, a: 1}
   tr: {fileID: 294460686}
 --- !u!96 &294460686
 TrailRenderer:
@@ -1938,7 +2078,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 834397750}
+  - {fileID: 1694700806}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1970,7 +2110,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -1978,7 +2118,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -1989,8 +2129,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.007843138, g: 0.011764706, b: 0, a: 1}
-      key1: {r: 0.007843138, g: 0.011764706, b: 0, a: 1}
+      key0: {r: 0.2, g: 0.23921569, b: 0.019607844, a: 1}
+      key1: {r: 0.2, g: 0.23921569, b: 0.019607844, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -2050,15 +2190,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7517008446463809012, guid: a0a927f409e1eee4cbcf78cc0d9434b7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -453022.28
+      value: -1611102.4
       objectReference: {fileID: 0}
     - target: {fileID: -7517008446463809012, guid: a0a927f409e1eee4cbcf78cc0d9434b7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 344374.4
+      value: -1291257.2
       objectReference: {fileID: 0}
     - target: {fileID: -7517008446463809012, guid: a0a927f409e1eee4cbcf78cc0d9434b7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6442.8896
+      value: 14793.366
       objectReference: {fileID: 0}
     - target: {fileID: -7517008446463809012, guid: a0a927f409e1eee4cbcf78cc0d9434b7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2151,7 +2291,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.47830033, g: 0.53587013, b: 0.46146962, a: 1}
+  color: {r: 0.2983015, g: 0.47935396, b: 0.32459372, a: 1}
   tr: {fileID: 324036330}
 --- !u!96 &324036330
 TrailRenderer:
@@ -2173,7 +2313,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 390708916}
+  - {fileID: 1345701206}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2205,7 +2345,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -2213,7 +2353,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -2224,8 +2364,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.47843137, g: 0.5372549, b: 0.4627451, a: 1}
-      key1: {r: 0.47843137, g: 0.5372549, b: 0.4627451, a: 1}
+      key0: {r: 0.29803923, g: 0.47843137, b: 0.3254902, a: 1}
+      key1: {r: 0.29803923, g: 0.47843137, b: 0.3254902, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -2259,7 +2399,7 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
-  m_Emitting: 0
+  m_Emitting: 1
 --- !u!1001 &353874440
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2289,15 +2429,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1950787895384281262, guid: a382b689a968de6449c3f083fbecc6df, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -410909.97
+      value: -1568990.1
       objectReference: {fileID: 0}
     - target: {fileID: -1950787895384281262, guid: a382b689a968de6449c3f083fbecc6df, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 515268.62
+      value: -1120363
       objectReference: {fileID: 0}
     - target: {fileID: -1950787895384281262, guid: a382b689a968de6449c3f083fbecc6df, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10986.457
+      value: 19336.934
       objectReference: {fileID: 0}
     - target: {fileID: -1950787895384281262, guid: a382b689a968de6449c3f083fbecc6df, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2346,27 +2486,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4551332228185958397, guid: 16e2a8f2916e54747820bbbaff6803aa, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.0069462024
+      value: 0.006946202
       objectReference: {fileID: 0}
     - target: {fileID: 4551332228185958397, guid: 16e2a8f2916e54747820bbbaff6803aa, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0069462024
+      value: 0.006946202
       objectReference: {fileID: 0}
     - target: {fileID: 4551332228185958397, guid: 16e2a8f2916e54747820bbbaff6803aa, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0069462024
+      value: 0.006946202
       objectReference: {fileID: 0}
     - target: {fileID: 4551332228185958397, guid: 16e2a8f2916e54747820bbbaff6803aa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -410899.56
+      value: -1568979.8
       objectReference: {fileID: 0}
     - target: {fileID: 4551332228185958397, guid: 16e2a8f2916e54747820bbbaff6803aa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 515268.7
+      value: -1120362.9
       objectReference: {fileID: 0}
     - target: {fileID: 4551332228185958397, guid: 16e2a8f2916e54747820bbbaff6803aa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10982.043
+      value: 19332.52
       objectReference: {fileID: 0}
     - target: {fileID: 4551332228185958397, guid: 16e2a8f2916e54747820bbbaff6803aa, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2398,76 +2538,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 9199261849990390558, guid: 16e2a8f2916e54747820bbbaff6803aa, type: 3}
---- !u!21 &379142730
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
---- !u!21 &390708916
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &414943889 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2902540547183967652, guid: 168c2b58725eb9040b1a40348d63d19e, type: 3}
@@ -2492,7 +2562,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 0.000659
   radius: 240
-  siderealPeriod: 0
+  siderealPeriod: 1.413
   obliquity: 0
   position:
     x: 2262287602.7000604
@@ -2517,7 +2587,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.4692827, g: 0.51141995, b: 0.45882, a: 1}
+  color: {r: 0.9273367, g: 0.22256137, b: 0.3745768, a: 1}
   tr: {fileID: 414943894}
 --- !u!96 &414943894
 TrailRenderer:
@@ -2539,7 +2609,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 379142730}
+  - {fileID: 286422815}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2571,7 +2641,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -2579,7 +2649,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -2590,8 +2660,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.47058824, g: 0.50980395, b: 0.45882353, a: 1}
-      key1: {r: 0.47058824, g: 0.50980395, b: 0.45882353, a: 1}
+      key0: {r: 0.9254902, g: 0.22352941, b: 0.3764706, a: 1}
+      key1: {r: 0.9254902, g: 0.22352941, b: 0.3764706, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -2651,15 +2721,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8572439903742658862, guid: 1b07c41280cd79c42b154f67c2381717, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -582861.3
+      value: -1740941.5
       objectReference: {fileID: 0}
     - target: {fileID: -8572439903742658862, guid: 1b07c41280cd79c42b154f67c2381717, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 397054.9
+      value: -1238576.8
       objectReference: {fileID: 0}
     - target: {fileID: -8572439903742658862, guid: 1b07c41280cd79c42b154f67c2381717, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 33170.465
+      value: 41520.94
       objectReference: {fileID: 0}
     - target: {fileID: -8572439903742658862, guid: 1b07c41280cd79c42b154f67c2381717, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2720,15 +2790,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6719975177263183207, guid: c5716db56939a054c984cf6502220bef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -327872.53
+      value: -1485952.6
       objectReference: {fileID: 0}
     - target: {fileID: -6719975177263183207, guid: c5716db56939a054c984cf6502220bef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 331679.03
+      value: -1303952.6
       objectReference: {fileID: 0}
     - target: {fileID: -6719975177263183207, guid: c5716db56939a054c984cf6502220bef, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1329.8668
+      value: 9680.344
       objectReference: {fileID: 0}
     - target: {fileID: -6719975177263183207, guid: c5716db56939a054c984cf6502220bef, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2764,41 +2834,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 9199261849990390558, guid: c5716db56939a054c984cf6502220bef, type: 3}
---- !u!21 &438441452
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &454922220 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7949136978043226412, guid: 776ddf061694aa74aaa80bc8531368f7, type: 3}
@@ -2819,7 +2854,7 @@ MonoBehaviour:
   mass: 5683.4
   radius: 58232
   siderealPeriod: 0.44400926
-  obliquity: 0
+  obliquity: 26.73
   position:
     x: 878980989.3384117
     y: -1205293079.4400802
@@ -2828,7 +2863,7 @@ MonoBehaviour:
     x: 7.278123685844438
     y: 5.677244448560165
     z: -0.38778756171942047
-  axis: {x: 0.041974504, y: 0, z: 0.7877912}
+  axis: {x: 0.25523338, y: -0.27993682, z: 0.69200295}
   rotation: 0
   initPos:
     x: 5.875625002050325
@@ -2843,7 +2878,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.85671544, g: 0.85174876, b: 0.83324856, a: 1}
+  color: {r: 0.45882964, g: 0.6728378, b: 0.38416997, a: 1}
   tr: {fileID: 454922223}
 --- !u!4 &454922222 stripped
 Transform:
@@ -2870,7 +2905,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1426407148}
+  - {fileID: 1094503259}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2902,7 +2937,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -2910,7 +2945,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -2921,8 +2956,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.85490197, g: 0.8509804, b: 0.83137256, a: 1}
-      key1: {r: 0.85490197, g: 0.8509804, b: 0.83137256, a: 1}
+      key0: {r: 0.45882353, g: 0.6745098, b: 0.38431373, a: 1}
+      key1: {r: 0.45882353, g: 0.6745098, b: 0.38431373, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -2957,42 +2992,7 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!21 &466741367
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
---- !u!21 &487257604
+--- !u!21 &480003936
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -3059,76 +3059,6 @@ Transform:
   m_Father: {fileID: 811372387}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &515361144
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
---- !u!21 &593783258
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &594818530 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2902540547183967652, guid: d64f28e9fedca4c4dab9a028886f069c, type: 3}
@@ -3153,7 +3083,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 0.0010805
   radius: 252.3
-  siderealPeriod: 0
+  siderealPeriod: 1.370218
   obliquity: 0
   position:
     x: 878764177.6907619
@@ -3178,7 +3108,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.31201074, g: 0.15417264, b: 0.3713335, a: 1}
+  color: {r: 0.29511142, g: 0.16027099, b: 0.35500422, a: 1}
   tr: {fileID: 594818535}
 --- !u!96 &594818535
 TrailRenderer:
@@ -3200,7 +3130,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1334740919}
+  - {fileID: 1876455437}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3232,7 +3162,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -3240,7 +3170,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -3251,8 +3181,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.3137255, g: 0.15294118, b: 0.37254903, a: 1}
-      key1: {r: 0.3137255, g: 0.15294118, b: 0.37254903, a: 1}
+      key0: {r: 0.29411766, g: 0.16078432, b: 0.35686275, a: 1}
+      key1: {r: 0.29411766, g: 0.16078432, b: 0.35686275, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -3287,7 +3217,165 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!21 &607539487
+--- !u!1 &610886709 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7111863898127977107, guid: 8748fe336c3e6574287c5ebfc57c275e, type: 3}
+  m_PrefabInstance: {fileID: 1803271505}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &610886710 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -7084461056319848078, guid: 8748fe336c3e6574287c5ebfc57c275e, type: 3}
+  m_PrefabInstance: {fileID: 1803271505}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &610886711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610886709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 616b7b0691ef46d4c949a1b1a8ab79ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mass: 0.0153
+  radius: 605
+  siderealPeriod: 6.38723
+  obliquity: 0
+  position:
+    x: 2142972694.9403963
+    y: -4652696148.048113
+    z: -121814242.49972868
+  velocity:
+    x: 4.949201743780997
+    y: 1.0694372215724883
+    z: -1.4382067182299965
+  axis: {x: 0.2732302, y: 0, z: 0.9402482}
+  rotation: 0
+  initPos:
+    x: 14.32488767997148
+    y: -31.10135275507042
+    z: -0.814277916722572
+  initVel:
+    x: 0.002858403188907676
+    y: 0.0006176516785399874
+    z: -0.0008306338845173931
+  universe: {fileID: 811372386}
+  useCustomSizeScale: 0
+  useCustomDistanceScale: 0
+  sizeScale: 10
+  distanceScale: 10
+  color: {r: 0.3953789, g: 0.26749977, b: 0.31960982, a: 1}
+  tr: {fileID: 610886714}
+--- !u!96 &610886714
+TrailRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610886709}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 1938004071}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Time: 10
+  m_Parameters:
+    serializedVersion: 3
+    widthMultiplier: 4.044175
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: -1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -1
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 0.39607844, g: 0.26666668, b: 0.32156864, a: 1}
+      key1: {r: 0.39607844, g: 0.26666668, b: 0.32156864, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 0
+    textureMode: 0
+    shadowBias: 0.5
+    generateLightingData: 0
+  m_MinVertexDistance: 0.1
+  m_Autodestruct: 0
+  m_Emitting: 1
+--- !u!21 &617391466
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -3322,165 +3410,7 @@ Material:
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
---- !u!1 &610886709 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -7111863898127977107, guid: 8748fe336c3e6574287c5ebfc57c275e, type: 3}
-  m_PrefabInstance: {fileID: 1803271505}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &610886710 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -7084461056319848078, guid: 8748fe336c3e6574287c5ebfc57c275e, type: 3}
-  m_PrefabInstance: {fileID: 1803271505}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &610886711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 610886709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 616b7b0691ef46d4c949a1b1a8ab79ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mass: 0.0153
-  radius: 605
-  siderealPeriod: 0
-  obliquity: 0
-  position:
-    x: 2142972694.9403963
-    y: -4652696148.048113
-    z: -121814242.49972868
-  velocity:
-    x: 4.949201743780997
-    y: 1.0694372215724883
-    z: -1.4382067182299965
-  axis: {x: 0.2732302, y: 0, z: 0.9402482}
-  rotation: 0
-  initPos:
-    x: 14.32488767997148
-    y: -31.10135275507042
-    z: -0.814277916722572
-  initVel:
-    x: 0.002858403188907676
-    y: 0.0006176516785399874
-    z: -0.0008306338845173931
-  universe: {fileID: 811372386}
-  useCustomSizeScale: 0
-  useCustomDistanceScale: 0
-  sizeScale: 10
-  distanceScale: 10
-  color: {r: 0.26363575, g: 0.64323, b: 0.44020343, a: 1}
-  tr: {fileID: 610886714}
---- !u!96 &610886714
-TrailRenderer:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 610886709}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 0
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2005509867}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Time: 10
-  m_Parameters:
-    serializedVersion: 3
-    widthMultiplier: 4.044175
-    widthCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    colorGradient:
-      serializedVersion: 2
-      key0: {r: 0.2627451, g: 0.6431373, b: 0.4392157, a: 1}
-      key1: {r: 0.2627451, g: 0.6431373, b: 0.4392157, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    numCornerVertices: 0
-    numCapVertices: 0
-    alignment: 0
-    textureMode: 0
-    shadowBias: 0.5
-    generateLightingData: 0
-  m_MinVertexDistance: 0.1
-  m_Autodestruct: 0
-  m_Emitting: 1
---- !u!21 &621192955
+--- !u!21 &645959741
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -3534,7 +3464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 1.34553
   radius: 2575.5
-  siderealPeriod: 0
+  siderealPeriod: 15.945421
   obliquity: 0
   position:
     x: 880021205.435674
@@ -3559,7 +3489,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.228578, g: 0.2733635, b: 0.09474922, a: 1}
+  color: {r: 0.21073699, g: 0.010998105, b: 0.5404226, a: 1}
   tr: {fileID: 662604178}
 --- !u!96 &662604178
 TrailRenderer:
@@ -3581,7 +3511,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 593783258}
+  - {fileID: 1023299547}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3613,7 +3543,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -3621,7 +3551,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -3632,8 +3562,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.22745098, g: 0.27450982, b: 0.09411765, a: 1}
-      key1: {r: 0.22745098, g: 0.27450982, b: 0.09411765, a: 1}
+      key0: {r: 0.21176471, g: 0.011764706, b: 0.5411765, a: 1}
+      key1: {r: 0.21176471, g: 0.011764706, b: 0.5411765, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -3692,7 +3622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 0.0109572
   radius: 562.5
-  siderealPeriod: 0
+  siderealPeriod: 2.736915
   obliquity: 0
   position:
     x: 878768155.5436994
@@ -3717,7 +3647,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.059661277, g: 0.043368556, b: 0.0262901, a: 1}
+  color: {r: 0.89517355, g: 0.91928566, b: 0.2318474, a: 1}
   tr: {fileID: 682483840}
 --- !u!96 &682483840
 TrailRenderer:
@@ -3739,7 +3669,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 128791231}
+  - {fileID: 1262053998}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3771,7 +3701,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -3779,7 +3709,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -3790,8 +3720,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.05882353, g: 0.043137256, b: 0.02745098, a: 1}
-      key1: {r: 0.05882353, g: 0.043137256, b: 0.02745098, a: 1}
+      key0: {r: 0.89411765, g: 0.91764706, b: 0.23137255, a: 1}
+      key1: {r: 0.89411765, g: 0.91764706, b: 0.23137255, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -3845,7 +3775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 0.000000108
   radius: 11.100000381469727
-  siderealPeriod: 0
+  siderealPeriod: 0.319
   obliquity: 0
   position:
     x: -83630908.69458766
@@ -3870,7 +3800,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.2019625, g: 0.13827652, b: 0.11566751, a: 1}
+  color: {r: 0.9472691, g: 0.4928145, b: 0.83565605, a: 1}
   tr: {fileID: 697187812}
 --- !u!4 &697187811 stripped
 Transform:
@@ -3897,7 +3827,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1333297992}
+  - {fileID: 943519709}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3929,7 +3859,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -3937,7 +3867,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -3948,8 +3878,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.20392157, g: 0.13725491, b: 0.11372549, a: 1}
-      key1: {r: 0.20392157, g: 0.13725491, b: 0.11372549, a: 1}
+      key0: {r: 0.9490196, g: 0.49411765, b: 0.8352941, a: 1}
+      key1: {r: 0.9490196, g: 0.49411765, b: 0.8352941, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -3984,7 +3914,7 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!21 &765120574
+--- !u!21 &709975758
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -4038,7 +3968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 0.002589
   radius: 262.7
-  siderealPeriod: 0
+  siderealPeriod: 0.22258866667
   obliquity: 0
   position:
     x: -340866523.4361041
@@ -4063,7 +3993,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.41455445, g: 0.5027667, b: 0.9753207, a: 1}
+  color: {r: 0.13749886, g: 0.10267337, b: 0.1742902, a: 1}
   tr: {fileID: 769269651}
 --- !u!4 &769269650 stripped
 Transform:
@@ -4090,7 +4020,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1646184164}
+  - {fileID: 170383562}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4122,7 +4052,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -4130,7 +4060,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -4141,8 +4071,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.41568628, g: 0.5019608, b: 0.9764706, a: 1}
-      key1: {r: 0.41568628, g: 0.5019608, b: 0.9764706, a: 1}
+      key0: {r: 0.13725491, g: 0.101960786, b: 0.17254902, a: 1}
+      key1: {r: 0.13725491, g: 0.101960786, b: 0.17254902, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -4206,15 +4136,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 876be3f7576c3924d9093fde9097afb0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 230352.67
+      value: -927727.44
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 876be3f7576c3924d9093fde9097afb0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -440897.44
+      value: -2076529
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 876be3f7576c3924d9093fde9097afb0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2723.7705
+      value: 5626.706
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 876be3f7576c3924d9093fde9097afb0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4246,7 +4176,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 9199261849990390558, guid: 876be3f7576c3924d9093fde9097afb0, type: 3}
---- !u!21 &808865137
+--- !u!21 &796688719
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
+--- !u!21 &807632118
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -4337,9 +4302,9 @@ MonoBehaviour:
   sizeScale: 100
   runSpeedFactor: 100000
   worldOffset:
-    x: -355006.14621614665
-    y: 363776.6824716242
-    z: 6441.757728202569
+    x: -1513086.2669187675
+    y: -1271854.9236168456
+    z: 14792.234435323502
 --- !u!4 &811372387
 Transform:
   m_ObjectHideFlags: 0
@@ -4365,41 +4330,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &834397750
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &855075583 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5264013918990972462, guid: 241ed0f589a821a4e8ded573be001270, type: 3}
@@ -4419,8 +4349,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 868.13
   radius: 25362
-  siderealPeriod: 0
-  obliquity: 0
+  siderealPeriod: 0.71833333
+  obliquity: 97.77
   position:
     x: 2262281948.248167
     y: 1902650690.8638315
@@ -4429,7 +4359,7 @@ MonoBehaviour:
     x: -4.425172680102913
     y: 4.904057347767626
     z: 0.07538379778511949
-  axis: {x: -0.011411625, y: 0, z: -0.6698842}
+  axis: {x: -0.49119857, y: -0.44475386, z: 0.09896025}
   rotation: 0
   initPos:
     x: 15.12242077820007
@@ -4444,7 +4374,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.16805436, g: 0.2995079, b: 0.06157833, a: 1}
+  color: {r: 0.6791758, g: 0.54062927, b: 0.5043423, a: 1}
   tr: {fileID: 855075588}
 --- !u!4 &855075587 stripped
 Transform:
@@ -4471,7 +4401,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 50259802}
+  - {fileID: 1043310061}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4503,7 +4433,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -4511,7 +4441,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -4522,8 +4452,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.16862746, g: 0.29803923, b: 0.0627451, a: 1}
-      key1: {r: 0.16862746, g: 0.29803923, b: 0.0627451, a: 1}
+      key0: {r: 0.6784314, g: 0.5411765, b: 0.5058824, a: 1}
+      key1: {r: 0.6784314, g: 0.5411765, b: 0.5058824, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -4587,15 +4517,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: f9ddb08dd27593142bdace24f1f392fb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 104.62053
+      value: -1157975.5
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: f9ddb08dd27593142bdace24f1f392fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3580.3215
+      value: -1632051.2
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: f9ddb08dd27593142bdace24f1f392fb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 43.23747
+      value: 8393.714
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: f9ddb08dd27593142bdace24f1f392fb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4640,27 +4570,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5586771015700741038, guid: 1f476b932886dcd4d8333609d59dd343, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.013369175
+      value: 0.013369174
       objectReference: {fileID: 0}
     - target: {fileID: 5586771015700741038, guid: 1f476b932886dcd4d8333609d59dd343, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.013369175
+      value: 0.013369174
       objectReference: {fileID: 0}
     - target: {fileID: 5586771015700741038, guid: 1f476b932886dcd4d8333609d59dd343, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.013369175
+      value: 0.013369174
       objectReference: {fileID: 0}
     - target: {fileID: 5586771015700741038, guid: 1f476b932886dcd4d8333609d59dd343, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4284444.5
+      value: -5442524.5
       objectReference: {fileID: 0}
     - target: {fileID: 5586771015700741038, guid: 1f476b932886dcd4d8333609d59dd343, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1685790.9
+      value: -3321422.5
       objectReference: {fileID: 0}
     - target: {fileID: 5586771015700741038, guid: 1f476b932886dcd4d8333609d59dd343, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2376410.8
+      value: 2384761.2
       objectReference: {fileID: 0}
     - target: {fileID: 5586771015700741038, guid: 1f476b932886dcd4d8333609d59dd343, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4715,7 +4645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 0.01353
   radius: 581.1
-  siderealPeriod: 0
+  siderealPeriod: 2.52
   obliquity: 0
   position:
     x: 2262386591.99884
@@ -4740,7 +4670,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.034817528, g: 0.04203308, b: 0.0065325787, a: 1}
+  color: {r: 0.24001275, g: 0.28397194, b: 0.12457064, a: 1}
   tr: {fileID: 898390875}
 --- !u!4 &898390874 stripped
 Transform:
@@ -4767,7 +4697,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2090488189}
+  - {fileID: 1117166199}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4799,7 +4729,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -4807,7 +4737,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -4818,8 +4748,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.03529412, g: 0.043137256, b: 0.007843138, a: 1}
-      key1: {r: 0.03529412, g: 0.043137256, b: 0.007843138, a: 1}
+      key0: {r: 0.23921569, g: 0.28235295, b: 0.1254902, a: 1}
+      key1: {r: 0.23921569, g: 0.28235295, b: 0.1254902, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -4898,7 +4828,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.26061165, g: 0.38727003, b: 0.3797846, a: 1}
+  color: {r: 0.027094362, g: 0.069718726, b: 0.067142226, a: 1}
   tr: {fileID: 904737531}
 --- !u!4 &904737530 stripped
 Transform:
@@ -4925,7 +4855,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 956193767}
+  - {fileID: 262227245}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4957,7 +4887,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -4965,7 +4895,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -4976,8 +4906,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.25882354, g: 0.3882353, b: 0.38039216, a: 1}
-      key1: {r: 0.25882354, g: 0.3882353, b: 0.38039216, a: 1}
+      key0: {r: 0.02745098, g: 0.07058824, b: 0.06666667, a: 1}
+      key1: {r: 0.02745098, g: 0.07058824, b: 0.06666667, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -5012,6 +4942,41 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!21 &922997971
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1001 &939075726
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5037,23 +5002,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6719975177263183207, guid: a2549b1a7e8d3d642b51393d2e2087d5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -410913.12
+      value: -1568993.2
       objectReference: {fileID: 0}
     - target: {fileID: -6719975177263183207, guid: a2549b1a7e8d3d642b51393d2e2087d5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 515263.28
+      value: -1120368.4
       objectReference: {fileID: 0}
     - target: {fileID: -6719975177263183207, guid: a2549b1a7e8d3d642b51393d2e2087d5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10987.741
+      value: 19338.219
       objectReference: {fileID: 0}
     - target: {fileID: -6719975177263183207, guid: a2549b1a7e8d3d642b51393d2e2087d5, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.70710677
+      value: 0.5437092
       objectReference: {fileID: 0}
     - target: {fileID: -6719975177263183207, guid: a2549b1a7e8d3d642b51393d2e2087d5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7069865
+      value: -0.834026
       objectReference: {fileID: 0}
     - target: {fileID: -6719975177263183207, guid: a2549b1a7e8d3d642b51393d2e2087d5, type: 3}
       propertyPath: m_LocalRotation.y
@@ -5061,7 +5026,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6719975177263183207, guid: a2549b1a7e8d3d642b51393d2e2087d5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.013043019
+      value: -0.093706876
       objectReference: {fileID: 0}
     - target: {fileID: -6719975177263183207, guid: a2549b1a7e8d3d642b51393d2e2087d5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5081,7 +5046,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 9199261849990390558, guid: a2549b1a7e8d3d642b51393d2e2087d5, type: 3}
---- !u!21 &956193767
+--- !u!21 &943519709
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
+--- !u!21 &957099609
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -5141,15 +5141,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6719975177263183207, guid: 8cd8d6b193bfd9e42852f8179dc911eb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4972856.5
+      value: -6130936.5
       objectReference: {fileID: 0}
     - target: {fileID: -6719975177263183207, guid: 8cd8d6b193bfd9e42852f8179dc911eb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -168287.97
+      value: -1803919.6
       objectReference: {fileID: 0}
     - target: {fileID: -6719975177263183207, guid: 8cd8d6b193bfd9e42852f8179dc911eb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2469423.8
+      value: 2477774.2
       objectReference: {fileID: 0}
     - target: {fileID: -6719975177263183207, guid: 8cd8d6b193bfd9e42852f8179dc911eb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5185,7 +5185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 9199261849990390558, guid: 8cd8d6b193bfd9e42852f8179dc911eb, type: 3}
---- !u!21 &969223842
+--- !u!21 &1023299547
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -5249,15 +5249,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7670373896536335047, guid: 7cc0cd0da43864b4585b80e2141a7777, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -447397.53
+      value: -1605477.6
       objectReference: {fileID: 0}
     - target: {fileID: -7670373896536335047, guid: 7cc0cd0da43864b4585b80e2141a7777, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 250782.92
+      value: -1384848.6
       objectReference: {fileID: 0}
     - target: {fileID: -7670373896536335047, guid: 7cc0cd0da43864b4585b80e2141a7777, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20341.678
+      value: -11991.201
       objectReference: {fileID: 0}
     - target: {fileID: -7670373896536335047, guid: 7cc0cd0da43864b4585b80e2141a7777, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5289,42 +5289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 9199261849990390558, guid: 7cc0cd0da43864b4585b80e2141a7777, type: 3}
---- !u!21 &1048478236
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
---- !u!21 &1063396788
+--- !u!21 &1043310061
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -5388,15 +5353,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 168c2b58725eb9040b1a40348d63d19e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1157239.8
+      value: -840.4093
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 168c2b58725eb9040b1a40348d63d19e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1635637.4
+      value: 5.721222
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 168c2b58725eb9040b1a40348d63d19e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8341.864
+      value: 8.612458
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 168c2b58725eb9040b1a40348d63d19e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5457,15 +5422,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: f06a26c7479bb2c45976c5ecd07fcdce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 232563.94
+      value: -925516.2
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: f06a26c7479bb2c45976c5ecd07fcdce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -442087.3
+      value: -2077718.9
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: f06a26c7479bb2c45976c5ecd07fcdce, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2845.1912
+      value: 5505.2856
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: f06a26c7479bb2c45976c5ecd07fcdce, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5521,7 +5486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 0.006176
   radius: 536.3
-  siderealPeriod: 0
+  siderealPeriod: 1.888
   obliquity: 0
   position:
     x: 878992324.0435327
@@ -5546,7 +5511,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.50920874, g: 0.28642085, b: 0.3305969, a: 1}
+  color: {r: 0.2941687, g: 0.30548635, b: 0.20793799, a: 1}
   tr: {fileID: 1092941277}
 --- !u!96 &1092941277
 TrailRenderer:
@@ -5568,7 +5533,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1541665884}
+  - {fileID: 92765428}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5600,7 +5565,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -5608,7 +5573,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -5619,8 +5584,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.50980395, g: 0.28627452, b: 0.32941177, a: 1}
-      key1: {r: 0.50980395, g: 0.28627452, b: 0.32941177, a: 1}
+      key0: {r: 0.29411766, g: 0.30588236, b: 0.20784314, a: 1}
+      key1: {r: 0.29411766, g: 0.30588236, b: 0.20784314, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -5655,6 +5620,41 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!21 &1094503259
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &1104543204 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2902540547183967652, guid: cbf5748fce52cb940a2a484c17014484, type: 3}
@@ -5679,7 +5679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 0.16466
   radius: 1163
-  siderealPeriod: 0
+  siderealPeriod: 1.0791667
   obliquity: 0
   position:
     x: 12864380218.754215
@@ -5704,7 +5704,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.8205426, g: 0.15876721, b: 0.8429874, a: 1}
+  color: {r: 0.49774238, g: 0.96117467, b: 0.9888052, a: 1}
   tr: {fileID: 1104543209}
 --- !u!96 &1104543209
 TrailRenderer:
@@ -5726,7 +5726,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 466741367}
+  - {fileID: 1786428486}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5758,7 +5758,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -5766,7 +5766,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -5777,8 +5777,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.81960785, g: 0.15686275, b: 0.84313726, a: 1}
-      key1: {r: 0.81960785, g: 0.15686275, b: 0.84313726, a: 1}
+      key0: {r: 0.49803922, g: 0.9607843, b: 0.9882353, a: 1}
+      key1: {r: 0.49803922, g: 0.9607843, b: 0.9882353, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -5813,6 +5813,41 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!21 &1117166199
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1001 &1127536847
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5842,15 +5877,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: ef07819a0c1b2794290b0c5714d731e7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -78528.08
+      value: -1236608.2
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: ef07819a0c1b2794290b0c5714d731e7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 444011
+      value: -1191620.6
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: ef07819a0c1b2794290b0c5714d731e7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -41961.375
+      value: -33610.9
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: ef07819a0c1b2794290b0c5714d731e7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5882,6 +5917,76 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 9199261849990390558, guid: ef07819a0c1b2794290b0c5714d731e7, type: 3}
+--- !u!21 &1140637377
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
+--- !u!21 &1145275374
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &1153985039 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2902540547183967652, guid: f9ddb08dd27593142bdace24f1f392fb, type: 3}
@@ -5906,7 +6011,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 1.075938
   radius: 2410.3
-  siderealPeriod: 0
+  siderealPeriod: 16.691
   obliquity: 0
   position:
     x: 531238145.6739132
@@ -5931,7 +6036,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.080385715, g: 0.13089956, b: 0.1376449, a: 1}
+  color: {r: 0.1795076, g: 0.6196068, b: 0.3377482, a: 1}
   tr: {fileID: 1153985044}
 --- !u!96 &1153985044
 TrailRenderer:
@@ -5953,7 +6058,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 57900481}
+  - {fileID: 617391466}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5985,7 +6090,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -5993,7 +6098,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -6004,8 +6109,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.078431375, g: 0.12941177, b: 0.13725491, a: 1}
-      key1: {r: 0.078431375, g: 0.12941177, b: 0.13725491, a: 1}
+      key0: {r: 0.18039216, g: 0.61960787, b: 0.3372549, a: 1}
+      key1: {r: 0.18039216, g: 0.61960787, b: 0.3372549, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -6069,15 +6174,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 025e3e13091551745b4d716097284852, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2595832.5
+      value: 1437752.5
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 025e3e13091551745b4d716097284852, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -131443.11
+      value: -1767074.8
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 025e3e13091551745b4d716097284852, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -51554.812
+      value: -43204.336
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 025e3e13091551745b4d716097284852, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6133,7 +6238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 0.2139
   radius: 1352.6
-  siderealPeriod: 0
+  siderealPeriod: 5.876854
   obliquity: 0
   position:
     x: 4414391940.589582
@@ -6158,7 +6263,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.17947103, g: 0.12941986, b: 0.20109096, a: 1}
+  color: {r: 0.3088826, g: 0.2864413, b: 0.3639268, a: 1}
   tr: {fileID: 1159387013}
 --- !u!96 &1159387013
 TrailRenderer:
@@ -6180,7 +6285,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 515361144}
+  - {fileID: 1292495641}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6212,7 +6317,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -6220,7 +6325,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -6231,8 +6336,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.18039216, g: 0.12941177, b: 0.2, a: 1}
-      key1: {r: 0.18039216, g: 0.12941177, b: 0.2, a: 1}
+      key0: {r: 0.30980393, g: 0.28627452, b: 0.3647059, a: 1}
+      key1: {r: 0.30980393, g: 0.28627452, b: 0.3647059, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -6267,41 +6372,6 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!21 &1178492962
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &1198476693 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6241534801529296094, guid: a2549b1a7e8d3d642b51393d2e2087d5, type: 3}
@@ -6326,8 +6396,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 6.4171
   radius: 3389.919921875
-  siderealPeriod: 0
-  obliquity: 0
+  siderealPeriod: 686.98
+  obliquity: 25.19
   position:
     x: -83635669.99940513
     y: 226620734.63076892
@@ -6336,7 +6406,7 @@ MonoBehaviour:
     x: -21.815096541644888
     y: -6.331171810791808
     z: 0.4024613103506916
-  axis: {x: -0.017714897, y: 0, z: -0.96022195}
+  axis: {x: 0.09786191, y: -0.3925677, z: -0.87100726}
   rotation: 0
   initPos:
     x: -0.559069922640317
@@ -6351,7 +6421,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.11298282, g: 0.22752751, b: 0.23578575, a: 1}
+  color: {r: 0.42900485, g: 0.25779125, b: 0.23035233, a: 1}
   tr: {fileID: 1198476698}
 --- !u!96 &1198476698
 TrailRenderer:
@@ -6373,7 +6443,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1538256466}
+  - {fileID: 957099609}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6405,7 +6475,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -6413,7 +6483,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -6424,8 +6494,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.11372549, g: 0.22745098, b: 0.23529412, a: 1}
-      key1: {r: 0.11372549, g: 0.22745098, b: 0.23529412, a: 1}
+      key0: {r: 0.42745098, g: 0.25882354, b: 0.23137255, a: 1}
+      key1: {r: 0.42745098, g: 0.25882354, b: 0.23137255, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -6484,7 +6554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 0.03014
   radius: 761.4
-  siderealPeriod: 0
+  siderealPeriod: 13.463
   obliquity: 0
   position:
     x: 2262723541.1330976
@@ -6509,7 +6579,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.109146185, g: 0.19965556, b: 0.12046173, a: 1}
+  color: {r: 0.87857056, g: 0.8410441, b: 0.84583056, a: 1}
   tr: {fileID: 1202814203}
 --- !u!96 &1202814203
 TrailRenderer:
@@ -6531,7 +6601,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1375064767}
+  - {fileID: 134844962}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6563,7 +6633,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -6571,7 +6641,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -6582,8 +6652,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.10980392, g: 0.2, b: 0.12156863, a: 1}
-      key1: {r: 0.10980392, g: 0.2, b: 0.12156863, a: 1}
+      key0: {r: 0.8784314, g: 0.8392157, b: 0.84705883, a: 1}
+      key1: {r: 0.8784314, g: 0.8392157, b: 0.84705883, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -6653,41 +6723,6 @@ Transform:
   m_Father: {fileID: 811372387}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1240848282
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &1246976814 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7769505331517793681, guid: 7cc0cd0da43864b4585b80e2141a7777, type: 3}
@@ -6712,7 +6747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 0.00000006687
   radius: 8.42
-  siderealPeriod: 0
+  siderealPeriod: 5.27
   obliquity: 0
   position:
     x: -138215553.44311494
@@ -6737,7 +6772,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.30687037, g: 0.30549723, b: 0.2932107, a: 1}
+  color: {r: 0.7098571, g: 0.73977786, b: 0.28937218, a: 1}
   tr: {fileID: 1246976819}
 --- !u!96 &1246976819
 TrailRenderer:
@@ -6759,7 +6794,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2090005479}
+  - {fileID: 922997971}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6791,7 +6826,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -6799,7 +6834,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -6810,8 +6845,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.30588236, g: 0.30588236, b: 0.29411766, a: 1}
-      key1: {r: 0.30588236, g: 0.30588236, b: 0.29411766, a: 1}
+      key0: {r: 0.70980394, g: 0.7411765, b: 0.2901961, a: 1}
+      key1: {r: 0.70980394, g: 0.7411765, b: 0.2901961, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -6884,7 +6919,7 @@ Transform:
   m_Father: {fileID: 811372387}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1333297992
+--- !u!21 &1262053998
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -6919,7 +6954,77 @@ Material:
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
---- !u!21 &1334740919
+--- !u!21 &1291329176
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
+--- !u!21 &1292495641
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
+--- !u!21 &1305097644
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -6983,15 +7088,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 0f9a8db417cdc8f49b1de71ebda4f567, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 232296.89
+      value: -925783.25
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 0f9a8db417cdc8f49b1de71ebda4f567, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -441691.56
+      value: -2077323.1
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 0f9a8db417cdc8f49b1de71ebda4f567, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3026.577
+      value: 5323.9
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 0f9a8db417cdc8f49b1de71ebda4f567, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7052,15 +7157,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 1302b24c92df4914ab95b53593e143a7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 232414.08
+      value: -925666.06
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 1302b24c92df4914ab95b53593e143a7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -441721.5
+      value: -2077353.1
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 1302b24c92df4914ab95b53593e143a7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3020.6619
+      value: 5329.815
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 1302b24c92df4914ab95b53593e143a7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7092,6 +7197,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 9199261849990390558, guid: 1302b24c92df4914ab95b53593e143a7, type: 3}
+--- !u!21 &1345701206
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &1360487621 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2902540547183967652, guid: 121ffdc89da18174faf4cf5d494c8ab6, type: 3}
@@ -7116,7 +7256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 0.01172
   radius: 584.7
-  siderealPeriod: 0
+  siderealPeriod: 4.144
   obliquity: 0
   position:
     x: 2262388531.112739
@@ -7141,7 +7281,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.5096427, g: 0.5119441, b: 0.33806762, a: 1}
+  color: {r: 0.05357041, g: 0.12435962, b: 0.102857426, a: 1}
   tr: {fileID: 1360487626}
 --- !u!96 &1360487626
 TrailRenderer:
@@ -7163,7 +7303,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1659775709}
+  - {fileID: 144281412}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7195,7 +7335,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -7203,7 +7343,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -7214,8 +7354,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.50980395, g: 0.5137255, b: 0.3372549, a: 1}
-      key1: {r: 0.50980395, g: 0.5137255, b: 0.3372549, a: 1}
+      key0: {r: 0.05490196, g: 0.1254902, b: 0.101960786, a: 1}
+      key1: {r: 0.05490196, g: 0.1254902, b: 0.101960786, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -7269,7 +7409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 0.031
   radius: 715
-  siderealPeriod: 0
+  siderealPeriod: 0.951108333
   obliquity: 0
   position:
     x: -6908205832.911101
@@ -7294,7 +7434,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.012528637, g: 0.03790546, b: 0.030499024, a: 1}
+  color: {r: 0.64693433, g: 0.15691887, b: 0.11707791, a: 1}
   tr: {fileID: 1366760096}
 --- !u!4 &1366760095 stripped
 Transform:
@@ -7321,7 +7461,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1063396788}
+  - {fileID: 1145275374}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7353,7 +7493,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -7361,7 +7501,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -7372,8 +7512,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.011764706, g: 0.039215688, b: 0.03137255, a: 1}
-      key1: {r: 0.011764706, g: 0.039215688, b: 0.03137255, a: 1}
+      key0: {r: 0.64705884, g: 0.15686275, b: 0.11764706, a: 1}
+      key1: {r: 0.64705884, g: 0.15686275, b: 0.11764706, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -7408,7 +7548,7 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!21 &1371859891
+--- !u!21 &1374130338
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -7443,7 +7583,7 @@ Material:
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
---- !u!21 &1375064767
+--- !u!21 &1376644945
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -7495,35 +7635,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8688869030300858935, guid: e5fdbbbed2d89f24d8a6a93ee49aede0, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.9346523
+      value: -0.9346523
       objectReference: {fileID: 0}
     - target: {fileID: 8688869030300858935, guid: e5fdbbbed2d89f24d8a6a93ee49aede0, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.9346523
+      value: -0.9346523
       objectReference: {fileID: 0}
     - target: {fileID: 8688869030300858935, guid: e5fdbbbed2d89f24d8a6a93ee49aede0, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.9346523
+      value: -0.9346523
       objectReference: {fileID: 0}
     - target: {fileID: 8688869030300858935, guid: e5fdbbbed2d89f24d8a6a93ee49aede0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -62.564682
+      value: -1158142.6
       objectReference: {fileID: 0}
     - target: {fileID: 8688869030300858935, guid: e5fdbbbed2d89f24d8a6a93ee49aede0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2335.8423
+      value: -1633295.8
       objectReference: {fileID: 0}
     - target: {fileID: 8688869030300858935, guid: e5fdbbbed2d89f24d8a6a93ee49aede0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.6762848
+      value: 8352.153
       objectReference: {fileID: 0}
     - target: {fileID: 8688869030300858935, guid: e5fdbbbed2d89f24d8a6a93ee49aede0, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.6937712
       objectReference: {fileID: 0}
     - target: {fileID: 8688869030300858935, guid: e5fdbbbed2d89f24d8a6a93ee49aede0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.70685303
+      value: 0.71859664
       objectReference: {fileID: 0}
     - target: {fileID: 8688869030300858935, guid: e5fdbbbed2d89f24d8a6a93ee49aede0, type: 3}
       propertyPath: m_LocalRotation.y
@@ -7531,7 +7671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8688869030300858935, guid: e5fdbbbed2d89f24d8a6a93ee49aede0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.018941637
+      value: -0.047962185
       objectReference: {fileID: 0}
     - target: {fileID: 8688869030300858935, guid: e5fdbbbed2d89f24d8a6a93ee49aede0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7547,41 +7687,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 9199261849990390558, guid: e5fdbbbed2d89f24d8a6a93ee49aede0, type: 3}
---- !u!21 &1426407148
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1001 &1478451582
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7611,15 +7716,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6079416829725123791, guid: 80aadd5d6145d284490fb53f37bd54ca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 233328.47
+      value: -924751.6
       objectReference: {fileID: 0}
     - target: {fileID: 6079416829725123791, guid: 80aadd5d6145d284490fb53f37bd54ca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -442285.1
+      value: -2077916.8
       objectReference: {fileID: 0}
     - target: {fileID: 6079416829725123791, guid: 80aadd5d6145d284490fb53f37bd54ca, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2821.5977
+      value: 5528.879
       objectReference: {fileID: 0}
     - target: {fileID: 6079416829725123791, guid: 80aadd5d6145d284490fb53f37bd54ca, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7651,42 +7756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 9199261849990390558, guid: 80aadd5d6145d284490fb53f37bd54ca, type: 3}
---- !u!21 &1538256466
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
---- !u!21 &1541665884
+--- !u!21 &1486194700
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -7782,15 +7852,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: d7139cf6e39851442a65703adc8daabc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -308.10928
+      value: -1158388.2
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: d7139cf6e39851442a65703adc8daabc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3008.3162
+      value: -1632623.2
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: d7139cf6e39851442a65703adc8daabc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 23.898207
+      value: 8374.375
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: d7139cf6e39851442a65703adc8daabc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7841,8 +7911,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 18981.8722
   radius: 69911
-  siderealPeriod: 0
-  obliquity: 0
+  siderealPeriod: 0.41353831
+  obliquity: 3.13
   position:
     x: 530988040.15995294
     y: -540707800.5870018
@@ -7851,7 +7921,7 @@ MonoBehaviour:
     x: 9.175301688467085
     y: 9.7812419460855
     z: -0.24587180698526898
-  axis: {x: 0.018330311, y: 0, z: 0.68403995}
+  axis: {x: 0.045538902, y: -0.025567036, z: 0.68228966}
   rotation: 0
   initPos:
     x: 3.549435815331782
@@ -7866,7 +7936,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.84683156, g: 0.8415512, b: 0.9706564, a: 1}
+  color: {r: 0.017184071, g: 0.025258316, b: 0.12394227, a: 1}
   tr: {fileID: 1632572223}
 --- !u!4 &1632572222 stripped
 Transform:
@@ -7893,7 +7963,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1178492962}
+  - {fileID: 205195626}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7925,7 +7995,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -7933,7 +8003,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -7944,8 +8014,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.84705883, g: 0.84313726, b: 0.972549, a: 1}
-      key1: {r: 0.84705883, g: 0.84313726, b: 0.972549, a: 1}
+      key0: {r: 0.015686275, g: 0.023529412, b: 0.1254902, a: 1}
+      key1: {r: 0.015686275, g: 0.023529412, b: 0.1254902, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -8004,7 +8074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 0.89319
   radius: 1821.6
-  siderealPeriod: 0
+  siderealPeriod: 1.77
   obliquity: 0
   position:
     x: 530741405.7696822
@@ -8029,7 +8099,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.45734555, g: 0.7014994, b: 0.36296722, a: 1}
+  color: {r: 0.5326341, g: 0.33045766, b: 0.29249322, a: 1}
   tr: {fileID: 1635378111}
 --- !u!96 &1635378111
 TrailRenderer:
@@ -8051,7 +8121,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 808865137}
+  - {fileID: 2104000734}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8083,7 +8153,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -8091,7 +8161,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -8102,8 +8172,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.45882353, g: 0.7019608, b: 0.3647059, a: 1}
-      key1: {r: 0.45882353, g: 0.7019608, b: 0.3647059, a: 1}
+      key0: {r: 0.53333336, g: 0.32941177, b: 0.29411766, a: 1}
+      key1: {r: 0.53333336, g: 0.32941177, b: 0.29411766, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -8138,77 +8208,7 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!21 &1643264210
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
---- !u!21 &1646184164
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
---- !u!21 &1659775709
+--- !u!21 &1663487277
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -8268,15 +8268,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7517008446463809012, guid: a7b0032058ab614468a37930cde48d14, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -355006.16
+      value: -1513086.2
       objectReference: {fileID: 0}
     - target: {fileID: -7517008446463809012, guid: a7b0032058ab614468a37930cde48d14, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 363776.7
+      value: -1271854.9
       objectReference: {fileID: 0}
     - target: {fileID: -7517008446463809012, guid: a7b0032058ab614468a37930cde48d14, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6441.758
+      value: 14792.234
       objectReference: {fileID: 0}
     - target: {fileID: -7517008446463809012, guid: a7b0032058ab614468a37930cde48d14, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8312,7 +8312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 9199261849990390558, guid: a7b0032058ab614468a37930cde48d14, type: 3}
---- !u!21 &1688386110
+--- !u!21 &1694700806
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -8364,27 +8364,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9111546128196986762, guid: d7dc255d06e7d504abc23fca8f338dc8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.000004120812
+      value: 0.0000041208114
       objectReference: {fileID: 0}
     - target: {fileID: 9111546128196986762, guid: d7dc255d06e7d504abc23fca8f338dc8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.000004120812
+      value: 0.0000041208114
       objectReference: {fileID: 0}
     - target: {fileID: 9111546128196986762, guid: d7dc255d06e7d504abc23fca8f338dc8, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.000004120812
+      value: 0.0000041208114
       objectReference: {fileID: 0}
     - target: {fileID: 9111546128196986762, guid: d7dc255d06e7d504abc23fca8f338dc8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -344288.12
+      value: -1502368.2
       objectReference: {fileID: 0}
     - target: {fileID: 9111546128196986762, guid: d7dc255d06e7d504abc23fca8f338dc8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 262732.8
+      value: -1372898.8
       objectReference: {fileID: 0}
     - target: {fileID: 9111546128196986762, guid: d7dc255d06e7d504abc23fca8f338dc8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5137.1885
+      value: 13487.665
       objectReference: {fileID: 0}
     - target: {fileID: 9111546128196986762, guid: d7dc255d06e7d504abc23fca8f338dc8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8440,8 +8440,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 48.685
   radius: 6051
-  siderealPeriod: 0
-  obliquity: 0
+  siderealPeriod: 224.70079922
+  obliquity: 177.3
   position:
     x: 104862003.12861803
     y: 27438543.33699571
@@ -8450,7 +8450,7 @@ MonoBehaviour:
     x: -8.989369416797116
     y: 33.72196316449026
     z: 0.9815260957609819
-  axis: {x: -0.028113194, y: 0, z: -0.25747648}
+  axis: {x: 0.016367093, y: -0.0031601067, z: 0.25846982}
   rotation: 0
   initPos:
     x: 0.7009591957288336
@@ -8465,7 +8465,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.6256755, g: 0.27987674, b: 0.26878747, a: 1}
+  color: {r: 0.6376735, g: 0.96689, b: 0.79383606, a: 1}
   tr: {fileID: 1719975874}
 --- !u!96 &1719975874
 TrailRenderer:
@@ -8487,7 +8487,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1371859891}
+  - {fileID: 1663487277}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8519,7 +8519,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -8527,7 +8527,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -8538,8 +8538,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.627451, g: 0.2784314, b: 0.27058825, a: 1}
-      key1: {r: 0.627451, g: 0.2784314, b: 0.27058825, a: 1}
+      key0: {r: 0.6392157, g: 0.96862745, b: 0.7921569, a: 1}
+      key1: {r: 0.6392157, g: 0.96862745, b: 0.7921569, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -8669,7 +8669,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1721818039}
-  m_LocalRotation: {x: 0.7068531, y: 0.0000000014916455, z: -0.01894164, w: -0.70710677}
+  m_LocalRotation: {x: -0.6815383, y: -0.28390688, z: 0.6260774, w: 0.25085765}
   m_LocalPosition: {x: 0, y: -0.00012207031, z: -0.00003361702}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -8688,10 +8688,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7773296fde27c91428b7dbfa029fe8c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  referenceBody: {fileID: 1632572219}
+  referenceBody: {fileID: 855075584}
   zoom: -0.5
   active: 1
-  followRotation: 1
+  followRotation: 0
 --- !u!114 &1721818045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8704,7 +8704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 186ec08a066d2524c89fccd3cb697ef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eulerOffset: {x: 0, y: 0, z: 0}
+  eulerOffset: {x: 27.56, y: 19.01, z: 0}
   tracking: 1
   sens: 0.25
   lockMouse: 1
@@ -8760,11 +8760,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4700993774647014714, guid: 776ddf061694aa74aaa80bc8531368f7, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.70710677
+      value: 0.567961
       objectReference: {fileID: 0}
     - target: {fileID: -4700993774647014714, guid: 776ddf061694aa74aaa80bc8531368f7, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.70610523
+      value: 0.7722053
       objectReference: {fileID: 0}
     - target: {fileID: -4700993774647014714, guid: 776ddf061694aa74aaa80bc8531368f7, type: 3}
       propertyPath: m_LocalRotation.y
@@ -8772,7 +8772,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4700993774647014714, guid: 776ddf061694aa74aaa80bc8531368f7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.037622172
+      value: -0.28481463
       objectReference: {fileID: 0}
     - target: {fileID: -3124914424127336872, guid: 776ddf061694aa74aaa80bc8531368f7, type: 3}
       propertyPath: m_RootOrder
@@ -8792,15 +8792,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3124914424127336872, guid: 776ddf061694aa74aaa80bc8531368f7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 232556.36
+      value: -925523.75
       objectReference: {fileID: 0}
     - target: {fileID: -3124914424127336872, guid: 776ddf061694aa74aaa80bc8531368f7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -441911.97
+      value: -2077543.6
       objectReference: {fileID: 0}
     - target: {fileID: -3124914424127336872, guid: 776ddf061694aa74aaa80bc8531368f7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2934.6602
+      value: 5415.8164
       objectReference: {fileID: 0}
     - target: {fileID: -3124914424127336872, guid: 776ddf061694aa74aaa80bc8531368f7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8844,11 +8844,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5410864720104426174, guid: 776ddf061694aa74aaa80bc8531368f7, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.70710677
+      value: 0.567961
       objectReference: {fileID: 0}
     - target: {fileID: 5410864720104426174, guid: 776ddf061694aa74aaa80bc8531368f7, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.70610523
+      value: 0.7722053
       objectReference: {fileID: 0}
     - target: {fileID: 5410864720104426174, guid: 776ddf061694aa74aaa80bc8531368f7, type: 3}
       propertyPath: m_LocalRotation.y
@@ -8856,7 +8856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5410864720104426174, guid: 776ddf061694aa74aaa80bc8531368f7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.037622172
+      value: -0.28481463
       objectReference: {fileID: 0}
     - target: {fileID: 6911680119867822893, guid: 776ddf061694aa74aaa80bc8531368f7, type: 3}
       propertyPath: m_LocalScale.x
@@ -8872,11 +8872,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6911680119867822893, guid: 776ddf061694aa74aaa80bc8531368f7, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.70710677
+      value: 0.567961
       objectReference: {fileID: 0}
     - target: {fileID: 6911680119867822893, guid: 776ddf061694aa74aaa80bc8531368f7, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.70610523
+      value: 0.7722053
       objectReference: {fileID: 0}
     - target: {fileID: 6911680119867822893, guid: 776ddf061694aa74aaa80bc8531368f7, type: 3}
       propertyPath: m_LocalRotation.y
@@ -8884,7 +8884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6911680119867822893, guid: 776ddf061694aa74aaa80bc8531368f7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.037622172
+      value: -0.28481463
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 9199261849990390558, guid: 776ddf061694aa74aaa80bc8531368f7, type: 3}
@@ -8912,7 +8912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 1.4819
   radius: 2631.2
-  siderealPeriod: 0
+  siderealPeriod: 7.155
   obliquity: 0
   position:
     x: 530620710.6624809
@@ -8937,7 +8937,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.0774927, g: 0.5540647, b: 0.09158555, a: 1}
+  color: {r: 0.93411016, g: 0.75295234, b: 0.9336158, a: 1}
   tr: {fileID: 1745348083}
 --- !u!96 &1745348083
 TrailRenderer:
@@ -8959,7 +8959,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 969223842}
+  - {fileID: 1374130338}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8991,7 +8991,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -8999,7 +8999,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -9010,8 +9010,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.078431375, g: 0.5529412, b: 0.09019608, a: 1}
-      key1: {r: 0.078431375, g: 0.5529412, b: 0.09019608, a: 1}
+      key0: {r: 0.93333334, g: 0.7529412, b: 0.93333334, a: 1}
+      key1: {r: 0.93333334, g: 0.7529412, b: 0.93333334, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -9075,15 +9075,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: e8b5e9d0c60284f44bb9dabc825090d8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -227.4296
+      value: -1158307.5
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: e8b5e9d0c60284f44bb9dabc825090d8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2106.0054
+      value: -1633525.6
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: e8b5e9d0c60284f44bb9dabc825090d8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.173983
+      value: 8341.303
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: e8b5e9d0c60284f44bb9dabc825090d8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9167,8 +9167,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 1024.4052
   radius: 24624
-  siderealPeriod: 0
-  obliquity: 0
+  siderealPeriod: 0.67125
+  obliquity: 28.32
   position:
     x: 4414225466.303339
     y: -740686258.408783
@@ -9177,7 +9177,7 @@ MonoBehaviour:
     x: 0.8739962348400284
     y: 5.404805756616664
     z: -0.13122962249693337
-  axis: {x: 0.023961931, y: 0, z: 0.15958774}
+  axis: {x: 0.09580938, y: -0.012354408, z: 0.12926853}
   rotation: 0
   initPos:
     x: 29.50727470684073
@@ -9192,7 +9192,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.5517538, g: 0.74434, b: 0.9134506, a: 1}
+  color: {r: 0.09242857, g: 0.3483037, b: 0.017249001, a: 1}
   tr: {fileID: 1779854632}
 --- !u!4 &1779854631 stripped
 Transform:
@@ -9219,7 +9219,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1688386110}
+  - {fileID: 1376644945}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9251,7 +9251,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -9259,7 +9259,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -9270,8 +9270,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.5529412, g: 0.74509805, b: 0.9137255, a: 1}
-      key1: {r: 0.5529412, g: 0.74509805, b: 0.9137255, a: 1}
+      key0: {r: 0.09411765, g: 0.34901962, b: 0.015686275, a: 1}
+      key1: {r: 0.09411765, g: 0.34901962, b: 0.015686275, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -9306,6 +9306,41 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!21 &1786428486
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1001 &1791287150
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9335,15 +9370,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 45a2c75bf8641784f9ca2efa41e21e47, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 233251.7
+      value: -924828.44
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 45a2c75bf8641784f9ca2efa41e21e47, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -441593.8
+      value: -2077225.4
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 45a2c75bf8641784f9ca2efa41e21e47, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3167.9536
+      value: 5182.523
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 45a2c75bf8641784f9ca2efa41e21e47, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9409,15 +9444,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7084461056319848078, guid: 8748fe336c3e6574287c5ebfc57c275e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1077482.6
+      value: -80597.5
       objectReference: {fileID: 0}
     - target: {fileID: -7084461056319848078, guid: 8748fe336c3e6574287c5ebfc57c275e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2746358.5
+      value: -4381990
       objectReference: {fileID: 0}
     - target: {fileID: -7084461056319848078, guid: 8748fe336c3e6574287c5ebfc57c275e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -74986.03
+      value: -66635.555
       objectReference: {fileID: 0}
     - target: {fileID: -7084461056319848078, guid: 8748fe336c3e6574287c5ebfc57c275e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9507,7 +9542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 0.000108
   radius: 133
-  siderealPeriod: 0
+  siderealPeriod: 13
   obliquity: 0
   position:
     x: 880136068.1758786
@@ -9532,7 +9567,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.79294634, g: 0.21793944, b: 0.7929765, a: 1}
+  color: {r: 0.7796032, g: 0.92167264, b: 0.974509, a: 1}
   tr: {fileID: 1825549323}
 --- !u!4 &1825549322 stripped
 Transform:
@@ -9559,7 +9594,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 120188150}
+  - {fileID: 645959741}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9591,7 +9626,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -9599,7 +9634,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -9610,8 +9645,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.7921569, g: 0.21960784, b: 0.7921569, a: 1}
-      key1: {r: 0.7921569, g: 0.21960784, b: 0.7921569, a: 1}
+      key0: {r: 0.78039217, g: 0.92156863, b: 0.972549, a: 1}
+      key1: {r: 0.78039217, g: 0.92156863, b: 0.972549, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -9646,7 +9681,165 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!21 &1831032421
+--- !u!1 &1831102730 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2902540547183967652, guid: b848ee18797a2b547a9cb4c9eba189eb, type: 3}
+  m_PrefabInstance: {fileID: 80499216}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1831102731 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8538979985123915573, guid: b848ee18797a2b547a9cb4c9eba189eb, type: 3}
+  m_PrefabInstance: {fileID: 80499216}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1831102732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831102730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 616b7b0691ef46d4c949a1b1a8ab79ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mass: 0.4799844
+  radius: 1560
+  siderealPeriod: 3.55
+  obliquity: 0
+  position:
+    x: 531581151.7720007
+    y: -541019754.5099974
+    z: -9633184.454895617
+  velocity:
+    x: 15.685519156346924
+    y: 21.88919901936329
+    z: 0.3673732861095554
+  axis: {x: -0.013641009, y: 0, z: 0.5824221}
+  rotation: 0
+  initPos:
+    x: 3.553400521575744
+    y: -3.616493683890364
+    z: -0.06439386075363182
+  initVel:
+    x: 0.009059145352584048
+    y: 0.01264207028097084
+    z: 0.0002121758269107876
+  universe: {fileID: 811372386}
+  useCustomSizeScale: 0
+  useCustomDistanceScale: 0
+  sizeScale: 10
+  distanceScale: 10
+  color: {r: 0.71772516, g: 0.63316923, b: 0.7522006, a: 1}
+  tr: {fileID: 1831102735}
+--- !u!96 &1831102735
+TrailRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831102730}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 1875376932}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Time: 10
+  m_Parameters:
+    serializedVersion: 3
+    widthMultiplier: 10.427956
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: -1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -1
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 0.7176471, g: 0.6313726, b: 0.7529412, a: 1}
+      key1: {r: 0.7176471, g: 0.6313726, b: 0.7529412, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 0
+    textureMode: 0
+    shadowBias: 0.5
+    generateLightingData: 0
+  m_MinVertexDistance: 0.1
+  m_Autodestruct: 0
+  m_Emitting: 1
+--- !u!21 &1875376932
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -9681,164 +9874,41 @@ Material:
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
---- !u!1 &1831102730 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2902540547183967652, guid: b848ee18797a2b547a9cb4c9eba189eb, type: 3}
-  m_PrefabInstance: {fileID: 80499216}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1831102731 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8538979985123915573, guid: b848ee18797a2b547a9cb4c9eba189eb, type: 3}
-  m_PrefabInstance: {fileID: 80499216}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1831102732
-MonoBehaviour:
+--- !u!21 &1876455437
+Material:
+  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1831102730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 616b7b0691ef46d4c949a1b1a8ab79ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mass: 0.4799844
-  radius: 1560
-  siderealPeriod: 0
-  obliquity: 0
-  position:
-    x: 531581151.7720007
-    y: -541019754.5099974
-    z: -9633184.454895617
-  velocity:
-    x: 15.685519156346924
-    y: 21.88919901936329
-    z: 0.3673732861095554
-  axis: {x: -0.013641009, y: 0, z: 0.5824221}
-  rotation: 0
-  initPos:
-    x: 3.553400521575744
-    y: -3.616493683890364
-    z: -0.06439386075363182
-  initVel:
-    x: 0.009059145352584048
-    y: 0.01264207028097084
-    z: 0.0002121758269107876
-  universe: {fileID: 811372386}
-  useCustomSizeScale: 0
-  useCustomDistanceScale: 0
-  sizeScale: 10
-  distanceScale: 10
-  color: {r: 0.067046896, g: 0.047826905, b: 0.2927232, a: 1}
-  tr: {fileID: 1831102735}
---- !u!96 &1831102735
-TrailRenderer:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1831102730}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 0
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 1831032421}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Time: 10
-  m_Parameters:
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
     serializedVersion: 3
-    widthMultiplier: 10.427956
-    widthCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    colorGradient:
-      serializedVersion: 2
-      key0: {r: 0.06666667, g: 0.047058824, b: 0.29411766, a: 1}
-      key1: {r: 0.06666667, g: 0.047058824, b: 0.29411766, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    numCornerVertices: 0
-    numCapVertices: 0
-    alignment: 0
-    textureMode: 0
-    shadowBias: 0.5
-    generateLightingData: 0
-  m_MinVertexDistance: 0.1
-  m_Autodestruct: 0
-  m_Emitting: 1
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &1879705444 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6241534801529296094, guid: b52a8ce24b6a7ce409e339386b830388, type: 3}
@@ -9883,7 +9953,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.05216215, g: 0.58310914, b: 0.74874717, a: 1}
+  color: {r: 0.23354949, g: 0.16360213, b: 0.37349573, a: 1}
   tr: {fileID: 1879705449}
 --- !u!4 &1879705448 stripped
 Transform:
@@ -9910,7 +9980,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 621192955}
+  - {fileID: 1291329176}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9942,7 +10012,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -9950,7 +10020,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -9961,8 +10031,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.050980393, g: 0.58431375, b: 0.7490196, a: 1}
-      key1: {r: 0.050980393, g: 0.58431375, b: 0.7490196, a: 1}
+      key0: {r: 0.23529412, g: 0.16470589, b: 0.37254903, a: 1}
+      key1: {r: 0.23529412, g: 0.16470589, b: 0.37254903, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -10021,7 +10091,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 0.018059
   radius: 734.5
-  siderealPeriod: 0
+  siderealPeriod: 79.33
   obliquity: 0
   position:
     x: 875684324.6092091
@@ -10046,7 +10116,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.15702441, g: 0.031353332, b: 0.27281836, a: 1}
+  color: {r: 0.4307873, g: 0.59032446, b: 0.42785323, a: 1}
   tr: {fileID: 1930054977}
 --- !u!96 &1930054977
 TrailRenderer:
@@ -10068,7 +10138,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2101592132}
+  - {fileID: 1486194700}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10100,7 +10170,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -10108,7 +10178,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -10119,8 +10189,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.15686275, g: 0.03137255, b: 0.27450982, a: 1}
-      key1: {r: 0.15686275, g: 0.03137255, b: 0.27450982, a: 1}
+      key0: {r: 0.43137255, g: 0.5921569, b: 0.42745098, a: 1}
+      key1: {r: 0.43137255, g: 0.5921569, b: 0.42745098, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -10266,7 +10336,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 1
   distanceScale: 10
-  color: {r: 0.27291474, g: 0.2613197, b: 0.29681364, a: 1}
+  color: {r: 0.26558867, g: 0.2597784, b: 0.1529465, a: 1}
   tr: {fileID: 1936154633}
 --- !u!96 &1936154633
 TrailRenderer:
@@ -10288,7 +10358,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 765120574}
+  - {fileID: 796688719}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10320,7 +10390,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -10328,7 +10398,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -10339,8 +10409,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.27450982, g: 0.2627451, b: 0.29803923, a: 1}
-      key1: {r: 0.27450982, g: 0.2627451, b: 0.29803923, a: 1}
+      key0: {r: 0.26666668, g: 0.25882354, b: 0.15294118, a: 1}
+      key1: {r: 0.26666668, g: 0.25882354, b: 0.15294118, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -10375,6 +10445,41 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!21 &1938004071
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1001 &1938478399
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10400,23 +10505,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3162278110913609356, guid: 978a609e6dce6c44698afc5a9339064c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -284910.22
+      value: -1442990.4
       objectReference: {fileID: 0}
     - target: {fileID: 3162278110913609356, guid: 978a609e6dce6c44698afc5a9339064c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 382118.22
+      value: -1253513.4
       objectReference: {fileID: 0}
     - target: {fileID: 3162278110913609356, guid: 978a609e6dce6c44698afc5a9339064c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2648.5593
+      value: 10999.036
       objectReference: {fileID: 0}
     - target: {fileID: 3162278110913609356, guid: 978a609e6dce6c44698afc5a9339064c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.7027799
       objectReference: {fileID: 0}
     - target: {fileID: 3162278110913609356, guid: 978a609e6dce6c44698afc5a9339064c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7029291
+      value: 0.7099854
       objectReference: {fileID: 0}
     - target: {fileID: 3162278110913609356, guid: 978a609e6dce6c44698afc5a9339064c, type: 3}
       propertyPath: m_LocalRotation.y
@@ -10424,7 +10529,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3162278110913609356, guid: 978a609e6dce6c44698afc5a9339064c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.076751016
+      value: -0.044958424
       objectReference: {fileID: 0}
     - target: {fileID: 3162278110913609356, guid: 978a609e6dce6c44698afc5a9339064c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10541,15 +10646,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: cbf5748fce52cb940a2a484c17014484, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8244301
+      value: 7086221
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: cbf5748fce52cb940a2a484c17014484, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4158177.8
+      value: 2522546
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: cbf5748fce52cb940a2a484c17014484, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1905329.8
+      value: -1896979.2
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: cbf5748fce52cb940a2a484c17014484, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10581,41 +10686,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 9199261849990390558, guid: cbf5748fce52cb940a2a484c17014484, type: 3}
---- !u!21 &2005509867
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1001 &2037366919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10645,15 +10715,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 121ffdc89da18174faf4cf5d494c8ab6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1157307.1
+      value: -772.9429
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 121ffdc89da18174faf4cf5d494c8ab6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1635627.1
+      value: -4.541022
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 121ffdc89da18174faf4cf5d494c8ab6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8264.467
+      value: 86.00962
       objectReference: {fileID: 0}
     - target: {fileID: 8538979985123915573, guid: 121ffdc89da18174faf4cf5d494c8ab6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10685,76 +10755,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 9199261849990390558, guid: 121ffdc89da18174faf4cf5d494c8ab6, type: 3}
---- !u!21 &2090005479
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
---- !u!21 &2090488189
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &2097792539 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2902540547183967652, guid: b4dc3184e83411743b6e3d932cd697d8, type: 3}
@@ -10774,7 +10774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 0.1307
   radius: 1188
-  siderealPeriod: 0
+  siderealPeriod: 6.38722295833
   obliquity: 0
   position:
     x: 2142979840.08974
@@ -10799,7 +10799,7 @@ MonoBehaviour:
   useCustomDistanceScale: 0
   sizeScale: 10
   distanceScale: 10
-  color: {r: 0.26687697, g: 0.2576788, b: 0.16903135, a: 1}
+  color: {r: 0.08905903, g: 0.115776554, b: 0.112768635, a: 1}
   tr: {fileID: 2097792544}
 --- !u!4 &2097792543 stripped
 Transform:
@@ -10826,7 +10826,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1048478236}
+  - {fileID: 807632118}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10858,7 +10858,7 @@ TrailRenderer:
         time: 0
         value: 1
         inSlope: 0
-        outSlope: 0
+        outSlope: -1
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -10866,7 +10866,7 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
+        inSlope: -1
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -10877,8 +10877,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.26666668, g: 0.25882354, b: 0.16862746, a: 1}
-      key1: {r: 0.26666668, g: 0.25882354, b: 0.16862746, a: 1}
+      key0: {r: 0.09019608, g: 0.11764706, b: 0.11372549, a: 1}
+      key1: {r: 0.09019608, g: 0.11764706, b: 0.11372549, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -10913,7 +10913,76 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!21 &2101592132
+--- !u!1001 &2102862203
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1939022549}
+    m_Modifications:
+    - target: {fileID: 2902540547183967652, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
+      propertyPath: m_Name
+      value: Oberon
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538979985123915573, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538979985123915573, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.010179289
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538979985123915573, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.010179289
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538979985123915573, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.010179289
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538979985123915573, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -549.0025
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538979985123915573, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -39.893158
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538979985123915573, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 175.71764
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538979985123915573, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538979985123915573, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5191743
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538979985123915573, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538979985123915573, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.48006052
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538979985123915573, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538979985123915573, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538979985123915573, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 9199261849990390558, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
+--- !u!21 &2104000734
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -10948,72 +11017,3 @@ Material:
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
---- !u!1001 &2102862203
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1939022549}
-    m_Modifications:
-    - target: {fileID: 2902540547183967652, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
-      propertyPath: m_Name
-      value: Oberon
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538979985123915573, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538979985123915573, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.010179289
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538979985123915573, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.010179289
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538979985123915573, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.010179289
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538979985123915573, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1157531.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538979985123915573, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1635591.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538979985123915573, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -8174.7593
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538979985123915573, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538979985123915573, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.5191743
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538979985123915573, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538979985123915573, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.48006052
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538979985123915573, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538979985123915573, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538979985123915573, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 9199261849990390558, guid: 95b3a7c9ede205140ac64e0913cf384e, type: 3}
