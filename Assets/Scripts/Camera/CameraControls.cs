@@ -6,12 +6,7 @@ public class CameraControls : MonoBehaviour {
     public bool tracking = true;
     public float sens = 1f;
     public bool lockMouse = true;
-    private bool resetTrails = true;
-    private Universe universe;
-
-    void Start() {
-        universe = transform.parent.GetComponent<Universe>();
-    }
+    void Start() {}
 
     void Update() { 
         if (lockMouse) {

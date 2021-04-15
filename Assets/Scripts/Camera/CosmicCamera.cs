@@ -23,7 +23,7 @@ public class CosmicCamera : MonoBehaviour {
         followCam.active = true;
     }
 
-    void Update() {
+    void LateUpdate() {
         if (Input.GetKeyDown(KeyCode.Q)) {
             flyCam.active = !flyCam.active;
             followCam.active = !followCam.active;
@@ -31,6 +31,10 @@ public class CosmicCamera : MonoBehaviour {
 
         foreach (GravityObject obj in transform.parent.GetComponentsInChildren<GravityObject>()) {
             obj.transform.localPosition = Mathd.GetFloatVector3(obj.GameWorldPos);
+        }
+        
+        if (followCam.active) {
+            followCam.TeleportTrails();
         }
     }
 }

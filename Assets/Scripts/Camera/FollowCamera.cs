@@ -21,6 +21,10 @@ public class FollowCamera : MonoBehaviour {
 
     void Update() {
         if (active) {
+            if (referenceBody != prevReferenceBody) {
+                zoom = -0.5;
+            }
+            
             if (referenceBody) {
                 zoomSpeed = referenceBody.GameWorldRadius * 10;
 
@@ -55,15 +59,20 @@ public class FollowCamera : MonoBehaviour {
 
                 // Get current camera postition for the offset
                 Vector3d offset = new Vector3d(X, Y, Z);
-                referenceBody.universe.worldOffset = -referenceBody.position * referenceBody.DistanceScale * Universe.SCALE + newPosition - offset;
+                referenceBody.universe.worldOffset = -referenceBody.ScaledPos + newPosition - offset;
 
                 referenceBody.universe.OffsetTrails(Mathd.GetFloatVector3(prevOffset - offset));
                 prevOffset = offset;
             }
-            if (referenceBody != prevReferenceBody) {
-                zoom = -0.5;
-            }
-            prevReferenceBody = referenceBody;
         }
+    }
+
+    public void TeleportTrails() {
+        if (referenceBody != prevReferenceBody && prevReferenceBody) {
+            foreach (GravityObject obj in referenceBody.universe.gravityObjects) {
+                obj.tr.Clear();
+            }
+        }
+        prevReferenceBody = referenceBody;
     }
 }

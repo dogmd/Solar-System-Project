@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(PredictedOrbitDisplay))]
@@ -56,13 +55,15 @@ public class Universe : MonoBehaviour {
     }
 
     public void OffsetTrails(Vector3 offset) {
-        if (offset != Vector3.zero) {
+        Vector3 test = ExtensionMethods.Round(offset);
+        if (test != Vector3.zero) {
             foreach (GravityObject obj in gravityObjects) {
                 TrailRenderer tr = obj.tr;
+                tr.AddPosition(obj.transform.position);
                 Vector3[] positions = new Vector3[tr.positionCount];
                 tr.GetPositions(positions);
 
-                for (int i = 0; i < positions.Length; i++) {
+                for (int i = 0; i < tr.positionCount; i++) {
                     positions[i] += offset;
                 }
                 tr.SetPositions(positions);
