@@ -50,7 +50,7 @@ public class GravityObject : MonoBehaviour {
         tr.startColor = color;
         tr.endColor = color;
         tr.widthCurve = AnimationCurve.Linear(0, 1, 1, 0);
-        tr.emitting = true;
+        tr.emitting = Application.isPlaying;
     }
 
     void SetScale() {
@@ -132,7 +132,7 @@ public class GravityObject : MonoBehaviour {
         double degOff = universe.timeStep * universe.runSpeedFactor / (siderealPeriod * 24 * 60 * 60) * 360;
         if (Application.isPlaying) {
             rotation += degOff;
-            //rotation %= 360;
+            rotation %= 360;
 
             if (name == "Saturn") {
                 foreach(Transform t in transform.GetComponentInChildren<Transform>()) {

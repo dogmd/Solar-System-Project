@@ -36,10 +36,8 @@ public class FollowCamera : MonoBehaviour {
                     transform.rotation *= Quaternion.AngleAxis((float)referenceBody.rotation, Vector3.up);
                 }
 
-                Vector3 axis = Vector3.Cross(Mathd.GetFloatVector3(referenceBody.velocity.normalized), Vector3.down);
-                transform.rotation *= Quaternion.FromToRotation(referenceBody.axis, axis);
-                transform.rotation *= Quaternion.AngleAxis(camControls.eulerOffset.y, Vector3.Cross(axis, Vector3.right));
-                transform.rotation *= Quaternion.AngleAxis(camControls.eulerOffset.x, Vector3.Cross(axis, Vector3.up));
+                transform.rotation *= Quaternion.AngleAxis(camControls.eulerOffset.y, Vector3.up);
+                transform.rotation *= Quaternion.AngleAxis(camControls.eulerOffset.x, Vector3.right);
 
                 // Modified from http://answers.unity.com/answers/1536663/view.html
                 double ScrollWheelChange = Input.GetAxis("Mouse ScrollWheel");
@@ -57,7 +55,6 @@ public class FollowCamera : MonoBehaviour {
                 double Z = R * Mathd.Sin(PosX) * Mathd.Sin(PosY);
                 double Y = R * Mathd.Cos(PosX);               
 
-                // Get current camera postition for the offset
                 Vector3d offset = new Vector3d(X, Y, Z);
                 referenceBody.universe.worldOffset = -referenceBody.ScaledPos + newPosition - offset;
 
