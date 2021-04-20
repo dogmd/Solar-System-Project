@@ -78,7 +78,7 @@ public class PredictedOrbitDisplay : MonoBehaviour {
         // render
         for (int i = 0; i < orbitPoints.Length; i++) {
             for (int j = 0; j < orbitPoints[i].Length - 1; j++) {
-                Vector3 worldOff = Mathd.GetFloatVector3(universe.worldOffset);
+                Vector3 worldOff = universe.worldOffset.ToFloat();
                 Debug.DrawLine(orbitPoints[i][j] + worldOff, orbitPoints[i][j + 1] + worldOff, gravObjs[i].color);
             }
         }

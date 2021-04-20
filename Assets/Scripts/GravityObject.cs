@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteInEditMode]
@@ -45,12 +43,75 @@ public class GravityObject : MonoBehaviour {
             mass = 0.01d;
         }
 
+        SetTrail();
+        SetLabel();
+    }
+
+    void SetLabel() {
+        TextMesh label = GetComponentInChildren<TextMesh>();
+
+        if (label) {
+            label.text = gameObject.name;
+            label.characterSize = 100;
+            label.fontSize = (int)(SizeScale * 10);
+            label.anchor = TextAnchor.UpperCenter;
+            label.alignment = TextAlignment.Center;
+
+            float scale = GetScale(label.transform, 2 * (radius * Universe.SCALE * SizeScale));
+            label.transform.localScale = new Vector3(scale, scale, scale);
+
+            Transform transform = label.transform.parent;
+            Vector3 eAngs = transform.localEulerAngles;
+            transform.localEulerAngles = Vector3.zero;
+            float height = transform.GetComponent<MeshFilter>().sharedMesh.bounds.size.y;
+            transform.localEulerAngles = eAngs;
+
+            CosmicCamera cam = universe.GetComponentInChildren<CosmicCamera>();
+            float rot = cam.camControls.eulerOffset.y;
+            if (cam.followCam.active && !cam.followCam.followRotation) {
+                rot -= (float)rotation;
+            }
+
+            label.transform.localEulerAngles = new Vector3(0, rot, 0);
+            if (name == "Jupiter") {
+                height = -height; // no idea why text appears on wrong side for Jupiter only.
+            }
+            label.transform.localPosition = new Vector3(0, height, 0);
+        }
+    }
+
+    float GetScale(Transform transform, double desiredSize) {
+        // undo rotation
+        Vector3 eAngs = transform.eulerAngles;
+        transform.eulerAngles = Vector3.zero;
+
+        double rescale = -1, maxSize = -1;
+        for (int i = 0; i < 3; i++) {
+            double size = transform.GetComponent<MeshRenderer>().bounds.size[i];
+            if (size == 0) {
+                size = 0.000001d;
+            }
+            if (maxSize < size) {
+                maxSize = size;
+                rescale = transform.localScale[i];
+            }
+        }
+        rescale = desiredSize * rescale / maxSize;
+
+        // redo rotation
+        transform.eulerAngles = eAngs;
+
+        return (float)rescale;
+    }
+
+    void SetTrail() {
         tr = GetComponentInChildren<TrailRenderer>();
         tr.material = new Material(Shader.Find("Sprites/Default"));
         tr.startColor = color;
         tr.endColor = color;
         tr.widthCurve = AnimationCurve.Linear(0, 1, 1, 0);
         tr.emitting = Application.isPlaying;
+        tr.minVertexDistance = (float)DistanceScale / 100;
     }
 
     void SetScale() {
@@ -67,24 +128,9 @@ public class GravityObject : MonoBehaviour {
             }
         }
 
-        // undo rotation
-        Vector3 eAngs = transform.eulerAngles;
-        transform.eulerAngles = Vector3.zero;
-
-        double rescale = -1, maxSize = -1;
-        for (int i = 0; i < 3; i++) {
-            double size = transform.GetComponent<MeshRenderer>().bounds.size[i];
-            if (size == 0) {
-                size = 0.000001d;
-            }
-            if (maxSize < size) {
-                maxSize = size;
-                rescale = transform.localScale[i];
-            }
-        }
-        rescale = 2 * (radius * Universe.SCALE * SizeScale) * rescale / maxSize;
+        float rescale = GetScale(transform, 2 * (radius * Universe.SCALE * SizeScale));
         if (rescale == 0) {
-            rescale = 0.000001d;
+            rescale = 0.00001f;
         }
         if (multiTransfom) {
             foreach (Transform t in transform.parent.GetComponentInChildren<Transform>()) {
@@ -98,14 +144,11 @@ public class GravityObject : MonoBehaviour {
         if (light) {
             light.range = (float)(radius * DistanceScale);
         }
-
-        // redo rotation
-        transform.eulerAngles = eAngs;
     }
 
     void SetAxis() {
-        Vector3 vel = Mathd.GetFloatVector3(velocity).normalized;
-        axis = Quaternion.AngleAxis((float)obliquity, vel) * Vector3.Cross(vel, Vector3.up);//Vector3.Cross(vel, Vector3.up + new Vector3((float)obliquity, 0, 0));
+        Vector3 vel = velocity.normalized.ToFloat();
+        axis = Quaternion.AngleAxis((float)obliquity, vel) * Vector3.Cross(vel, Vector3.up);
         if (name == "Saturn") {
             foreach(Transform t in transform.GetComponentInChildren<Transform>()) {
                 t.up = axis;
@@ -147,6 +190,8 @@ public class GravityObject : MonoBehaviour {
     }
 
     void Update() {
+        SetLabel();
+
         tr.time = 1 * (float)(100000 / universe.runSpeedFactor * DistanceScale);
         tr.widthMultiplier = GameWorldRadius;
 

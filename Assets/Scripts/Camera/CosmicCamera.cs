@@ -8,9 +8,9 @@ using UnityEngine;
 
 [ExecuteInEditMode]
 public class CosmicCamera : MonoBehaviour {
-    FlyCamera flyCam;
-    FollowCamera followCam;
-    CameraControls camControls;
+    public FlyCamera flyCam;
+    public FollowCamera followCam;
+    public CameraControls camControls;
     public Vector3 position;
     public Vector3 rotation;
 
@@ -30,7 +30,7 @@ public class CosmicCamera : MonoBehaviour {
         }
 
         foreach (GravityObject obj in transform.parent.GetComponentsInChildren<GravityObject>()) {
-            obj.transform.localPosition = Mathd.GetFloatVector3(obj.GameWorldPos);
+            obj.transform.localPosition = obj.GameWorldPos.ToFloat();
         }
         
         if (followCam.active) {

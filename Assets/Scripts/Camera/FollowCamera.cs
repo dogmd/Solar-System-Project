@@ -22,7 +22,9 @@ public class FollowCamera : MonoBehaviour {
     public void Update() {
         if (active) {
             if (referenceBody != prevReferenceBody) {
-                prevReferenceBody.tr.emitting = true;
+                if (prevReferenceBody) {
+                    prevReferenceBody.tr.emitting = true;
+                }
                 zoom = -0.5;
             }
             
@@ -60,7 +62,7 @@ public class FollowCamera : MonoBehaviour {
                 Vector3d offset = new Vector3d(X, Y, Z);
                 referenceBody.universe.worldOffset = -referenceBody.ScaledPos + newPosition - offset;
 
-                referenceBody.universe.OffsetTrails(Mathd.GetFloatVector3(prevOffset - offset));
+                referenceBody.universe.OffsetTrails((prevOffset - offset).ToFloat());
                 prevOffset = offset;
             }
         }

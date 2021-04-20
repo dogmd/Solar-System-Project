@@ -49,7 +49,7 @@ public class GravityObjectEditor : Editor {
             cam.referenceBody = value;
             cam.Update();
 
-            SceneView.lastActiveSceneView.pivot = Mathd.GetFloatVector3(value.GameWorldPos);
+            SceneView.lastActiveSceneView.pivot = value.GameWorldPos.ToFloat();
             SceneView.lastActiveSceneView.Repaint();
         }
         GUILayout.Label("Teleport to object");

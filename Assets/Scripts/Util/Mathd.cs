@@ -15,11 +15,7 @@ namespace UnityEngine {
 
         public static Vector3 GetDisplayVector3(Vector3d v, GravityObject obj) {
             v *= obj.DistanceScale * Universe.SCALE;
-            return new Vector3((float)v.x, (float)v.y, (float)v.z);
-        }
-
-        public static Vector3 GetFloatVector3(Vector3d v) {
-            return new Vector3((float)(v.x), (float)(v.y), (float)(v.z));
+            return v.ToFloat();
         }
 
         public static double Sin(double d) {
