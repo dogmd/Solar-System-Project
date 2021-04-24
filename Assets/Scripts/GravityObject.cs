@@ -44,43 +44,11 @@ public class GravityObject : MonoBehaviour {
         }
 
         SetTrail();
-        SetLabel();
     }
 
-    void SetLabel() {
-        TextMesh label = GetComponentInChildren<TextMesh>();
 
-        if (label) {
-            label.text = gameObject.name;
-            label.characterSize = 100;
-            label.fontSize = (int)(SizeScale * 10);
-            label.anchor = TextAnchor.UpperCenter;
-            label.alignment = TextAlignment.Center;
 
-            float scale = GetScale(label.transform, 2 * (radius * Universe.SCALE * SizeScale));
-            label.transform.localScale = new Vector3(scale, scale, scale);
-
-            Transform transform = label.transform.parent;
-            Vector3 eAngs = transform.localEulerAngles;
-            transform.localEulerAngles = Vector3.zero;
-            float height = transform.GetComponent<MeshFilter>().sharedMesh.bounds.size.y;
-            transform.localEulerAngles = eAngs;
-
-            CosmicCamera cam = universe.GetComponentInChildren<CosmicCamera>();
-            float rot = cam.camControls.eulerOffset.y;
-            if (cam.followCam.active && !cam.followCam.followRotation) {
-                rot -= (float)rotation;
-            }
-
-            label.transform.localEulerAngles = new Vector3(0, rot, 0);
-            if (name == "Jupiter") {
-                height = -height; // no idea why text appears on wrong side for Jupiter only.
-            }
-            label.transform.localPosition = new Vector3(0, height, 0);
-        }
-    }
-
-    float GetScale(Transform transform, double desiredSize) {
+    public float GetScale(Transform transform, double desiredSize) {
         // undo rotation
         Vector3 eAngs = transform.eulerAngles;
         transform.eulerAngles = Vector3.zero;
@@ -112,6 +80,10 @@ public class GravityObject : MonoBehaviour {
         tr.widthCurve = AnimationCurve.Linear(0, 1, 1, 0);
         tr.emitting = Application.isPlaying;
         tr.minVertexDistance = (float)DistanceScale / 100;
+
+        if (!tr.emitting) {
+            tr.Clear();
+        }
     }
 
     void SetScale() {
@@ -190,8 +162,6 @@ public class GravityObject : MonoBehaviour {
     }
 
     void Update() {
-        SetLabel();
-
         tr.time = 1 * (float)(100000 / universe.runSpeedFactor * DistanceScale);
         tr.widthMultiplier = GameWorldRadius;
 
