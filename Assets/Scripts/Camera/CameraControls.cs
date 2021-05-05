@@ -6,16 +6,21 @@ public class CameraControls : MonoBehaviour {
     public bool tracking = true;
     public float sens = 1f;
     public bool lockMouse = true;
-    void Start() {}
+    private Canvas canvas;
+    void Start() {
+        canvas = FindObjectOfType<Canvas>();
+    }
 
-    void Update() { 
+    void Update() {
         if (lockMouse) {
             if (Input.GetKey(KeyCode.Tab)) {
                 Cursor.lockState = CursorLockMode.None;
                 tracking = false;
+                canvas.enabled = true;
             } else if (Application.isPlaying) {
                 Cursor.lockState = CursorLockMode.Locked;
                 tracking = true;
+                canvas.enabled = false;
             }
             eulerOffset = new Vector3(eulerOffset.x % 360, eulerOffset.y % 360, eulerOffset.z % 360);
         } else if (Cursor.lockState == CursorLockMode.Locked) {
@@ -38,7 +43,7 @@ public class CameraControls : MonoBehaviour {
             } else if (Input.GetMouseButton(0)) {
                 mouseOff = Quaternion.AngleAxis(-eulerOffset.z, Vector3.forward) * new Vector3(yOff * ySens, xOff * xSens, 0);
             }
-            
+
             eulerOffset += mouseOff;
             gameObject.transform.eulerAngles = eulerOffset;
         }

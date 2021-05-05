@@ -27,7 +27,7 @@ public class FollowCamera : MonoBehaviour {
                 }
                 zoom = -0.5;
             }
-            
+
             if (referenceBody) {
                 referenceBody.tr.emitting = false;
                 zoomSpeed = referenceBody.GameWorldRadius * 10;
@@ -49,21 +49,24 @@ public class FollowCamera : MonoBehaviour {
                 double R = zoom * zoomSpeed - 0.05f;
                 double PosX = transform.eulerAngles.x + 90; // Get up and down
                 double PosY = -1 * (transform.eulerAngles.y - 90); // Get left to right
-                
+
                 // Convert from degrees to radians
                 PosX = PosX / 180 * Mathd.PI;
-                PosY = PosY / 180 * Mathd.PI;                   
+                PosY = PosY / 180 * Mathd.PI;
 
                 // Calculate new coords
                 double X = R * Mathd.Sin(PosX) * Mathd.Cos(PosY);
                 double Z = R * Mathd.Sin(PosX) * Mathd.Sin(PosY);
-                double Y = R * Mathd.Cos(PosX);               
+                double Y = R * Mathd.Cos(PosX);
 
                 Vector3d offset = new Vector3d(X, Y, Z);
                 referenceBody.universe.worldOffset = -referenceBody.ScaledPos + newPosition - offset;
 
                 referenceBody.universe.OffsetTrails((prevOffset - offset).ToFloat());
                 prevOffset = offset;
+                foreach (Label lbl in referenceBody.universe.GetComponentsInChildren<Label>()) {
+                    lbl.transform.rotation = this.transform.rotation;
+                }
             }
         }
     }

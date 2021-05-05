@@ -16,8 +16,14 @@ public class Universe : MonoBehaviour {
     public double sizeScale = 1d;
     public double runSpeedFactor = 1d;
     public Vector3d worldOffset = Vector3d.zero;
+    public UniverseSettings activeSettings;
+    public bool toScale = false;
 
     void Start() {
+        Init();
+    }
+
+    public void Init() {
         Time.fixedDeltaTime = timeStep;
         gravityObjects = GetComponentsInChildren<GravityObject>();
 
@@ -45,7 +51,7 @@ public class Universe : MonoBehaviour {
         }
     }
 
-    void Update() {}
+    void Update() { }
 
     public double CalcGravity(double m1, double m2, double r) {
         if (r < 0.01) {

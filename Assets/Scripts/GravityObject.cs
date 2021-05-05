@@ -12,7 +12,7 @@ public class GravityObject : MonoBehaviour {
     public Vector3d velocity;
     public Vector3 axis;
     public double rotation;
-    
+
     // Values used for input
     public Vector3d initPos;
     public Vector3d initVel;
@@ -24,6 +24,7 @@ public class GravityObject : MonoBehaviour {
     private int trailInd;
     public Color color;
     public TrailRenderer tr;
+    public GravityObject parent;
 
     void SetUniverse() {
         Transform curr = transform;
@@ -31,7 +32,7 @@ public class GravityObject : MonoBehaviour {
             curr = curr.parent;
         }
     }
-    
+
     void Start() {
         SetUniverse();
         if (radius == 0) {
@@ -44,6 +45,15 @@ public class GravityObject : MonoBehaviour {
         }
 
         SetTrail();
+        if (transform.parent != universe.transform) {
+            GravityObject[] siblings = transform.parent.GetComponentsInChildren<GravityObject>();
+            foreach (GravityObject sibling in siblings) {
+                if (sibling.name == transform.parent.gameObject.name) {
+                    parent = sibling;
+                    break;
+                }
+            }
+        }
     }
 
 
@@ -74,6 +84,7 @@ public class GravityObject : MonoBehaviour {
 
     void SetTrail() {
         tr = GetComponentInChildren<TrailRenderer>();
+        tr.time = 15f;
         tr.material = new Material(Shader.Find("Sprites/Default"));
         tr.startColor = color;
         tr.endColor = color;
@@ -122,10 +133,10 @@ public class GravityObject : MonoBehaviour {
         Vector3 vel = velocity.normalized.ToFloat();
         axis = Quaternion.AngleAxis((float)obliquity, vel) * Vector3.Cross(vel, Vector3.up);
         if (name == "Saturn") {
-            foreach(Transform t in transform.GetComponentInChildren<Transform>()) {
+            foreach (Transform t in transform.GetComponentInChildren<Transform>()) {
                 t.up = axis;
             }
-        } else { 
+        } else {
             transform.up = axis;
         }
 
@@ -134,8 +145,8 @@ public class GravityObject : MonoBehaviour {
             float r = (float)radius;
             Vector3 orthogonal = Vector3.Cross(vel, Vector3.forward);
             Debug.DrawLine(transform.position, transform.position + axis * (float)SizeScale * r, Color.yellow);
-            Debug.DrawLine(transform.position, transform.position + vel * (float)SizeScale* r, Color.white);
-            Debug.DrawLine(transform.position, transform.position + orthogonal * (float)SizeScale* r, Color.red);
+            Debug.DrawLine(transform.position, transform.position + vel * (float)SizeScale * r, Color.white);
+            Debug.DrawLine(transform.position, transform.position + orthogonal * (float)SizeScale * r, Color.red);
         }
     }
 
@@ -150,7 +161,7 @@ public class GravityObject : MonoBehaviour {
             rotation %= 360;
 
             if (name == "Saturn") {
-                foreach(Transform t in transform.GetComponentInChildren<Transform>()) {
+                foreach (Transform t in transform.GetComponentInChildren<Transform>()) {
                     t.up = axis;
                     t.RotateAround(t.position, axis, (float)rotation);
                 }
@@ -162,7 +173,12 @@ public class GravityObject : MonoBehaviour {
     }
 
     void Update() {
-        tr.time = 1 * (float)(100000 / universe.runSpeedFactor * DistanceScale);
+        if (Time.time <= 0.2f) {
+            tr.emitting = false;
+        } else {
+            tr.emitting = true;
+        }
+        //tr.time = 1 * (float)(100000000 / universe.runSpeedFactor * DistanceScale);
         tr.widthMultiplier = GameWorldRadius;
 
         SetUniverse();
@@ -171,7 +187,7 @@ public class GravityObject : MonoBehaviour {
             SetAxis();
         }
         Rotate();
-        
+
         if (!Application.isPlaying) {
             this.position = initPos * Universe.AU;
             this.velocity = initVel * Universe.VEL_SCALE;
@@ -181,7 +197,7 @@ public class GravityObject : MonoBehaviour {
             tr.Clear();
         }
     }
-        
+
     public Vector3d GameWorldPos {
         get {
             return ScaledPos + universe.worldOffset;
@@ -190,7 +206,12 @@ public class GravityObject : MonoBehaviour {
 
     public Vector3d ScaledPos {
         get {
-            return position * this.DistanceScale * Universe.SCALE;
+            if (parent && parent != this) {
+                Vector3d offset = (parent.position - position) * Universe.SCALE;
+                return parent.ScaledPos + offset * DistanceScale;
+            } else {
+                return position * Universe.SCALE * DistanceScale;
+            }
         }
     }
 

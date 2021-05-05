@@ -2,12 +2,10 @@ using UnityEngine;
 using UnityEditor;
 using System;
 
-
-// IngredientDrawerUIE
 [CustomEditor(typeof(GravityObject))]
 [CanEditMultipleObjects]
 public class GravityObjectEditor : Editor {
-    SerializedProperty mass, radius, initPos, initVel, useCustSize, useCustDist, sizeScale, distScale, siderealPeriod, obliquity, color; 
+    SerializedProperty mass, radius, initPos, initVel, useCustSize, useCustDist, sizeScale, distScale, siderealPeriod, obliquity, color;
 
     void OnEnable() {
         mass = serializedObject.FindProperty("mass");
