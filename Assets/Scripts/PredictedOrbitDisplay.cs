@@ -90,7 +90,7 @@ public class PredictedOrbitDisplay : MonoBehaviour {
             if (other != obj) {
                 Vector3d heading = (obj.position - other.position);
                 double forceMag = universe.CalcGravity(obj.mass, other.mass, heading.magnitude);
-                Vector3d forceDirection = heading / heading.magnitude;                
+                Vector3d forceDirection = heading / heading.magnitude;
                 force += forceDirection * -forceMag;
             }
         }

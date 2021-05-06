@@ -5,7 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: Assets/Scenes/3DTest.unity
+    guid: 668dcaeeae80cd844bc95822ae6b75dd
+  - enabled: 0
+    path: Assets/Scenes/TestSolarSystem.unity
+    guid: 9dedd502592df794b9e87756eb02e343
+  - enabled: 0
+    path: Assets/Scenes/RealSolarSystem.unity
+    guid: f40f488027d734441bfdf647e20c59e4
+  - enabled: 1
+    path: Assets/Scenes/HorizonsSolarSystem.unity
+    guid: 306b02506359133459083cd0f6a4eb84
   m_configObjects: {}

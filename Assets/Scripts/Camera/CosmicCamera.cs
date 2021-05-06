@@ -32,7 +32,7 @@ public class CosmicCamera : MonoBehaviour {
         foreach (GravityObject obj in transform.parent.GetComponentsInChildren<GravityObject>()) {
             obj.transform.localPosition = obj.GameWorldPos.ToFloat();
         }
-        
+
         if (followCam.active) {
             followCam.TeleportTrails();
         }

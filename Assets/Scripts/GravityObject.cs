@@ -155,7 +155,7 @@ public class GravityObject : MonoBehaviour {
             return;
         }
 
-        double degOff = universe.timeStep * universe.runSpeedFactor / (siderealPeriod * 24 * 60 * 60) * 360;
+        double degOff = Time.deltaTime * universe.runSpeedFactor / (siderealPeriod * 24 * 60 * 60) * 360;
         if (Application.isPlaying) {
             rotation += degOff;
             rotation %= 360;

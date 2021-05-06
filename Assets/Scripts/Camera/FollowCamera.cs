@@ -45,7 +45,14 @@ public class FollowCamera : MonoBehaviour {
 
                 // Modified from http://answers.unity.com/answers/1536663/view.html
                 double ScrollWheelChange = Input.GetAxis("Mouse ScrollWheel");
-                zoom += ScrollWheelChange;
+
+                float scrollSpeedMult = 1f;
+                if (Input.GetKey(KeyCode.LeftShift)) {
+                    scrollSpeedMult = 0.1f;
+                } else if (Input.GetKey(KeyCode.LeftControl)) {
+                    scrollSpeedMult = 10f;
+                }
+                zoom += ScrollWheelChange * scrollSpeedMult;
                 double R = zoom * zoomSpeed - 0.05f;
                 double PosX = transform.eulerAngles.x + 90; // Get up and down
                 double PosY = -1 * (transform.eulerAngles.y - 90); // Get left to right

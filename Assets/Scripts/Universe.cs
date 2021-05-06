@@ -18,9 +18,13 @@ public class Universe : MonoBehaviour {
     public Vector3d worldOffset = Vector3d.zero;
     public UniverseSettings activeSettings;
     public bool toScale = false;
+    public double simulatedSeconds;
 
     void Start() {
         Init();
+        if (activeSettings) {
+            activeSettings.WriteSettings();
+        }
     }
 
     public void Init() {
@@ -34,6 +38,7 @@ public class Universe : MonoBehaviour {
     }
 
     void FixedUpdate() {
+        simulatedSeconds += runSpeedFactor * Time.fixedDeltaTime;
         foreach (GravityObject obj in gravityObjects) {
             Vector3d force = new Vector3d(Vector3.zero);
             foreach (GravityObject other in gravityObjects) {
@@ -51,7 +56,6 @@ public class Universe : MonoBehaviour {
         }
     }
 
-    void Update() { }
 
     public double CalcGravity(double m1, double m2, double r) {
         if (r < 0.01) {
@@ -61,19 +65,16 @@ public class Universe : MonoBehaviour {
     }
 
     public void OffsetTrails(Vector3 offset) {
-        Vector3 test = ExtensionMethods.Round(offset);
-        if (test != Vector3.zero) {
-            foreach (GravityObject obj in gravityObjects) {
-                TrailRenderer tr = obj.tr;
-                tr.AddPosition(obj.transform.position);
-                Vector3[] positions = new Vector3[tr.positionCount];
-                tr.GetPositions(positions);
+        foreach (GravityObject obj in gravityObjects) {
+            TrailRenderer tr = obj.tr;
+            tr.AddPosition(obj.transform.position);
+            Vector3[] positions = new Vector3[tr.positionCount];
+            tr.GetPositions(positions);
 
-                for (int i = 0; i < tr.positionCount; i++) {
-                    positions[i] += offset;
-                }
-                tr.SetPositions(positions);
+            for (int i = 0; i < tr.positionCount; i++) {
+                positions[i] += offset;
             }
+            tr.SetPositions(positions);
         }
     }
 }
