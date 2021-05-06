@@ -9,7 +9,8 @@ public class UniverseSettings : MonoBehaviour {
     public double[] distanceScales;
     public Universe universe;
     public GravityObject referenceBody;
-
+    private Image img;
+    private Color btnColor;
 
     void Start() {
         universe = FindObjectOfType<Universe>();
@@ -17,21 +18,28 @@ public class UniverseSettings : MonoBehaviour {
         name = referenceBody.name + " Button";
         text.text = referenceBody.name;
         text.color = Color.white;
+        img = GetComponent<Image>();
         GetComponent<Button>().onClick.AddListener(WriteSettings);
-        Color color;
         if (referenceBody.transform.parent.name != "Asteroids/Dwarfs") {
             if (referenceBody.parent) {
-                color = referenceBody.parent.color;
+                btnColor = referenceBody.parent.color;
             } else {
-                color = referenceBody.color;
+                btnColor = referenceBody.color;
             }
-            GetComponent<Image>().color = color;
+            img.color = btnColor;
+        } else {
+            btnColor = img.color;
         }
     }
 
     void Update() {
         if (!universe) {
             universe = FindObjectOfType<Universe>();
+        }
+        if (universe.activeSettings == this) {
+            img.color = Color.gray;
+        } else {
+            img.color = btnColor;
         }
     }
 

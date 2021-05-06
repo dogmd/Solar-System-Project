@@ -10,8 +10,9 @@ public class UniverseSettingsCustom : MonoBehaviour {
     private Text text;
     private Universe universe;
     private double lastTimeUpdate;
-    private DateTimeOffset simDateTime;
+    private static DateTimeOffset simDateTime;
     private const double MAX_LOSSY_SCALE = 100000;
+    private bool resetTime;
 
     void Start() {
         slider = GetComponent<Slider>();
@@ -35,7 +36,6 @@ public class UniverseSettingsCustom : MonoBehaviour {
         universe.activeSettings.WriteSettings();
         universe.simulatedSeconds = 0;
         simDateTime = new DateTimeOffset(new DateTime(2021, 4, 1, 0, 0, 0));
-
         FindObjectOfType<CosmicCamera>().queueTrailReset = true;
     }
 
