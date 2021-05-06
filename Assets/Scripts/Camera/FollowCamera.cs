@@ -23,13 +23,14 @@ public class FollowCamera : MonoBehaviour {
         if (active) {
             if (referenceBody != prevReferenceBody) {
                 if (prevReferenceBody) {
-                    prevReferenceBody.tr.emitting = true;
+                    //prevReferenceBody.tr.emitting = true;
+                    cosmicCam.queueTrailReset = true;
                 }
                 zoom = -0.5;
             }
 
             if (referenceBody) {
-                referenceBody.tr.emitting = false;
+                //referenceBody.tr.emitting = false;
                 zoomSpeed = referenceBody.GameWorldRadius * 10;
 
                 Vector3d newPosition = new Vector3d(transform.position);
@@ -75,15 +76,7 @@ public class FollowCamera : MonoBehaviour {
                     lbl.transform.rotation = this.transform.rotation;
                 }
             }
+            prevReferenceBody = referenceBody;
         }
-    }
-
-    public void TeleportTrails() {
-        if (referenceBody != prevReferenceBody && prevReferenceBody) {
-            foreach (GravityObject obj in referenceBody.universe.gravityObjects) {
-                obj.tr.Clear();
-            }
-        }
-        prevReferenceBody = referenceBody;
     }
 }

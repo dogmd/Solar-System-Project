@@ -16,6 +16,7 @@ public class UniverseSettingsToggle : MonoBehaviour {
         Universe universe = FindObjectOfType<Universe>();
         universe.toScale = toggle.isOn;
         universe.activeSettings.WriteSettings();
+        FindObjectOfType<CosmicCamera>().queueTrailReset = true;
     }
 
     public void SetTrails() {

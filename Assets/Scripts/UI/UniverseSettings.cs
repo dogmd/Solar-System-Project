@@ -59,10 +59,10 @@ public class UniverseSettings : MonoBehaviour {
                 obj.sizeScale = sizeScales[i] / minScale * smallScale;
                 obj.distanceScale = distanceScales[i] / minScale * smallScale;
             }
-            obj.tr.Clear();
         }
         universe.GetComponentInChildren<FollowCamera>().referenceBody = referenceBody;
         universe.activeSettings = this;
+        FindObjectOfType<CosmicCamera>().queueTrailReset = true;
     }
 
     public void SaveSettings() {

@@ -13,6 +13,7 @@ public class CosmicCamera : MonoBehaviour {
     public CameraControls camControls;
     public Vector3 position;
     public Vector3 rotation;
+    public bool queueTrailReset = false;
 
     void Start() {
         flyCam = gameObject.transform.GetComponent<FlyCamera>();
@@ -31,10 +32,11 @@ public class CosmicCamera : MonoBehaviour {
 
         foreach (GravityObject obj in transform.parent.GetComponentsInChildren<GravityObject>()) {
             obj.transform.localPosition = obj.GameWorldPos.ToFloat();
-        }
 
-        if (followCam.active) {
-            followCam.TeleportTrails();
+            if (queueTrailReset) {
+                obj.tr.Clear();
+            }
         }
+        queueTrailReset = false;
     }
 }

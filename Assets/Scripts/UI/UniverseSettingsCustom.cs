@@ -36,9 +36,7 @@ public class UniverseSettingsCustom : MonoBehaviour {
         universe.simulatedSeconds = 0;
         simDateTime = new DateTimeOffset(new DateTime(2021, 4, 1, 0, 0, 0));
 
-        foreach (GravityObject obj in universe.gravityObjects) {
-            obj.tr.Clear();
-        }
+        FindObjectOfType<CosmicCamera>().queueTrailReset = true;
     }
 
     public void SetRunSpeedFactor() {

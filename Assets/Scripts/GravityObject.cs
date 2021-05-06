@@ -54,6 +54,8 @@ public class GravityObject : MonoBehaviour {
                 }
             }
         }
+
+        FindObjectOfType<CosmicCamera>().queueTrailReset = true;
     }
 
 
@@ -89,7 +91,7 @@ public class GravityObject : MonoBehaviour {
         tr.startColor = color;
         tr.endColor = color;
         tr.widthCurve = AnimationCurve.Linear(0, 1, 1, 0);
-        tr.emitting = Application.isPlaying;
+        tr.emitting = true;
         tr.minVertexDistance = (float)DistanceScale / 100;
 
         if (!tr.emitting) {
@@ -173,11 +175,6 @@ public class GravityObject : MonoBehaviour {
     }
 
     void Update() {
-        if (Time.time <= 0.2f) {
-            tr.emitting = false;
-        } else {
-            tr.emitting = true;
-        }
         //tr.time = 1 * (float)(100000000 / universe.runSpeedFactor * DistanceScale);
         tr.widthMultiplier = GameWorldRadius;
 
@@ -191,10 +188,6 @@ public class GravityObject : MonoBehaviour {
         if (!Application.isPlaying) {
             this.position = initPos * Universe.AU;
             this.velocity = initVel * Universe.VEL_SCALE;
-        }
-
-        if (Time.frameCount < 3) {
-            tr.Clear();
         }
     }
 
