@@ -86,12 +86,11 @@ public class GravityObject : MonoBehaviour {
 
     void SetTrail() {
         tr = GetComponentInChildren<TrailRenderer>();
-        tr.time = 15f;
         tr.material = new Material(Shader.Find("Sprites/Default"));
         tr.startColor = color;
         tr.endColor = color;
         tr.widthCurve = AnimationCurve.Linear(0, 1, 1, 0);
-        tr.emitting = true;
+        tr.emitting = name != "Sun";
         tr.minVertexDistance = (float)DistanceScale / 100;
 
         if (!tr.emitting) {
@@ -175,7 +174,7 @@ public class GravityObject : MonoBehaviour {
     }
 
     void Update() {
-        //tr.time = 1 * (float)(100000000 / universe.runSpeedFactor * DistanceScale);
+        tr.time = 3500000f / (float)(universe.runSpeedFactor);
         tr.widthMultiplier = GameWorldRadius;
 
         SetUniverse();

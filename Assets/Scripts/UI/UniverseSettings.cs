@@ -53,7 +53,7 @@ public class UniverseSettings : MonoBehaviour {
 
         double smallScale = 1;
         if (referenceBody.tag == "Small") {
-            smallScale = 3000 / referenceBody.radius;
+            smallScale = 3200 / referenceBody.radius;
         }
 
         for (int i = 0; i < sizeScales.Length; i++) {
