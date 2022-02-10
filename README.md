@@ -1,5 +1,5 @@
 # Solar System Simulator
-This project was made for UT Dallas's computer graphics class (CS 4361). It is written using Unity Version 2020.3.3f1.
+This is a project that uses N body Newtonian gravity and NASA data to simulate the solar system starting at 04/01/2021. It is written using Unity Version 2020.3.3f1.
 
 ## Compile / Run Instructions
 These instructions assume you have Unity 2020.3.3f1 and UnityHub installed.
